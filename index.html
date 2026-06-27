@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>China EV Deliveries Dashboard</title>
+  <style>
+    :root {
+      --ink:#17212b; --muted:#657286; --line:#d8dde6; --page:#f4f6f8;
+      --panel:#fff; --accent:#0d7c86; --prev:#c4512d; --ok:#1f7a4d; --warn:#9b5a12;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:var(--page);color:var(--ink);line-height:1.5}
+    header{background:#fff;border-bottom:1px solid var(--line)}
+    .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}
+    .top{padding:24px 0 18px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:end}
+    h1{margin:0 0 6px;font-size:clamp(24px,3vw,38px);letter-spacing:0}
+    h2{margin:0 0 10px;font-size:18px;letter-spacing:0}
+    .sub,.note{color:var(--muted);font-size:14px}
+    .status{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid #b9dbc9;background:#ecf8f1;color:var(--ok);border-radius:6px;font-weight:700;white-space:nowrap}
+    main{padding:22px 0 36px}
+    .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}
+    .kpi,.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px}
+    .kpi{padding:14px;min-height:106px}.label{color:var(--muted);font-size:13px;margin-bottom:8px}
+    .value{font-size:clamp(23px,3vw,34px);font-weight:750;line-height:1.05}.small{color:var(--muted);font-size:12px;margin-top:8px}
+    .panel{padding:16px;overflow:hidden}.grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr);gap:16px;align-items:start}
+    .filter-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .brand-filters,.actions,.legend{display:flex;flex-wrap:wrap;gap:8px}
+    button{border:1px solid var(--line);background:#fff;color:#273342;border-radius:6px;min-height:34px;padding:7px 10px;font:inherit;font-size:13px;cursor:pointer}
+    button[aria-pressed=true]{border-color:var(--accent);background:#eaf7f8;color:#075c63;font-weight:700}
+    .chart-area{width:100%;overflow-x:auto;border-top:1px solid var(--line);padding-top:10px}
+    svg{display:block;width:100%;min-width:820px;height:auto}.axis{stroke:#aab3c0}.gridline{stroke:#e7ebf0}
+    .series-main{fill:none;stroke:var(--accent);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+    .series-prev{fill:none;stroke:var(--prev);stroke-width:2.6;stroke-dasharray:8 6;stroke-linejoin:round;stroke-linecap:round}
+    .series-brand{fill:none;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round;opacity:.78}.dot-main{fill:var(--accent)}.dot-prev{fill:var(--prev)}
+    .legend{gap:14px;margin:8px 0 4px;font-size:13px;color:var(--muted)}.legend span{display:inline-flex;align-items:center;gap:7px}
+    .key{width:24px;height:3px;display:inline-block;background:var(--accent);border-radius:2px}.key.prev{background:repeating-linear-gradient(90deg,var(--prev) 0 8px,transparent 8px 14px)}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px}table{width:100%;border-collapse:collapse;font-size:13px;background:#fff}
+    th,td{padding:8px 10px;border-bottom:1px solid #edf0f4;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}
+    th{background:#f8fafc;color:#3c4856;font-weight:700}tr:last-child td{border-bottom:0}.positive{color:#136f45;font-weight:700}.negative{color:#b23a2a;font-weight:700}
+    .assumptions{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}ul{margin:8px 0 0;padding-left:20px}li{margin:5px 0}a{color:#1766a6}
+    @media(max-width:860px){.top,.grid,.assumptions{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:520px){.wrap{width:min(100% - 20px,1180px)}.kpis{grid-template-columns:1fr}.panel,.kpi{padding:12px}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap top"><div><h1>Dashboard ยอดส่งมอบรถ EV จีน</h1><div class="sub" id="subtitle">กำลังโหลดข้อมูลจาก GitHub...</div></div><div class="status" id="status">Loading</div></div></header>
+  <main class="wrap">
+    <section class="kpis">
+      <div class="kpi"><div class="label">ยอดรวมทั้งหมด</div><div class="value" id="totalAll">-</div><div class="small" id="totalScope">คัน จากแบรนด์ที่เลือก</div></div>
+      <div class="kpi"><div class="label">จำนวนเดือน</div><div class="value" id="monthCount">-</div><div class="small" id="rangeText">-</div></div>
+      <div class="kpi"><div class="label">เดือนล่าสุด</div><div class="value" id="latestTotal">-</div><div class="small" id="latestScope">-</div></div>
+      <div class="kpi"><div class="label">YoY เดือนล่าสุด</div><div class="value" id="latestYoy">-</div><div class="small" id="latestYoyBase">-</div></div>
+    </section>
+    <section class="panel" style="margin-bottom:16px">
+      <div class="filter-bar"><div><h2 style="margin-bottom:4px">ตัวกรองแบรนด์</h2><div class="note" id="filterSummary">-</div></div><div class="actions"><button id="selectAll">เลือกทั้งหมด</button><button id="clearAll">ล้าง</button></div></div>
+      <div class="brand-filters" id="brandFilters"></div>
+    </section>
+    <section class="grid">
+      <div class="panel"><h2>ยอดรายเดือนรวมทุกแบรนด์ และเส้นเทียบปีก่อน</h2><div class="legend"><span><i class="key"></i>ยอดรวมรายเดือน</span><span><i class="key prev"></i>เดือนเดียวกันของปีก่อน</span><span><i class="key" style="background:#5266b0"></i>เส้นรายแบรนด์ที่เลือก</span></div><div class="chart-area"><svg id="chart" viewBox="0 0 980 430"></svg></div><p class="note">ข้อมูลมาจาก CnEVPost และอัปเดตด้วย GitHub Actions ตามรอบเวลา</p></div>
+      <div class="panel"><h2>ยอดรวมตามแบรนด์</h2><div class="table-wrap"><table id="brandTable"><thead><tr><th>แบรนด์</th><th>เดือน</th><th>ยอดรวม</th></tr></thead><tbody></tbody></table></div></div>
+    </section>
+    <section class="panel" style="margin-top:16px"><h2>ตารางรายเดือน</h2><div class="table-wrap"><table id="monthTable"><thead><tr><th>เดือน</th><th>ยอดรวม</th><th>เทียบปีก่อน</th><th>YoY</th></tr></thead><tbody></tbody></table></div></section>
+    <section class="assumptions"><div class="panel"><h2>ข้อสมมุติ</h2><ul id="assumptions"></ul></div><div class="panel"><h2>แหล่งข้อมูล</h2><div class="note" id="sources"></div></div></section>
+  </main>
+  <script>
+    const fmt = new Intl.NumberFormat("en-US");
+    const brandColors = {"BYD":"#0d7c86","Nio":"#5266b0","Xpeng":"#b45f2a","Li Auto":"#2f7d4f","Tesla China":"#b43b45","Zeekr":"#7c5ab8","Xiaomi EV":"#d18b00","Leapmotor":"#2783b8","Huawei HIMA":"#6b7280"};
+    let data, months=[], brands={}, brandNames=[], selectedBrands=new Set(), monthLabels=[];
+    const $ = id => document.getElementById(id);
+    const monthLabel = m => `${m.slice(5,7)}/${m.slice(2,4)}`;
+    const selected = () => brandNames.filter(name => selectedBrands.has(name));
+    const calcMonthly = names => months.map((m,i)=>({month:m,label:monthLabels[i],total:names.reduce((s,n)=>s+(brands[n][i]??0),0),prev:i>=12?names.reduce((s,n)=>s+(brands[n][i-12]??0),0):null})).map(r=>({...r,yoy:r.prev?(r.total-r.prev)/r.prev:null}));
+    function updateKpis(monthly,names){const latest=monthly.at(-1), total=monthly.reduce((s,r)=>s+r.total,0); $("totalAll").textContent=fmt.format(total); $("totalScope").textContent=`คัน จาก ${names.length} แบรนด์ที่เลือก`; $("monthCount").textContent=months.length; $("rangeText").textContent=`${months[0]} ถึง ${months.at(-1)}`; $("latestTotal").textContent=fmt.format(latest.total); $("latestScope").textContent=`${latest.month} รวม ${names.length} แบรนด์ที่เลือก`; $("latestYoy").className="value"; if(latest.yoy===null){$("latestYoy").textContent="-"; $("latestYoyBase").textContent="ไม่มีข้อมูลปีก่อน"}else{$("latestYoy").textContent=`${latest.yoy>=0?"+":""}${(latest.yoy*100).toFixed(2)}%`; $("latestYoy").classList.add(latest.yoy>=0?"positive":"negative"); $("latestYoyBase").textContent=`เทียบ ${Number(latest.month.slice(0,4))-1}${latest.month.slice(4)}: ${fmt.format(latest.prev)} คัน`;} $("filterSummary").textContent=names.length?`เลือกอยู่ ${names.length} แบรนด์: ${names.join(", ")}`:"ยังไม่ได้เลือกแบรนด์";}
+    function drawChart(monthly,names){const svg=$("chart"),w=980,h=430,p={top:22,right:26,bottom:66,left:82},pw=w-p.left-p.right,ph=h-p.top-p.bottom,vals=names.flatMap(n=>brands[n].map(v=>v??0)),high=Math.max(1,...monthly.flatMap(d=>[d.total,d.prev||0]),...vals),step=high>300000?200000:high>100000?50000:20000,max=Math.ceil(high/step)*step,x=i=>p.left+pw*i/(monthly.length-1),y=v=>p.top+ph-((v)/(max))*ph,ns="http://www.w3.org/2000/svg";svg.innerHTML="";const add=(n,a,t)=>{const e=document.createElementNS(ns,n);Object.entries(a||{}).forEach(([k,v])=>e.setAttribute(k,v));if(t!==undefined)e.textContent=t;svg.appendChild(e);return e};for(let tick=0;tick<=max;tick+=step){add("line",{x1:p.left,x2:w-p.right,y1:y(tick),y2:y(tick),class:"gridline"});add("text",{x:p.left-12,y:y(tick)+4,"text-anchor":"end",fill:"#637083","font-size":"12"},fmt.format(tick));}add("line",{x1:p.left,x2:p.left,y1:p.top,y2:h-p.bottom,class:"axis"});add("line",{x1:p.left,x2:w-p.right,y1:h-p.bottom,y2:h-p.bottom,class:"axis"});const sparse=arr=>arr.map((d,i)=>d==null?null:`${arr.slice(0,i).some(v=>v!=null)?"L":"M"} ${x(i).toFixed(1)} ${y(d).toFixed(1)}`).filter(Boolean).join(" ");names.forEach(n=>{const d=sparse(brands[n]);if(d)add("path",{d,class:"series-brand",stroke:brandColors[n]||"#5266b0"});});const line=arr=>arr.map((d,i)=>`${i?"L":"M"} ${x(i).toFixed(1)} ${y(d).toFixed(1)}`).join(" ");if(monthly.some(d=>d.total>0))add("path",{d:line(monthly.map(d=>d.total)),class:"series-main"});const prev=sparse(monthly.map(d=>d.prev));if(prev)add("path",{d:prev,class:"series-prev"});monthly.forEach((d,i)=>{if(d.total>0)add("circle",{cx:x(i),cy:y(d.total),r:3.2,class:"dot-main"});if(d.prev!=null)add("circle",{cx:x(i),cy:y(d.prev),r:2.8,class:"dot-prev"});if(i%2===0||i===monthly.length-1)add("text",{x:x(i),y:h-p.bottom+24,"text-anchor":"middle",fill:"#637083","font-size":"11"},d.label);});add("text",{x:p.left,y:16,fill:"#637083","font-size":"12"},"คันต่อเดือน");}
+    function renderTables(monthly,names){$("brandTable").querySelector("tbody").innerHTML=names.map(brand=>({brand,months:brands[brand].filter(v=>v!=null).length,total:brands[brand].reduce((s,v)=>s+(v??0),0)})).sort((a,b)=>b.total-a.total).map(r=>`<tr><td>${r.brand}</td><td>${r.months}</td><td>${fmt.format(r.total)}</td></tr>`).join("")||`<tr><td colspan="3">เลือกแบรนด์เพื่อดูตาราง</td></tr>`;$("monthTable").querySelector("tbody").innerHTML=monthly.map(r=>{const text=r.yoy==null?"-":`${r.yoy>=0?"+":""}${(r.yoy*100).toFixed(2)}%`,cls=r.yoy==null?"":r.yoy>=0?"positive":"negative";return `<tr><td>${r.month}</td><td>${fmt.format(r.total)}</td><td>${r.prev==null?"-":fmt.format(r.prev)}</td><td class="${cls}">${text}</td></tr>`}).join("");}
+    function updateButtons(){document.querySelectorAll(".brand-toggle").forEach(b=>{const on=selectedBrands.has(b.dataset.brand);b.setAttribute("aria-pressed",String(on));b.style.borderColor=on?(brandColors[b.dataset.brand]||"#0d7c86"):"";});}
+    function update(){const names=selected(),monthly=calcMonthly(names);updateKpis(monthly,names);updateButtons();drawChart(monthly,names);renderTables(monthly,names);}
+    function setupFilters(){const holder=$("brandFilters");holder.innerHTML=brandNames.map(n=>`<button class="brand-toggle" data-brand="${n}" aria-pressed="true">${n}</button>`).join("");holder.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{selectedBrands.has(b.dataset.brand)?selectedBrands.delete(b.dataset.brand):selectedBrands.add(b.dataset.brand);update();}));$("selectAll").onclick=()=>{brandNames.forEach(n=>selectedBrands.add(n));update();};$("clearAll").onclick=()=>{selectedBrands.clear();update();};}
+    async function init(){try{const res=await fetch("data/china-ev-data.json",{cache:"no-store"});data=await res.json();months=data.months;brands=data.brands;brandNames=Object.keys(brands);selectedBrands=new Set(brandNames);monthLabels=months.map(monthLabel);$("subtitle").textContent=`ข้อมูลจาก CnEVPost | ${months[0]} ถึง ${months.at(-1)} | หน่วย: คัน`;const total=Object.values(brands).flat().reduce((s,v)=>s+(v??0),0);$("status").textContent=`Updated ${new Date(data.fetchedAt).toLocaleString("th-TH")} | รวม ${fmt.format(total)} คัน`;$("assumptions").innerHTML=(data.assumptions||[]).map(x=>`<li>${x}</li>`).join("");$("sources").innerHTML=Object.entries(data.sources||{}).map(([k,u])=>`<a href="${u}">${k}</a>`).join(", ");setupFilters();update();}catch(err){$("status").textContent="Load failed";$("subtitle").textContent=err.message;}}init();
+  </script>
+</body>
+</html>
