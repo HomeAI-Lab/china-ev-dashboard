@@ -30,6 +30,7 @@ jobs:
       - name: Update data from CnEVPost
         run: node scripts/update-data.mjs
       - name: Commit data changes
+        continue-on-error: true
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update China EV delivery data"
