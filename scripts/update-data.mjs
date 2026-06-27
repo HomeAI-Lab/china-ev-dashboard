@@ -85,6 +85,7 @@ function parseBrandTable(html, brand) {
 
 function monthRange(recordMaps) {
   const keys = recordMaps.flatMap(records => Object.keys(records)).sort();
+  if (!keys.length) return [];
   const start = keys[0];
   const end = keys[keys.length - 1];
   const months = [];
@@ -101,6 +102,58 @@ function monthRange(recordMaps) {
     }
   }
   return months;
+}
+
+function recordsFromSeries(months = [], values = []) {
+  const records = {};
+  months.forEach((month, idx) => {
+    const value = values[idx];
+    if (value !== undefined) records[month] = value;
+  });
+  return records;
+}
+
+function mergeWithExisting(freshData, existingData) {
+  if (!existingData?.months?.length || !existingData?.brands) return freshData;
+
+  const brandNames = [...new Set([
+    ...Object.keys(existingData.brands || {}),
+    ...Object.keys(freshData.brands || {})
+  ])];
+
+  const mergedRecords = {};
+  for (const brand of brandNames) {
+    const existingRecords = recordsFromSeries(existingData.months, existingData.brands?.[brand] || []);
+    const freshRecords = recordsFromSeries(freshData.months, freshData.brands?.[brand] || []);
+    mergedRecords[brand] = { ...existingRecords, ...freshRecords };
+  }
+
+  const months = monthRange(Object.values(mergedRecords));
+  const brands = {};
+  for (const brand of brandNames) {
+    brands[brand] = months.map(month => (
+      Object.prototype.hasOwnProperty.call(mergedRecords[brand], month)
+        ? mergedRecords[brand][month]
+        : null
+    ));
+  }
+
+  return {
+    ...freshData,
+    months,
+    brands,
+    firstFetchedAt: existingData.firstFetchedAt || existingData.fetchedAt || freshData.fetchedAt,
+    historyPolicy: "append-and-merge: existing months are retained; fresh CnEVPost values overwrite matching brand-month cells."
+  };
+}
+
+async function readExistingData(filePath) {
+  try {
+    return JSON.parse(await fs.readFile(filePath, "utf8"));
+  } catch (error) {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  }
 }
 
 async function scrapeData() {
@@ -133,14 +186,28 @@ async function scrapeData() {
     assumptions: [
       "CnEVPost reports vehicles/units, not tons.",
       "Missing brand-month cells are kept as null and are not estimated.",
-      "BYD uses CnEVPost NEV sales; Tesla China uses CnEVPost monthly sales including exports."
+      "BYD uses CnEVPost NEV sales; Tesla China uses CnEVPost monthly sales including exports.",
+      "Historical months already saved in china-ev-data.json are retained when CnEVPost source pages stop listing them."
     ]
   };
 }
 
-const data = await scrapeData();
+const dataPath = path.join("data", "china-ev-data.json");
+const existingData = await readExistingData(dataPath);
+let data;
+try {
+  data = mergeWithExisting(await scrapeData(), existingData);
+} catch (error) {
+  if (!existingData) throw error;
+  data = {
+    ...existingData,
+    lastAttemptAt: new Date().toISOString(),
+    errors: [...(existingData.errors || []), `Update skipped: ${error.message}`]
+  };
+  console.warn(`Keeping existing data because update failed: ${error.message}`);
+}
 await fs.mkdir("data", { recursive: true });
-await fs.writeFile(path.join("data", "china-ev-data.json"), `${JSON.stringify(data, null, 2)}\n`, "utf8");
+await fs.writeFile(dataPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 
 const total = Object.values(data.brands).flat().reduce((sum, value) => sum + (value ?? 0), 0);
 console.log(`Updated ${data.months.length} months, ${Object.keys(data.brands).length} brands, total ${total.toLocaleString("en-US")} vehicles.`);
