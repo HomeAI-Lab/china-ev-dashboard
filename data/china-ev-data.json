@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-27T05:53:33.373Z",
+  "fetchedAt": "2026-06-27T06:02:11.881Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -328,6 +328,9 @@
   "assumptions": [
     "CnEVPost reports vehicles/units, not tons.",
     "Missing brand-month cells are kept as null and are not estimated.",
-    "BYD uses CnEVPost NEV sales; Tesla China uses CnEVPost monthly sales including exports."
-  ]
+    "BYD uses CnEVPost NEV sales; Tesla China uses CnEVPost monthly sales including exports.",
+    "Historical months already saved in china-ev-data.json are retained when CnEVPost source pages stop listing them."
+  ],
+  "firstFetchedAt": "2026-06-27T05:53:33.373Z",
+  "historyPolicy": "append-and-merge: existing months are retained; fresh CnEVPost values overwrite matching brand-month cells."
 }
