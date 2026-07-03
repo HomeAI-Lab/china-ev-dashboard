@@ -6,13 +6,13 @@
   <title>China EV Deliveries Dashboard</title>
   <style>
     :root {
-      --bg: #f6f8fb;
-      --panel: #ffffff;
-      --panel-soft: #f9fbfd;
+      --bg: #eeeeef;
+      --panel: #f7f7f8;
+      --panel-soft: #ececef;
       --ink: #111827;
-      --muted: #667085;
-      --line: #d9e0ea;
-      --line-soft: #edf1f6;
+      --muted: #5e6b7d;
+      --line: #d2d5da;
+      --line-soft: #e1e2e5;
       --teal: #0f7c80;
       --teal-2: #0b5f63;
       --orange: #d56b3d;
@@ -32,7 +32,7 @@
 
     .wrap { width: min(1220px, calc(100% - 32px)); margin: 0 auto; }
     header {
-      background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+      background: linear-gradient(180deg, #f1f1f2 0%, #e9e9eb 100%);
       border-bottom: 1px solid var(--line);
     }
     .hero {
@@ -45,13 +45,13 @@
     .eyebrow {
       color: var(--teal-2);
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 650;
       letter-spacing: .08em;
       text-transform: uppercase;
       margin-bottom: 8px;
     }
-    h1 { margin: 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.1; letter-spacing: 0; }
-    h2 { margin: 0; font-size: 18px; letter-spacing: 0; }
+    h1 { margin: 0; font-size: clamp(28px, 4vw, 44px); font-weight: 650; line-height: 1.1; letter-spacing: 0; }
+    h2 { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: 0; }
     .sub { margin-top: 10px; color: var(--muted); font-size: 14px; }
     .status {
       display: grid;
@@ -59,19 +59,19 @@
       min-width: 250px;
       padding: 12px 14px;
       border: 1px solid #b9ddc9;
-      background: #edf9f2;
+      background: #e8f0eb;
       color: var(--green);
       border-radius: 8px;
-      font-weight: 800;
+      font-weight: 650;
       box-shadow: 0 10px 24px rgba(22, 132, 87, .08);
       white-space: nowrap;
     }
-    .status small { color: #3e7b60; font-weight: 600; }
+    .status small { color: #3e7b60; font-weight: 500; }
 
     main { padding: 22px 0 40px; }
     .summary {
       display: grid;
-      grid-template-columns: 1.1fr repeat(3, minmax(0, .75fr));
+      grid-template-columns: 1.08fr repeat(4, minmax(0, .72fr));
       gap: 12px;
       margin-bottom: 14px;
     }
@@ -79,7 +79,7 @@
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
-      box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+      box-shadow: 0 1px 2px rgba(16, 24, 40, .05);
     }
     .card {
       min-height: 124px;
@@ -96,9 +96,9 @@
       background: linear-gradient(135deg, #0f7c80 0%, #135d72 100%);
       box-shadow: var(--shadow);
     }
-    .metric-label { color: var(--muted); font-size: 13px; font-weight: 700; }
+    .metric-label { color: var(--muted); font-size: 13px; font-weight: 600; }
     .card.primary .metric-label, .card.primary .metric-note { color: rgba(255,255,255,.78); }
-    .metric-value { font-size: clamp(26px, 4vw, 42px); font-weight: 850; line-height: 1; letter-spacing: 0; }
+    .metric-value { font-size: clamp(26px, 4vw, 42px); font-weight: 650; line-height: 1; letter-spacing: 0; }
     .metric-note { color: var(--muted); font-size: 12px; }
     .positive { color: var(--green); }
     .negative { color: var(--red); }
@@ -121,18 +121,18 @@
       min-height: 36px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: #ffffff;
+      background: #f7f7f8;
       color: #273342;
       padding: 7px 11px;
       font: inherit;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
     }
-    button:hover { border-color: #9fb1c6; background: #fbfcfe; }
+    button:hover { border-color: #aeb4bd; background: #eeeeef; }
     button[aria-pressed="true"] {
       border-color: var(--teal);
-      background: #e9f7f7;
+      background: #e3eeee;
       color: var(--teal-2);
     }
 
@@ -176,11 +176,11 @@
     .key.brand { background: #6172b8; }
 
     .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
-    table { width: 100%; border-collapse: collapse; background: #fff; font-size: 13px; }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); font-size: 13px; }
     th, td { padding: 9px 11px; border-bottom: 1px solid var(--line-soft); text-align: right; white-space: nowrap; }
     th:first-child, td:first-child { text-align: left; }
-    th { background: var(--panel-soft); color: #394556; font-weight: 800; }
-    tbody tr:hover { background: #fbfdff; }
+    th { background: var(--panel-soft); color: #394556; font-weight: 600; }
+    tbody tr:hover { background: #eeeeef; }
     tr:last-child td { border-bottom: 0; }
 
     .below {
@@ -190,6 +190,33 @@
       gap: 14px;
       align-items: start;
     }
+    .wide-panel { grid-column: 1 / -1; }
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .insight-item {
+      min-height: 88px;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      padding: 11px;
+      background: var(--panel-soft);
+    }
+    .insight-item strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #273342;
+    }
+    .insight-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
     ul { margin: 8px 0 0; padding-left: 20px; }
     li { margin: 6px 0; }
     a { color: #1766a6; text-decoration: none; }
@@ -198,6 +225,7 @@
     @media (max-width: 960px) {
       .hero, .layout, .below { grid-template-columns: 1fr; }
       .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .insight-grid { grid-template-columns: 1fr; }
       .status { min-width: 0; }
     }
     @media (max-width: 560px) {
@@ -241,6 +269,11 @@
         <div class="metric-note" id="latestYoyBase">-</div>
       </div>
       <div class="card">
+        <div class="metric-label">YTD ปีปัจจุบัน</div>
+        <div class="metric-value" id="currentYtd">-</div>
+        <div class="metric-note" id="currentYtdNote">เทียบช่วงเดียวกันปีก่อน</div>
+      </div>
+      <div class="card">
         <div class="metric-label">ช่วงข้อมูล</div>
         <div class="metric-value" id="monthCount">-</div>
         <div class="metric-note" id="rangeText">-</div>
@@ -262,7 +295,7 @@
     </section>
 
     <section class="layout">
-      <div class="panel">
+      <div class="panel wide-panel">
         <div class="panel-head">
           <div class="panel-title">
             <h2>ยอดรายเดือนและเส้นเทียบปีก่อน</h2>
@@ -295,6 +328,17 @@
     </section>
 
     <section class="below">
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">
+            <h2>มุมมองเชิงลงทุนจากข้อมูล</h2>
+            <div class="note">สรุปจากยอดส่งมอบใน dashboard เพื่อจับแรงส่ง, การกระจุกตัว และความเสี่ยงของกลุ่ม EV</div>
+          </div>
+        </div>
+        <div class="insight-grid" id="investmentInsights"></div>
+        <p class="note">หมายเหตุ: ส่วนนี้เป็น research signal ไม่ใช่คำแนะนำซื้อขาย และยังไม่แทนการวิเคราะห์งบการเงิน/มูลค่าหุ้นรายบริษัท</p>
+      </div>
+
       <div class="panel">
         <div class="panel-head">
           <div class="panel-title">
@@ -333,6 +377,7 @@
     const $ = id => document.getElementById(id);
     const monthLabel = month => `${month.slice(5, 7)}/${month.slice(2, 4)}`;
     const selected = () => brandNames.filter(name => selectedBrands.has(name));
+    const pct = value => `${value >= 0 ? "+" : ""}${(value * 100).toFixed(2)}%`;
 
     function calcMonthly(names) {
       return months.map((month, index) => {
@@ -342,9 +387,42 @@
       });
     }
 
+    function calcYtd(names) {
+      const latestMonth = months.at(-1);
+      const year = latestMonth.slice(0, 4);
+      const monthLimit = latestMonth.slice(5, 7);
+      const prevYear = String(Number(year) - 1);
+      const sumFor = targetYear => months.reduce((sum, month, index) => {
+        if (month.slice(0, 4) !== targetYear || month.slice(5, 7) > monthLimit) return sum;
+        return sum + names.reduce((brandSum, name) => brandSum + (brands[name][index] ?? 0), 0);
+      }, 0);
+      const current = sumFor(year);
+      const previous = sumFor(prevYear);
+      return { year, prevYear, monthLimit, current, previous, yoy: previous ? (current - previous) / previous : null };
+    }
+
+    function brandYtdRows(names) {
+      const latestMonth = months.at(-1);
+      const year = latestMonth.slice(0, 4);
+      const monthLimit = latestMonth.slice(5, 7);
+      const prevYear = String(Number(year) - 1);
+      return names.map(name => {
+        const current = months.reduce((sum, month, index) => {
+          if (month.slice(0, 4) !== year || month.slice(5, 7) > monthLimit) return sum;
+          return sum + (brands[name][index] ?? 0);
+        }, 0);
+        const previous = months.reduce((sum, month, index) => {
+          if (month.slice(0, 4) !== prevYear || month.slice(5, 7) > monthLimit) return sum;
+          return sum + (brands[name][index] ?? 0);
+        }, 0);
+        return { name, current, previous, yoy: previous ? (current - previous) / previous : null };
+      }).sort((a, b) => b.current - a.current);
+    }
+
     function updateKpis(monthly, names) {
       const latest = monthly.at(-1);
       const total = monthly.reduce((sum, row) => sum + row.total, 0);
+      const ytd = calcYtd(names);
       $("totalAll").textContent = fmt.format(total);
       $("totalScope").textContent = `คัน จาก ${names.length} แบรนด์ที่เลือก`;
       $("monthCount").textContent = months.length;
@@ -359,6 +437,14 @@
         $("latestYoy").textContent = `${latest.yoy >= 0 ? "+" : ""}${(latest.yoy * 100).toFixed(2)}%`;
         $("latestYoy").classList.add(latest.yoy >= 0 ? "positive" : "negative");
         $("latestYoyBase").textContent = `เทียบ ${Number(latest.month.slice(0, 4)) - 1}${latest.month.slice(4)}: ${fmt.format(latest.prev)} คัน`;
+      }
+      $("currentYtd").className = "metric-value";
+      $("currentYtd").textContent = fmt.format(ytd.current);
+      if (ytd.yoy === null) {
+        $("currentYtdNote").textContent = `ม.ค.-${ytd.monthLimit}/${ytd.year}: ไม่มีฐานปีก่อน`;
+      } else {
+        $("currentYtd").classList.add(ytd.yoy >= 0 ? "positive" : "negative");
+        $("currentYtdNote").textContent = `YoY ${pct(ytd.yoy)} เทียบ ${fmt.format(ytd.previous)} คัน`;
       }
       $("filterSummary").textContent = names.length
         ? `เลือกอยู่ ${names.length} แบรนด์: ${names.join(", ")}`
@@ -434,6 +520,50 @@
       }).join("");
     }
 
+    function renderInvestmentInsights(monthly, names) {
+      const holder = $("investmentInsights");
+      if (!names.length) {
+        holder.innerHTML = `<div class="insight-item"><strong>ยังไม่มีข้อมูล</strong><span>เลือกอย่างน้อย 1 แบรนด์เพื่อดูสัญญาณเชิงลงทุน</span></div>`;
+        return;
+      }
+      const ytd = calcYtd(names);
+      const rows = brandYtdRows(names);
+      const leader = rows[0];
+      const growthRows = rows.filter(row => row.yoy !== null).sort((a, b) => b.yoy - a.yoy);
+      const fastest = growthRows[0];
+      const weakest = growthRows[growthRows.length - 1];
+      const top3Total = rows.slice(0, 3).reduce((sum, row) => sum + row.current, 0);
+      const concentration = ytd.current ? top3Total / ytd.current : null;
+      const latest = monthly.at(-1);
+      const prior = monthly.length >= 2 ? monthly.at(-2) : null;
+      const mom = prior?.total ? (latest.total - prior.total) / prior.total : null;
+      const ytdText = ytd.yoy === null ? "ยังไม่มีฐานเทียบปีก่อน" : `${pct(ytd.yoy)} YoY`;
+      const momentumText = mom === null ? "ยังไม่มีฐานเดือนก่อน" : `${pct(mom)} MoM และ ${latest.yoy === null ? "ไม่มี YoY" : pct(latest.yoy) + " YoY"}`;
+      const leaderText = names.length === 1
+        ? `${leader.name} มียอด YTD ${fmt.format(leader.current)} คัน จากแบรนด์ที่เลือก`
+        : `${leader.name} นำด้วย ${fmt.format(leader.current)} คัน YTD ในกลุ่มแบรนด์ที่เลือก`;
+      const growthTitle = names.length === 1 ? "YoY ของแบรนด์ที่เลือก" : "Growth dispersion";
+      const growthText = names.length === 1
+        ? (leader.yoy === null
+          ? `${leader.name} ยังไม่มีฐานปีก่อนครบพอสำหรับคำนวณ YoY`
+          : `${leader.name} YTD ${pct(leader.yoy)} เทียบช่วงเดียวกันปีก่อน`)
+        : (fastest
+          ? `${fastest.name} โตเร็วสุดใน YTD (${pct(fastest.yoy)}) ขณะที่ ${weakest.name} อ่อนสุด (${pct(weakest.yoy)})`
+          : "ยังคำนวณ growth รายแบรนด์ไม่ได้เพราะฐานปีก่อนไม่ครบ");
+      const concentrationTitle = names.length === 1 ? "Selection scope" : "Concentration risk";
+      const concentrationText = names.length === 1
+        ? "เลือกอยู่ 1 แบรนด์ จึงยังวัดการกระจุกตัวระหว่างแบรนด์ไม่ได้"
+        : `Top 3 รวม ${concentration === null ? "-" : (concentration * 100).toFixed(1) + "%"} ของ YTD; ยิ่งสูงยิ่งพึ่งพาแบรนด์ใหญ่`;
+      holder.innerHTML = [
+        `<div class="insight-item"><strong>YTD ปี ${ytd.year}</strong><span>${fmt.format(ytd.current)} คัน, ${ytdText}; ใช้ดูแรงส่งของ demand ปีนี้เทียบปีก่อน</span></div>`,
+        `<div class="insight-item"><strong>${names.length === 1 ? "แบรนด์ที่เลือก" : "ผู้นำยอดรวม"}</strong><span>${leaderText}</span></div>`,
+        `<div class="insight-item"><strong>${growthTitle}</strong><span>${growthText}</span></div>`,
+        `<div class="insight-item"><strong>${concentrationTitle}</strong><span>${concentrationText}</span></div>`,
+        `<div class="insight-item"><strong>Momentum ล่าสุด</strong><span>${latest.month}: ${fmt.format(latest.total)} คัน, ${momentumText}; ใช้จับการเร่ง/ชะลอรอบล่าสุด</span></div>`,
+        `<div class="insight-item"><strong>มุมมอง value investor</strong><span>ยอดส่งมอบช่วยวัด scale และ product-market fit แต่ต้องเทียบ margin, cash burn, inventory และ valuation ก่อนตัดสินใจรายหุ้น</span></div>`
+      ].join("");
+    }
+
     function updateButtons() {
       document.querySelectorAll(".brand-toggle").forEach(button => {
         const isOn = selectedBrands.has(button.dataset.brand);
@@ -449,6 +579,7 @@
       updateButtons();
       drawChart(monthly, names);
       renderTables(monthly, names);
+      renderInvestmentInsights(monthly, names);
     }
 
     function setupFilters() {
@@ -464,7 +595,10 @@
 
     async function init() {
       try {
-        const response = await fetch("data/china-ev-data.json", { cache: "no-store" });
+        const dataUrl = location.hostname === "127.0.0.1"
+          ? "https://raw.githubusercontent.com/HomeAI-Lab/china-ev-dashboard/main/data/china-ev-data.json"
+          : "data/china-ev-data.json";
+        const response = await fetch(dataUrl, { cache: "no-store" });
         data = await response.json();
         months = data.months;
         brands = data.brands;
@@ -476,6 +610,7 @@
         $("status").textContent = `Updated ${new Date(data.fetchedAt).toLocaleString("th-TH")}`;
         $("statusMeta").textContent = `รวม ${fmt.format(total)} คัน`;
         $("assumptions").innerHTML = (data.assumptions || []).map(item => `<li>${item}</li>`).join("");
+        $("assumptions").innerHTML += `<li>YTD และ YoY ใน dashboard คำนวณจากยอดส่งมอบ/ยอดขายรายแบรนด์ที่ CnEVPost แสดง ไม่ใช่ข้อมูลส่งออกศุลกากรแยกประเทศ ยกเว้นกรณีที่ source ระบุรวม exports เช่น Tesla China.</li>`;
         $("sources").innerHTML = Object.entries(data.sources || {}).map(([brand, url]) => `<a href="${url}">${brand}</a>`).join(", ");
         setupFilters();
         update();
