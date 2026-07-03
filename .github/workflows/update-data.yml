@@ -3,7 +3,7 @@ name: Update China EV data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "17 * * * *"
   push:
     branches: ["main"]
 
@@ -43,3 +43,5 @@ jobs:
           path: "."
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 1800000
