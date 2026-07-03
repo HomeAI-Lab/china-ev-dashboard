@@ -186,7 +186,7 @@
     .below {
       margin-top: 14px;
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+      grid-template-columns: 1fr;
       gap: 14px;
       align-items: start;
     }
@@ -225,12 +225,13 @@
     @media (max-width: 960px) {
       .hero, .layout, .below { grid-template-columns: 1fr; }
       .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .insight-grid { grid-template-columns: 1fr; }
+      .insight-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .status { min-width: 0; }
     }
     @media (max-width: 560px) {
       .wrap { width: min(100% - 20px, 1220px); }
       .summary { grid-template-columns: 1fr; }
+      .insight-grid { grid-template-columns: 1fr; }
       .toolbar-head, .panel-head { display: grid; }
       .panel, .toolbar, .card { padding: 12px; }
     }
@@ -321,6 +322,21 @@
         <div class="table-wrap">
           <table id="brandTable">
             <thead><tr><th>แบรนด์</th><th>เดือน</th><th>ยอดรวม</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">
+            <h2>สัญญาณ YTD รายแบรนด์</h2>
+            <div class="note">ดูว่าแบรนด์ไหนเร่งหรือชะลอเทียบช่วงเดียวกันปีก่อน</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="ytdBrandTable">
+            <thead><tr><th>แบรนด์</th><th>YTD</th><th>YoY</th></tr></thead>
             <tbody></tbody>
           </table>
         </div>
@@ -518,6 +534,14 @@
         const cls = row.yoy == null ? "" : row.yoy >= 0 ? "positive" : "negative";
         return `<tr><td>${row.month}</td><td>${fmt.format(row.total)}</td><td>${row.prev == null ? "-" : fmt.format(row.prev)}</td><td class="${cls}">${yoyText}</td></tr>`;
       }).join("");
+
+      $("ytdBrandTable").querySelector("tbody").innerHTML = brandYtdRows(names)
+        .map(row => {
+          const yoyText = row.yoy == null ? "-" : pct(row.yoy);
+          const cls = row.yoy == null ? "" : row.yoy >= 0 ? "positive" : "negative";
+          return `<tr><td>${row.name}</td><td>${fmt.format(row.current)}</td><td class="${cls}">${yoyText}</td></tr>`;
+        })
+        .join("") || `<tr><td colspan="3">เลือกแบรนด์เพื่อดู YTD</td></tr>`;
     }
 
     function renderInvestmentInsights(monthly, names) {
