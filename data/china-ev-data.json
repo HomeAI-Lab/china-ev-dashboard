@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-12T12:11:55.091Z",
-  "newsFetchedAt": "2026-07-12T12:11:55.091Z",
+  "fetchedAt": "2026-07-12T12:15:13.581Z",
+  "newsFetchedAt": "2026-07-12T12:15:13.581Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-12T12:11:55.090Z",
+    "fetchedAt": "2026-07-12T12:15:13.580Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2291,7 +2291,7 @@
   ],
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: existing months are retained; fresh CnEVPost values overwrite matching brand-month cells.",
-  "lastCheckedAt": "2026-07-12T12:11:55.092Z",
+  "lastCheckedAt": "2026-07-12T12:15:13.583Z",
   "lastDataChangeAt": "2026-07-12T12:11:55.092Z",
   "latestChanges": [
     "Xiaomi EV company-reported 2026-06: added 34738",
