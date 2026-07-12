@@ -86,25 +86,51 @@
     .status.error { border-color: #dab5b1; background: var(--red-soft); color: var(--red); }
     .status.error small { color: #874c47; }
 
+    .tab-strip {
+      background: #dadddf;
+      border-top: 1px solid #c7ccd1;
+      box-shadow: inset 0 -1px 0 rgba(17, 24, 39, .04);
+    }
     .tabbar {
       display: flex;
-      gap: 4px;
+      gap: 2px;
       overflow-x: auto;
-      padding-bottom: 10px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
     }
     .tabbar button {
-      border: 0;
-      border-bottom: 2px solid transparent;
+      position: relative;
+      min-height: 40px;
+      border: 1px solid transparent;
+      border-radius: 5px;
       background: transparent;
-      color: var(--muted);
-      padding: 9px 13px;
+      color: #4d5968;
+      padding: 8px 14px;
       white-space: nowrap;
       cursor: pointer;
       font-weight: 500;
     }
+    .tabbar button:hover {
+      color: var(--ink);
+      background: rgba(242, 243, 244, .55);
+    }
     .tabbar button[aria-selected="true"] {
       color: var(--teal-dark);
-      border-bottom-color: var(--teal);
+      background: var(--surface);
+      border-color: #b9c5c7;
+      box-shadow: var(--shadow);
+      font-weight: 600;
+    }
+    .tabbar button[aria-selected="true"]::after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      bottom: -1px;
+      left: 10px;
+      height: 3px;
+      border-radius: 2px 2px 0 0;
+      background: var(--teal);
     }
 
     main { padding: 18px 0 42px; }
@@ -244,6 +270,11 @@
     .share-track { height: 6px; border-radius: 3px; background: var(--surface-3); overflow: hidden; margin-top: 4px; }
     .share-fill { height: 100%; background: var(--teal); border-radius: inherit; }
     .rank { color: var(--muted); width: 38px; }
+    th.label-cell, td.label-cell { text-align: left; }
+    .metric-with-bar { min-width: 150px; }
+    .metric-bar { height: 5px; margin-top: 5px; overflow: hidden; border-radius: 3px; background: var(--surface-3); }
+    .metric-bar > span { display: block; height: 100%; border-radius: inherit; background: var(--teal); }
+    .scope-callout { padding: 11px 12px; border-left: 3px solid var(--orange); background: var(--surface-2); color: var(--muted); font-size: 12px; }
 
     .inline-metrics {
       display: grid;
@@ -290,18 +321,78 @@
     .signal-kind.analysis { color: #69520e; background: #ece6d5; }
     .signal h3 { margin-bottom: 5px; }
     .signal p { margin-bottom: 0; color: var(--muted); font-size: 12px; }
+    #exportSignals { grid-template-columns: 1fr; }
+    #exportSignals .signal { min-height: 0; border-right: 0; }
 
-    .definition-list, .source-list, .policy-list { display: grid; gap: 0; }
-    .definition-row, .source-row, .policy-row {
+    .definition-list, .source-list { display: grid; gap: 0; }
+    .definition-row, .source-row {
       display: grid;
       grid-template-columns: minmax(150px, .45fr) minmax(0, 1.55fr);
       gap: 14px;
       padding: 10px 0;
       border-bottom: 1px solid var(--line-soft);
     }
-    .definition-row:last-child, .source-row:last-child, .policy-row:last-child { border-bottom: 0; }
-    .definition-row strong, .source-row strong, .policy-row strong { font-weight: 600; }
-    .definition-row span, .source-row span, .policy-row span { color: var(--muted); font-size: 12px; }
+    .definition-row:last-child, .source-row:last-child { border-bottom: 0; }
+    .definition-row strong, .source-row strong { font-weight: 600; }
+    .definition-row span, .source-row span { color: var(--muted); font-size: 12px; }
+    .policy-context-grid {
+      display: grid;
+      grid-template-columns: minmax(470px, .9fr) minmax(0, 1.1fr);
+      gap: 14px;
+      align-items: start;
+    }
+    .policy-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--line-soft);
+    }
+    .policy-group { min-width: 0; padding: 12px 16px 0 0; }
+    .policy-group + .policy-group { padding: 12px 0 0 16px; border-left: 1px solid var(--line-soft); }
+    .policy-group-head {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 9px;
+      align-items: start;
+      min-height: 46px;
+      padding-bottom: 8px;
+    }
+    .policy-group-head h3 { font-size: 15px; }
+    .policy-group-head p { margin: 2px 0 0; color: var(--muted); font-size: 11px; }
+    .policy-kind {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 7px;
+      border-radius: 4px;
+      color: var(--teal-dark);
+      background: var(--teal-soft);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .policy-kind.supply { color: #7c492e; background: #eadfd8; }
+    .policy-list { display: grid; }
+    .policy-item { padding: 11px 0; border-top: 1px solid var(--line-soft); }
+    .policy-item-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+    }
+    .policy-item strong { font-weight: 600; }
+    .policy-period {
+      flex: 0 0 auto;
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: var(--surface-3);
+      color: #4b5563;
+      font-size: 10px;
+      white-space: nowrap;
+    }
+    .policy-item p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+    .policy-label { color: #303a47; font-weight: 600; }
+    .policy-watch { color: #455468 !important; }
+    .policy-item a { white-space: nowrap; }
     .badge {
       display: inline-flex;
       align-items: center;
@@ -349,7 +440,7 @@
 
     @media (max-width: 1100px) {
       .summary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .two-col, .three-col { grid-template-columns: 1fr; }
+      .two-col, .three-col, .policy-context-grid { grid-template-columns: 1fr; }
       .signal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .signal:nth-child(3n) { border-right: 1px solid var(--line-soft); }
       .signal:nth-child(2n) { border-right: 0; }
@@ -364,7 +455,10 @@
       .inline-metric:nth-child(2) { border-right: 0; }
       .inline-metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
       .news-grid { grid-template-columns: 1fr; }
-      .definition-row, .source-row, .policy-row { grid-template-columns: 1fr; gap: 3px; }
+      .definition-row, .source-row { grid-template-columns: 1fr; gap: 3px; }
+      .policy-matrix { grid-template-columns: 1fr; }
+      .policy-group { padding-right: 0; }
+      .policy-group + .policy-group { padding: 14px 0 0; border-top: 1px solid var(--line-soft); border-left: 0; }
     }
     @media (max-width: 500px) {
       .summary-grid, .signal-grid { grid-template-columns: 1fr; }
@@ -389,42 +483,45 @@
         <small id="statusMeta">กำลังตรวจไฟล์ข้อมูล</small>
       </div>
     </div>
-    <nav class="wrap tabbar" aria-label="มุมมอง Dashboard">
-      <button type="button" data-view="market" aria-selected="true">ภาพรวมตลาด</button>
-      <button type="button" data-view="brands" aria-selected="false">การแข่งขันแบรนด์</button>
-      <button type="button" data-view="quality" aria-selected="false">คุณภาพ Demand</button>
-      <button type="button" data-view="company" aria-selected="false">บริษัทและข่าว</button>
-      <button type="button" data-view="data" aria-selected="false">ข้อมูลและนิยาม</button>
-    </nav>
+    <div class="tab-strip">
+      <nav class="wrap tabbar" aria-label="มุมมอง Dashboard">
+        <button type="button" data-view="market" aria-selected="true">ภาพรวมตลาด</button>
+        <button type="button" data-view="brands" aria-selected="false">การแข่งขันแบรนด์</button>
+        <button type="button" data-view="quality" aria-selected="false">คุณภาพ Demand</button>
+        <button type="button" data-view="exports" aria-selected="false">ส่งออกเชิงลึก</button>
+        <button type="button" data-view="company" aria-selected="false">ยอดขายรายเดือนและข่าว</button>
+        <button type="button" data-view="data" aria-selected="false">ข้อมูลและนิยาม</button>
+      </nav>
+    </div>
   </header>
 
   <main class="wrap">
     <section class="view" id="view-market" data-view-panel="market">
       <div class="summary-grid">
         <div class="stat primary">
-          <div class="stat-label">China NEV Retail ล่าสุด</div>
-          <div class="stat-value" id="marketRetail">-</div>
-          <div class="stat-note" id="marketRetailNote">CPCA domestic retail</div>
+          <div class="stat-label" id="marketMetricLatestLabel">ค่าล่าสุด</div>
+          <div class="stat-value" id="marketMetricLatest">-</div>
+          <div class="stat-note" id="marketMetricLatestNote">-</div>
         </div>
         <div class="stat">
-          <div class="stat-label">YoY Retail</div>
-          <div class="stat-value" id="marketRetailYoy">-</div>
-          <div class="stat-note" id="marketRetailYoyNote">เทียบเดือนเดียวกันปีก่อน</div>
+          <div class="stat-label" id="marketMetricYoyLabel">YoY</div>
+          <div class="stat-value" id="marketMetricYoy">-</div>
+          <div class="stat-note" id="marketMetricYoyNote">เทียบเดือนเดียวกันปีก่อน</div>
         </div>
         <div class="stat">
-          <div class="stat-label">NEV Penetration</div>
-          <div class="stat-value" id="marketPenetration">-</div>
-          <div class="stat-note">สัดส่วน retail ในตลาดรถยนต์นั่ง</div>
+          <div class="stat-label" id="marketMetricMomLabel">MoM</div>
+          <div class="stat-value" id="marketMetricMom">-</div>
+          <div class="stat-note" id="marketMetricMomNote">เทียบเดือนก่อน</div>
         </div>
         <div class="stat">
-          <div class="stat-label">NEV Export</div>
-          <div class="stat-value" id="marketExport">-</div>
-          <div class="stat-note" id="marketExportNote">CAAM รวมทุกประเภทรถ NEV</div>
+          <div class="stat-label" id="marketMetricYtdLabel">YTD</div>
+          <div class="stat-value" id="marketMetricYtd">-</div>
+          <div class="stat-note" id="marketMetricYtdNote">ยอดสะสมปีปัจจุบัน</div>
         </div>
         <div class="stat">
-          <div class="stat-label">Domestic YTD</div>
-          <div class="stat-value" id="marketDomesticYtd">-</div>
-          <div class="stat-note" id="marketDomesticYtdNote">CAAM ไม่รวมส่งออก</div>
+          <div class="stat-label" id="marketMetricRangeLabel">ช่วงข้อมูล</div>
+          <div class="stat-value" id="marketMetricRange">-</div>
+          <div class="stat-note" id="marketMetricRangeNote">-</div>
         </div>
       </div>
 
@@ -618,7 +715,7 @@
         </div>
       </div>
 
-      <div class="two-col">
+      <div class="policy-context-grid">
         <div class="panel">
           <div class="panel-head">
             <div class="panel-title">
@@ -637,20 +734,99 @@
         <div class="panel">
           <div class="panel-head">
             <div class="panel-title">
-              <h2>นโยบายที่มีผลต่อ Demand</h2>
-              <div class="note">ใช้เป็น event context ไม่ใช้แทนข้อมูลยอดขาย</div>
+              <h2>นโยบายที่มีผลต่อ Demand และ Supply</h2>
+              <div class="note">แยกแรงหนุนยอดขายออกจากข้อกำหนดฝั่งผู้ผลิต เพื่อใช้เป็น event context</div>
             </div>
           </div>
-          <div class="policy-list">
-            <div class="policy-row">
-              <strong>ภาษีซื้อ NEV 2026-2027</strong>
-              <span>ลดภาษีซื้อ 50% และจำกัดสิทธิสูงสุด 15,000 หยวนต่อรถยนต์นั่ง NEV หนึ่งคัน <a href="https://www.chinatax.gov.cn/eng/c102962/c102967/c102997/c103002/c5246324/content.html" target="_blank" rel="noopener">แหล่งทางการ</a></span>
-            </div>
-            <div class="policy-row">
-              <strong>Trade-in subsidy 2026</strong>
-              <span>มาตรการเปลี่ยนรถเก่าเป็นรถใหม่ยังดำเนินต่อ โดยเงื่อนไขแตกต่างตามประเภทการทดแทนและราคารถ <a href="https://www.mofcom.gov.cn/zfxxgk/fdzdgknr/ztfl/gnmygl/art/2025/art_1a6dd3bbec924caba382de84e0afad30.html" target="_blank" rel="noopener">แหล่งทางการ</a></span>
-            </div>
+          <div class="policy-matrix">
+            <section class="policy-group" aria-labelledby="demandPolicyTitle">
+              <div class="policy-group-head">
+                <span class="policy-kind">Demand</span>
+                <div>
+                  <h3 id="demandPolicyTitle">กำลังซื้อและการเข้าถึงตลาด</h3>
+                  <p>แรงหนุนตรงต่อผู้ซื้อและแรงหนุนทางอ้อมจากโครงสร้างพื้นฐาน</p>
+                </div>
+              </div>
+              <div class="policy-list">
+                <article class="policy-item">
+                  <div class="policy-item-head">
+                    <strong>ภาษีซื้อ NEV ช่วงเปลี่ยนผ่าน</strong>
+                    <span class="policy-period">01/01/26-31/12/27</span>
+                  </div>
+                  <p><span class="policy-label">ผล:</span> ลดภาษีซื้อ 50% สูงสุด 15,000 หยวนต่อรถยนต์นั่ง NEV หนึ่งคัน จากช่วง 2024-2025 ที่ยกเว้นเต็มจำนวนสูงสุด 30,000 หยวน</p>
+                  <p class="policy-watch"><span class="policy-label">จับตา:</span> Retail YoY รอบเปลี่ยนสิทธิ์และสัดส่วนรถราคาสูง · <a href="https://hq.mof.gov.cn/tongzhitonggao/202307/t20230704_3894319.htm" target="_blank" rel="noopener">MOF</a></p>
+                </article>
+                <article class="policy-item">
+                  <div class="policy-item-head">
+                    <strong>Trade-in subsidy 2026</strong>
+                    <span class="policy-period">ตั้งแต่ 01/01/26</span>
+                  </div>
+                  <p><span class="policy-label">ผล:</span> ทำลายรถเก่าแล้วซื้อ NEV ใหม่ รับ 12% ของราคารถ สูงสุด 20,000 หยวน; โอนรถเก่าแล้วซื้อ NEV ใหม่ รับ 8% สูงสุด 15,000 หยวน</p>
+                  <p class="policy-watch"><span class="policy-label">จับตา:</span> Retail เทียบ Wholesale และ Domestic YTD · <a href="https://www.mofcom.gov.cn/zwgk/zcfb/art/2025/art_3fbdd57f4f1b4ab78c2d9457f3517569.html" target="_blank" rel="noopener">MOFCOM</a></p>
+                </article>
+                <article class="policy-item">
+                  <div class="policy-item-head">
+                    <strong>NEV to the Countryside 2026</strong>
+                    <span class="policy-period">ประกาศ 18/06/26</span>
+                  </div>
+                  <p><span class="policy-label">ผล:</span> คัดเลือกรุ่นสำหรับตลาดชนบท ผสาน trade-in แบบ one-stop และดึงเครือข่ายขาย บริการ การเงิน และชาร์จลงพื้นที่</p>
+                  <p class="policy-watch"><span class="policy-label">จับตา:</span> Retail และแคมเปญในเมืองระดับอำเภอ; เอกสารนี้ไม่ระบุเงินอุดหนุนซื้อรถก้อนใหม่ระดับชาติ · <a href="https://wap.miit.gov.cn/jgsj/zbys/wjfb/art/2026/art_e8451f9a3b074d3ab0f8c5985da0407d.html" target="_blank" rel="noopener">MIIT</a></p>
+                </article>
+                <article class="policy-item">
+                  <div class="policy-item-head">
+                    <strong>County charging pilot 2026</strong>
+                    <span class="policy-period">59 เขตนำร่องร่วม</span>
+                  </div>
+                  <p><span class="policy-label">ผล:</span> ขยายสถานีชาร์จ/สลับแบตในชนบท; สถานีที่ผลิตไฟฟ้าโซลาร์ใช้เองเกิน 40% ได้ตัวคูณปริมาณชาร์จ 1.2 เท่าในการประเมิน</p>
+                  <p class="policy-watch"><span class="policy-label">จับตา:</span> การเปิดสถานีและยอดขายชนบท เป็นแรงหนุน Demand ทางอ้อม ไม่ใช่ subsidy ต่อคัน · <a href="https://jjs.mof.gov.cn/tongzhigonggao/202603/t20260313_3985275.htm" target="_blank" rel="noopener">MOF</a></p>
+                </article>
+              </div>
+            </section>
+            <section class="policy-group" aria-labelledby="supplyPolicyTitle">
+              <div class="policy-group-head">
+                <span class="policy-kind supply">Supply</span>
+                <div>
+                  <h3 id="supplyPolicyTitle">ข้อกำหนดการผลิตและส่งออก</h3>
+                  <p>ผลต่อต้นทุน compliance, product mix และการเข้าถึงตลาดต่างประเทศ</p>
+                </div>
+              </div>
+              <div class="policy-list">
+                <article class="policy-item">
+                  <div class="policy-item-head">
+                    <strong>ใบอนุญาตส่งออก BEV</strong>
+                    <span class="policy-period">มีผล 01/01/26</span>
+                  </div>
+                  <p><span class="policy-label">ผล:</span> ผู้ส่งออกรถยนต์นั่งไฟฟ้าล้วน (HS อ้างอิง 8703801090) ต้องยื่นขอใบอนุญาตและผ่านกระบวนการตรวจเอกสาร</p>
+                  <p class="policy-watch"><span class="policy-label">จับตา:</span> Export และผู้ส่งออกที่ผ่านสิทธิ; ประกาศระบุเงื่อนไขใบอนุญาต แต่ไม่ระบุเพดานโควตาปริมาณ · <a href="https://www.mofcom.gov.cn/zfxxgk/gkml/art/2025/art_2203b4024abd421189cb5d18b59b8503.html" target="_blank" rel="noopener">MOFCOM</a></p>
+                </article>
+                <article class="policy-item">
+                  <div class="policy-item-head">
+                    <strong>มาตรฐานบังคับด้านการใช้พลังงาน</strong>
+                    <span class="policy-period">GB 36980.1-2025</span>
+                  </div>
+                  <p><span class="policy-label">ผล:</span> มีผล 01/01/26 เกณฑ์เข้มขึ้นราว 11% จากมาตรฐานแนะนำฉบับก่อน และรถผลิตใหม่ต้องปรับเทคนิคให้ผ่าน</p>
+                  <p class="policy-watch"><span class="policy-label">จับตา:</span> รุ่นกินไฟสูง การปรับสเปก และต้นทุน R&amp;D/compliance · <a href="https://www.samr.gov.cn/xw/sj/art/2025/art_72323bbf4d894a7ab4b933a037d26fc5.html" target="_blank" rel="noopener">SAMR</a></p>
+                </article>
+                <article class="policy-item">
+                  <div class="policy-item-head">
+                    <strong>Dual-credit 2026-2027</strong>
+                    <span class="policy-period">48% / 58%</span>
+                  </div>
+                  <p><span class="policy-label">ผล:</span> อัตราส่วนข้อกำหนดเครดิต NEV อยู่ที่ 48% ในปี 2026 และ 58% ในปี 2027 เพิ่มแรงกดดันต่อ product mix ของผู้ผลิตรถยนต์นั่ง</p>
+                  <p class="policy-watch"><span class="policy-label">จับตา:</span> BEV/PHEV mix และภาระเครดิตรายผู้ผลิต; ตัวเลขนี้ไม่ใช่เป้า market share 48%/58% · <a href="https://www.miit.gov.cn/jgsj/zbys/qcgy/art/2025/art_1efdb5ad57014ece905d62211dcd9e1c.html" target="_blank" rel="noopener">MIIT</a></p>
+                </article>
+                <article class="policy-item">
+                  <div class="policy-item-head">
+                    <strong>ความรับผิดชอบรีไซเคิลแบตเตอรี่</strong>
+                    <span class="policy-period">มีผล 01/04/26</span>
+                  </div>
+                  <p><span class="policy-label">ผล:</span> ผู้ผลิตรถ NEV ต้องรับผิดชอบแบตเตอรี่ที่ติดรถและขายในจีน จัดจุดรับคืนระดับเมืองให้สอดคล้องกับยอดขาย และรายงานข้อมูลติดตามตลอดวงจร</p>
+                  <p class="policy-watch"><span class="policy-label">จับตา:</span> ต้นทุนเครือข่ายหลังการขาย พันธมิตรรีไซเคิล และการทำ traceability · <a href="https://www.miit.gov.cn/gyhxxhb/jgsj/cyzcyfgs/bmgz/jdcjxl/art/2026/art_392462fdc40c415ea4a4129cac3028c2.html" target="_blank" rel="noopener">MIIT</a></p>
+                </article>
+              </div>
+            </section>
           </div>
+          <p class="source-note">ข้อกำหนดมาจากประกาศทางการ ส่วน “จับตา” เป็นกรอบวิเคราะห์ ไม่ใช่การคาดการณ์ยอดขาย</p>
         </div>
       </div>
 
@@ -662,6 +838,98 @@
           </div>
         </div>
         <div class="signal-grid" id="qualitySignals"></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-exports" data-view-panel="exports" hidden>
+      <div class="summary-grid">
+        <div class="stat primary">
+          <div class="stat-label">Passenger NEV export ล่าสุด</div>
+          <div class="stat-value" id="exportLatest">-</div>
+          <div class="stat-note" id="exportLatestNote">CPCA</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">ผู้นำส่งออก</div>
+          <div class="stat-value" id="exportLeader">-</div>
+          <div class="stat-note" id="exportLeaderNote">-</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">ประเทศปลายทางอันดับ 1</div>
+          <div class="stat-value" id="exportDestination">-</div>
+          <div class="stat-note" id="exportDestinationNote">-</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Top 10 ประเทศ</div>
+          <div class="stat-value" id="exportCountryCoverage">-</div>
+          <div class="stat-note" id="exportCountryCoverageNote">สัดส่วนต่อยอดรวมงวดเดียวกัน</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Top 10 ผู้ผลิต</div>
+          <div class="stat-value" id="exportBrandCoverage">-</div>
+          <div class="stat-note" id="exportBrandCoverageNote">สัดส่วนต่อยอดรวมงวดเดียวกัน</div>
+        </div>
+      </div>
+
+      <div class="scope-callout" id="exportScopeNote"></div>
+
+      <div class="equal-col">
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">
+              <h2>ประเทศปลายทางส่งออก NEV</h2>
+              <div class="note" id="exportDestinationPeriod">ข้อมูลล่าสุดตามงวดที่แหล่งต้นทางเผยแพร่</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table id="exportDestinationTable">
+              <thead><tr><th>#</th><th class="label-cell">ประเทศ / ภูมิภาค</th><th>ยอดส่งออก</th><th>YoY</th><th>สัดส่วน</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p class="source-note" id="exportDestinationSource"></p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">
+              <h2>ยอดส่งออกตามผู้ผลิต</h2>
+              <div class="note" id="exportBrandPeriod">ยอด Passenger NEV จากฐานการผลิตในจีน</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table id="exportBrandTable">
+              <thead><tr><th>#</th><th class="label-cell">ผู้ผลิต</th><th>เดือนล่าสุด</th><th>Share</th><th>YTD</th><th>Share</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p class="source-note" id="exportBrandSource"></p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">
+              <h2>สถานะของแบรนด์ที่ Dashboard ติดตาม</h2>
+              <div class="note">เครื่องหมาย “ไม่เปิดเผย” ไม่ได้แปลว่ายอดเป็นศูนย์ แต่หมายถึงไม่มีตัวเลขใน Top 10 ต้นทาง</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table id="trackedExportTable">
+              <thead><tr><th class="label-cell">แบรนด์</th><th>เดือนล่าสุด</th><th>YTD</th><th class="label-cell">สถานะข้อมูล</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">
+              <h2>สิ่งที่ควรรู้ก่อนใช้ตัวเลขส่งออก</h2>
+              <div class="note">แยกข้อเท็จจริง ขอบเขต และข้อจำกัดที่มีผลต่อการวิเคราะห์</div>
+            </div>
+          </div>
+          <div class="signal-grid" id="exportSignals"></div>
+        </div>
       </div>
     </section>
 
@@ -742,7 +1010,7 @@
         <div class="panel-head">
           <div class="panel-title">
             <h2>ข่าวล่าสุดรายแบรนด์</h2>
-            <div class="note" id="newsSummary">สูงสุด 10 ข่าวล่าสุดต่อแบรนด์จาก CnEVPost</div>
+            <div class="note" id="newsSummary">Snapshot สูงสุด 20 ข่าวล่าสุดต่อแบรนด์จาก CnEVPost</div>
           </div>
         </div>
         <div class="news-tabs" id="newsTabs"></div>
@@ -806,7 +1074,7 @@
           </div>
         </div>
         <div id="brandSources"></div>
-        <p class="footer-note">Dashboard เก็บข้อมูลแบบ append-and-merge: ข้อมูลเดือนเก่าจะถูกเก็บไว้ และค่าที่ source แก้ย้อนหลังจะถูกบันทึกทับเฉพาะเดือน/series เดียวกัน</p>
+        <p class="footer-note">ข้อมูลตลาดและอันดับเก็บแบบ append-and-merge โดยคงงวดเก่าไว้ ส่วนข่าวเป็น snapshot ล่าสุดสูงสุด 20 รายการต่อแบรนด์และไม่สะสมข่าวเก่า</p>
       </div>
     </section>
   </main>
@@ -834,12 +1102,22 @@
       nevExportsCaam: { label: "Export", title: "China NEV exports", unit: "คัน", source: "caam", decimals: 0 },
       bevSalesCaam: { label: "BEV", title: "China BEV sales", unit: "คัน", source: "caam", decimals: 0 },
       phevSalesCaam: { label: "PHEV", title: "China PHEV sales", unit: "คัน", source: "caam", decimals: 0 },
-      passengerNevRetailPenetrationPct: { label: "Penetration", title: "China passenger NEV retail penetration", unit: "%", source: "cpcaRetail", decimals: 1 }
+      passengerNevRetailPenetrationPct: {
+        label: "Penetration",
+        title: "China passenger NEV retail penetration",
+        unit: "%",
+        source: "cpcaRetail",
+        decimals: 1,
+        ytdNumerator: "passengerNevRetail",
+        ytdDenominator: "passengerCarRetail"
+      }
     };
     const definitionLabels = {
       passengerNevRetail: "CPCA domestic retail",
       passengerNevWholesale: "CPCA wholesale",
       nevSalesCaam: "CAAM NEV sales",
+      passengerNevExportsCpca: "CPCA passenger NEV exports",
+      exportDestinations: "Export destinations",
       companyReported: "Company-reported",
       dealerInventoryCoefficient: "Dealer inventory coefficient"
     };
@@ -887,6 +1165,12 @@
       if (value == null || !Number.isFinite(value)) return "-";
       const places = digits == null ? 1 : digits;
       return (value >= 0 ? "+" : "") + (value * 100).toFixed(places) + "%";
+    }
+
+    function signed(value, digits) {
+      if (value == null || !Number.isFinite(value)) return "-";
+      const places = digits == null ? 1 : digits;
+      return (value >= 0 ? "+" : "") + value.toFixed(places);
     }
 
     function formatMetric(value, config) {
@@ -945,6 +1229,45 @@
       return { current, previous, yoy: previous ? (current - previous) / previous : null, year, monthLimit };
     }
 
+    function metricChange(values, index, offset, config) {
+      const priorIndex = index - offset;
+      if (index < 0 || priorIndex < 0 || values[index] == null || values[priorIndex] == null) return null;
+      if (config.unit === "%") return values[index] - values[priorIndex];
+      if (values[priorIndex] === 0) return null;
+      return (values[index] - values[priorIndex]) / values[priorIndex];
+    }
+
+    function formatMetricChange(value, config) {
+      if (value == null || !Number.isFinite(value)) return "-";
+      if (config.unit === "%") return (value >= 0 ? "+" : "") + value.toFixed(1) + " จุด";
+      return pct(value);
+    }
+
+    function ytdForMetric(config, values, index) {
+      if (config.ytdNumerator && config.ytdDenominator) {
+        const numerator = ytdFor(market.series[config.ytdNumerator] || [], index, market.months);
+        const denominator = ytdFor(market.series[config.ytdDenominator] || [], index, market.months);
+        const current = denominator.current ? numerator.current / denominator.current * 100 : null;
+        const previous = denominator.previous ? numerator.previous / denominator.previous * 100 : null;
+        return {
+          current,
+          previous,
+          change: current != null && previous != null ? current - previous : null,
+          year: numerator.year,
+          method: "คำนวณจากยอดสะสม NEV / รถยนต์นั่ง"
+        };
+      }
+      const result = ytdFor(values, index, market.months);
+      return { ...result, change: result.yoy, method: "รวมจากข้อมูลรายเดือน" };
+    }
+
+    function sourceStatusLabel(status) {
+      if (status === "final") return "Final";
+      if (status === "preliminary") return "Preliminary";
+      if (status === "estimate") return "Estimate";
+      return status || "";
+    }
+
     function statusBadge(status) {
       const value = status || "unknown";
       const label = value === "final" ? "Final" : value === "preliminary" ? "Preliminary" : value;
@@ -973,6 +1296,15 @@
     }
 
     function drawChart(svg, sourceMonths, chartSeries, options) {
+      const populated = sourceMonths
+        .map((_, index) => index)
+        .filter(index => chartSeries.some(item => item.values[index] != null));
+      if (populated.length) {
+        const first = populated[0];
+        const last = populated[populated.length - 1];
+        sourceMonths = sourceMonths.slice(first, last + 1);
+        chartSeries = chartSeries.map(item => ({ ...item, values: item.values.slice(first, last + 1) }));
+      }
       const width = 1040;
       const height = 390;
       const pad = { top: 24, right: 34, bottom: 58, left: 78 };
@@ -1062,26 +1394,56 @@
     }
 
     function renderMarketKpis() {
-      const retail = market.series.passengerNevRetail || [];
-      const retailIndex = lastValueIndex(retail);
-      const retailYoy = yoyAt(retail, retailIndex);
-      const penetration = market.series.passengerNevRetailPenetrationPct || [];
-      const exportSeries = market.series.nevExportsCaam || [];
-      const exportIndex = lastValueIndex(exportSeries);
-      const exportYoy = yoyAt(exportSeries, exportIndex);
-      const domestic = market.series.nevDomesticSalesCaam || [];
-      const domesticIndex = lastValueIndex(domestic);
-      const domesticYtd = ytdFor(domestic, domesticIndex, market.months);
+      const config = metricConfigs[currentMarketMetric];
+      const values = market.series[currentMarketMetric] || [];
+      const available = values.map((value, index) => value == null ? null : index).filter(index => index != null);
+      const index = available.length ? available[available.length - 1] : -1;
+      const firstIndex = available.length ? available[0] : -1;
+      const source = market.sources && market.sources[config.source];
+      const yoy = metricChange(values, index, 12, config);
+      const mom = metricChange(values, index, 1, config);
+      const ytd = ytdForMetric(config, values, index);
+      const period = index >= 0 ? market.months[index] : "-";
+      const status = sourceStatusLabel(source && source.status);
 
-      setStat("marketRetail", formatMetric(retail[retailIndex]), null);
-      $("marketRetailNote").textContent = market.months[retailIndex] + " | CPCA final";
-      setStat("marketRetailYoy", pct(retailYoy), retailYoy == null ? null : retailYoy >= 0 ? "positive" : "negative");
-      $("marketRetailYoyNote").textContent = retailIndex >= 12 ? "เทียบ " + market.months[retailIndex - 12] + ": " + fmt.format(retail[retailIndex - 12]) + " คัน" : "ยังไม่มีฐานปีก่อน";
-      setStat("marketPenetration", penetration[retailIndex] == null ? "-" : penetration[retailIndex].toFixed(1) + "%");
-      setStat("marketExport", formatMetric(exportSeries[exportIndex]), null);
-      $("marketExportNote").textContent = market.months[exportIndex] + " | YoY " + pct(exportYoy);
-      setStat("marketDomesticYtd", compactFmt.format(domesticYtd.current), domesticYtd.yoy == null ? null : domesticYtd.yoy >= 0 ? "positive" : "negative");
-      $("marketDomesticYtdNote").textContent = domesticYtd.year + " YTD | YoY " + pct(domesticYtd.yoy);
+      $("marketMetricLatestLabel").textContent = config.label + " ล่าสุด";
+      setStat("marketMetricLatest", index >= 0 ? formatMetric(values[index], config) : "-", null);
+      $("marketMetricLatestNote").textContent = period + (status ? " | " + status : "");
+
+      $("marketMetricYoyLabel").textContent = "YoY " + config.label;
+      setStat("marketMetricYoy", formatMetricChange(yoy, config), yoy == null ? null : yoy >= 0 ? "positive" : "negative");
+      $("marketMetricYoyNote").textContent = index >= 12 && values[index - 12] != null
+        ? "เทียบ " + market.months[index - 12] + ": " + formatMetric(values[index - 12], config)
+        : "ยังไม่มีฐานปีก่อน";
+
+      $("marketMetricMomLabel").textContent = "MoM " + config.label;
+      setStat("marketMetricMom", formatMetricChange(mom, config), mom == null ? null : mom >= 0 ? "positive" : "negative");
+      $("marketMetricMomNote").textContent = index >= 1 && values[index - 1] != null
+        ? "เทียบ " + market.months[index - 1] + ": " + formatMetric(values[index - 1], config)
+        : "ยังไม่มีข้อมูลเดือนก่อน";
+
+      const useReportedYtd = config.unit !== "%"
+        && source
+        && source.reportedYtdPeriod === period
+        && Number.isFinite(source.reportedYtd);
+      const ytdValue = useReportedYtd ? source.reportedYtd : ytd.current;
+      const ytdChange = useReportedYtd && Number.isFinite(source.reportedYtdYoyPct)
+        ? source.reportedYtdYoyPct / 100
+        : ytd.change;
+      $("marketMetricYtdLabel").textContent = "YTD " + (ytd.year || "-");
+      setStat(
+        "marketMetricYtd",
+        ytdValue == null ? "-" : config.unit === "%" ? formatMetric(ytdValue, config) : compactFmt.format(ytdValue),
+        ytdChange == null ? null : ytdChange >= 0 ? "positive" : "negative"
+      );
+      $("marketMetricYtdNote").textContent = (useReportedYtd ? "CPCA รายงาน " + fmt.format(ytdValue) : ytd.method + (config.unit === "%" ? "" : ": " + fmt.format(ytdValue || 0)))
+        + " | YoY " + formatMetricChange(ytdChange, config);
+
+      $("marketMetricRangeLabel").textContent = "ช่วงข้อมูล " + config.label;
+      setStat("marketMetricRange", available.length ? available.length + " เดือน" : "-", null);
+      $("marketMetricRangeNote").textContent = available.length
+        ? market.months[firstIndex] + " ถึง " + period + (source && source.publisher ? " | " + source.publisher : "")
+        : "ยังไม่มีข้อมูล";
     }
 
     function setupMarketControls() {
@@ -1094,6 +1456,7 @@
         button.addEventListener("click", () => {
           currentMarketMetric = button.dataset.metric;
           $("marketMetricButtons").querySelectorAll("button").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+          renderMarketKpis();
           renderMarketChart();
         });
       });
@@ -1113,18 +1476,34 @@
       ], { unitLabel: config.unit, valueFormatter: formatter, zeroBased: config.unit !== "%" });
 
       const source = market.sources && market.sources[config.source];
-      $("marketSourceNote").innerHTML = source
+      let sourceNote = source
         ? "แหล่งข้อมูล: " + sourceLink(config.source) + " | ประกาศ " + escapeHtml(source.publishedAt || "-")
         : "ยังไม่มี metadata ของแหล่งข้อมูล";
+      if (source && source.tableUrl && source.tableUrl !== source.url) {
+        sourceNote += ' | <a href="' + escapeHtml(source.tableUrl) + '" target="_blank" rel="noopener">ตารางย้อนหลัง</a>';
+      }
+      if (source && Number.isFinite(source.reportedYtd) && source.reportedYtdPeriod === market.months[lastValueIndex(values)]) {
+        const monthlyYtd = ytdFor(values, lastValueIndex(values), market.months).current;
+        const difference = source.reportedYtd ? Math.abs(monthlyYtd - source.reportedYtd) / source.reportedYtd : 0;
+        sourceNote += " | YTD ต้นทาง " + fmt.format(source.reportedYtd)
+          + "; ผลรวมรายเดือน " + fmt.format(monthlyYtd)
+          + " (ต่าง " + (difference * 100).toFixed(2) + "%)";
+      }
+      $("marketSourceNote").innerHTML = sourceNote;
 
-      $("marketMonthTable").querySelector("tbody").innerHTML = market.months.map((month, index) => {
+      const populatedMonths = market.months
+        .map((month, index) => ({ month, index }))
+        .filter(item => values[item.index] != null);
+      $("marketMonthTable").querySelector("tbody").innerHTML = populatedMonths.map(item => {
+        const month = item.month;
+        const index = item.index;
         const value = values[index];
         const prior = index >= 12 ? values[index - 12] : null;
         const yoy = prior && value != null ? (value - prior) / prior : null;
         const tone = yoy == null ? "" : yoy >= 0 ? "positive" : "negative";
         const status = source && index === lastValueIndex(values) ? statusBadge(source.status) : "";
         return "<tr><td>" + month + "</td><td>" + formatMetric(value, config) + "</td><td>" + formatMetric(prior, config) + '</td><td class="' + tone + '">' + pct(yoy) + "</td><td>" + status + "</td></tr>";
-      }).join("");
+      }).join("") || '<tr><td colspan="5" class="empty">ยังไม่มีข้อมูลสำหรับตัวชี้วัดนี้</td></tr>';
     }
 
     function renderMarketMix() {
@@ -1277,6 +1656,94 @@
         signal("Fact", "Dealer pressure", inventoryText),
         signal("Fact", "Battery demand", "ยอดติดตั้งแบตเตอรี่ " + battery[batteryIdx].toFixed(1) + " GWh หรือ " + pct(batteryYoy) + " YoY และ LFP คิดเป็น " + (lfpShare * 100).toFixed(1) + "%"),
         signal("Analysis", "Investment implication", "ผู้ผลิตที่ได้ volume แต่ต้องใช้ส่วนลดสูงหรือมี inventory เพิ่ม อาจไม่เปลี่ยนยอดขายเป็น margin และ cash flow ได้เต็มที่")
+      ].join("");
+    }
+
+    function renderExports() {
+      const monthly = market.latestBrandExports;
+      const ytd = market.ytdBrandExports;
+      const destinations = market.latestExportDestinations;
+      const monthlyRows = monthly && monthly.rows ? monthly.rows : [];
+      const ytdRows = ytd && ytd.rows ? ytd.rows : [];
+      const destinationRows = destinations && destinations.rows ? destinations.rows : [];
+      const monthlyMap = new Map(monthlyRows.map(row => [row.brand, row]));
+      const ytdMap = new Map(ytdRows.map(row => [row.brand, row]));
+      const leader = monthlyRows[0];
+      const topDestination = destinationRows[0];
+      const brandTop10 = monthlyRows.reduce((sum, row) => sum + row.value, 0);
+      const brandCoverage = monthly && monthly.total ? brandTop10 / monthly.total * 100 : null;
+
+      setStat("exportLatest", monthly && monthly.total ? fmt.format(monthly.total) : "-");
+      $("exportLatestNote").textContent = monthly
+        ? monthly.period + " | YoY " + (monthly.totalYoyPct == null ? "-" : signed(monthly.totalYoyPct, 1)) + "% | CPCA"
+        : "ยังไม่มีข้อมูล CPCA";
+      setStat("exportLeader", leader ? leader.brand : "-");
+      $("exportLeaderNote").textContent = leader
+        ? fmt.format(leader.value) + " คัน | share " + leader.sharePct.toFixed(1) + "% | " + monthly.period
+        : "-";
+      setStat("exportDestination", topDestination ? topDestination.country : "-");
+      $("exportDestinationNote").textContent = topDestination
+        ? fmt.format(topDestination.value) + " คัน | YoY " + signed(topDestination.yoyPct, 1) + "% | " + destinations.period
+        : "-";
+      setStat("exportCountryCoverage", destinations && destinations.coveragePct != null ? destinations.coveragePct.toFixed(1) + "%" : "-");
+      $("exportCountryCoverageNote").textContent = destinations && destinations.top10Total
+        ? fmt.format(destinations.top10Total) + " จาก " + fmt.format(destinations.total) + " คัน | " + destinations.period
+        : "ยังไม่มียอดรวมงวดเดียวกัน";
+      setStat("exportBrandCoverage", brandCoverage == null ? "-" : brandCoverage.toFixed(1) + "%");
+      $("exportBrandCoverageNote").textContent = monthly && monthly.total
+        ? fmt.format(brandTop10) + " จาก " + fmt.format(monthly.total) + " คัน | " + monthly.period
+        : "ยังไม่มียอดรวมงวดเดียวกัน";
+
+      const caamIndex = monthly ? market.months.indexOf(monthly.period) : -1;
+      const caamValue = caamIndex >= 0 ? market.series.nevExportsCaam?.[caamIndex] : null;
+      const scopeGap = monthly && monthly.total && caamValue != null ? caamValue - monthly.total : null;
+      $("exportScopeNote").textContent = monthly && caamValue != null
+        ? "ขอบเขตต่างกัน: CPCA Passenger NEV export " + fmt.format(monthly.total) + " คัน เทียบกับ CAAM NEV export " + fmt.format(caamValue) + " คันใน " + monthly.period + (scopeGap == null ? "" : " ต่างกัน " + fmt.format(Math.abs(scopeGap)) + " คัน") + " จึงห้ามรวมยอดหรือบังคับให้เท่ากัน"
+        : "อันดับประเทศและอันดับผู้ผลิตเป็นคนละชุดข้อมูล และไม่มี brand-by-country matrix ในแหล่งต้นทาง";
+
+      const maxDestination = Math.max(1, ...destinationRows.map(row => row.value));
+      $("exportDestinationPeriod").textContent = destinations
+        ? destinations.period + " | " + destinations.scope
+        : "ยังไม่มีข้อมูลประเทศปลายทาง";
+      $("exportDestinationTable").querySelector("tbody").innerHTML = destinationRows.map(row => {
+        const share = destinations.total ? row.value / destinations.total * 100 : null;
+        return '<tr><td class="rank">' + row.rank + '</td><td class="label-cell"><strong>' + escapeHtml(row.country) + '</strong><div class="note">' + escapeHtml(row.region || "-") + '</div></td><td class="metric-with-bar">' + fmt.format(row.value) + '<div class="metric-bar"><span style="width:' + (row.value / maxDestination * 100).toFixed(1) + '%"></span></div></td><td class="' + (row.yoyPct >= 0 ? "positive" : "negative") + '">' + signed(row.yoyPct, 1) + '%</td><td>' + (share == null ? "-" : share.toFixed(1) + "%") + '</td></tr>';
+      }).join("") || '<tr><td colspan="5" class="empty">ยังไม่มีข้อมูลประเทศปลายทาง</td></tr>';
+      $("exportDestinationSource").innerHTML = sourceLink("exportDestinations")
+        + (market.sources?.exportDestinationTotal ? " | ยอดรวมงวดเดียวกัน: " + sourceLink("exportDestinationTotal") : "");
+
+      const automakers = [...new Set([...monthlyRows.map(row => row.brand), ...ytdRows.map(row => row.brand)])]
+        .sort((a, b) => (monthlyMap.get(a)?.rank || 99) - (monthlyMap.get(b)?.rank || 99)
+          || (ytdMap.get(a)?.rank || 99) - (ytdMap.get(b)?.rank || 99));
+      $("exportBrandPeriod").textContent = monthly && ytd
+        ? "เดือน " + monthly.period + " เทียบยอดสะสม " + ytd.period
+        : "ยอด Passenger NEV จากฐานการผลิตในจีน";
+      $("exportBrandTable").querySelector("tbody").innerHTML = automakers.map(brand => {
+        const monthRow = monthlyMap.get(brand);
+        const ytdRow = ytdMap.get(brand);
+        return "<tr><td class=\"rank\">" + (monthRow?.rank || ytdRow?.rank || "-") + '</td><td class="label-cell"><strong>' + escapeHtml(brand) + "</strong></td><td>" + (monthRow ? fmt.format(monthRow.value) : "-") + "</td><td>" + (monthRow ? monthRow.sharePct.toFixed(1) + "%" : "-") + "</td><td>" + (ytdRow ? fmt.format(ytdRow.value) : "-") + "</td><td>" + (ytdRow ? ytdRow.sharePct.toFixed(1) + "%" : "-") + "</td></tr>";
+      }).join("") || '<tr><td colspan="6" class="empty">ยังไม่มีอันดับผู้ส่งออก</td></tr>';
+      $("exportBrandSource").innerHTML = sourceLink("exportBrands");
+
+      $("trackedExportTable").querySelector("tbody").innerHTML = brandNames.map(brand => {
+        const monthRow = monthlyMap.get(brand);
+        const ytdRow = ytdMap.get(brand);
+        const status = monthRow && ytdRow ? "มีทั้งเดือนและ YTD" : monthRow ? "มีเฉพาะเดือนล่าสุด" : ytdRow ? "มีเฉพาะ YTD" : "ไม่เปิดเผยใน Top 10";
+        return '<tr><td class="label-cell"><strong>' + escapeHtml(brand) + "</strong></td><td>" + (monthRow ? fmt.format(monthRow.value) : "-") + "</td><td>" + (ytdRow ? fmt.format(ytdRow.value) : "-") + '</td><td class="label-cell">' + escapeHtml(status) + "</td></tr>";
+      }).join("");
+
+      const top3Brands = monthlyRows.slice(0, 3).reduce((sum, row) => sum + row.value, 0);
+      const top3Share = monthly && monthly.total ? top3Brands / monthly.total * 100 : null;
+      const europeCount = destinationRows.filter(row => row.region === "Europe").length;
+      const fastestCountries = [...destinationRows].sort((a, b) => b.yoyPct - a.yoyPct).slice(0, 3);
+      const exactTracked = brandNames.filter(brand => monthlyMap.has(brand)).length;
+      $("exportSignals").innerHTML = [
+        signal("Fact", "ขอบเขต CPCA กับ CAAM", scopeGap == null ? "ยังไม่มีงวดที่เทียบกันได้" : "เดือน " + monthly.period + " ต่างกัน " + fmt.format(Math.abs(scopeGap)) + " คัน เพราะ CAAM ครอบคลุมกว้างกว่า Passenger NEV ของ CPCA"),
+        signal("Fact", "ความกระจุกตัวผู้ผลิต", top3Share == null ? "ยังคำนวณไม่ได้" : "Top 3 รวม " + top3Share.toFixed(1) + "% และ Top 10 รวม " + brandCoverage.toFixed(1) + "% ของ Passenger NEV export เดือนล่าสุด"),
+        signal("Fact", "ตลาดปลายทาง", topDestination ? topDestination.country + " นำที่ " + fmt.format(topDestination.value) + " คัน และยุโรปมี " + europeCount + " ประเทศใน Top 10" : "ยังไม่มีข้อมูล"),
+        signal("Fact", "ตลาดที่โตเร็ว", fastestCountries.length ? fastestCountries.map(row => row.country + " " + signed(row.yoyPct, 1) + "%").join(", ") : "ยังไม่มีข้อมูล"),
+        signal("Analysis", "ข้อจำกัด brand × country", "ประเทศปลายทางเป็นงวด " + (destinations?.period || "-") + " แต่อันดับผู้ผลิตเป็น " + (monthly?.period || "-") + " และต้นทางไม่ได้เผย cross-tab ว่าแต่ละแบรนด์ส่งไปแต่ละประเทศกี่คัน จึงห้ามจับคู่สองตารางเอง"),
+        signal("Analysis", "มุมมองการลงทุน", "Export ช่วยการใช้กำลังผลิต แต่ต้องเทียบ margin หลังค่าขนส่ง ภาษี เครือข่ายจำหน่าย เงินทุนหมุนเวียน และสัดส่วนผลิตในต่างประเทศก่อนสรุปคุณภาพกำไร; แบรนด์ที่ติดตามมีตัวเลขเดือนล่าสุด " + exactTracked + " จาก " + brandNames.length + " แบรนด์")
       ].join("");
     }
 
@@ -1438,13 +1905,13 @@
       $("newsSummary").textContent = items.length
         ? activeNewsBrand + ": " + items.length + " ข่าวล่าสุดจาก CnEVPost"
         : activeNewsBrand + ": ยังไม่มีข่าวในไฟล์ข้อมูลรอบนี้";
-      $("brandNews").innerHTML = items.length ? items.slice(0, 10).map((item, index) => {
+      $("brandNews").innerHTML = items.length ? items.slice(0, 20).map((item, index) => {
         const publishedAt = newsPublishedAt(item);
         const dateMeta = publishedAt
           ? '<time class="news-date" datetime="' + escapeHtml(publishedAt) + '">' + escapeHtml(newsDateLabel(publishedAt)) + "</time>"
           : '<span class="news-date">' + escapeHtml(newsDateLabel(null)) + "</span>";
         return '<article class="news-item"><div class="news-meta"><span class="badge">' + classifyNews(item.title) + '</span><span>CnEVPost</span><span aria-hidden="true">|</span>' + dateMeta + '</div><a href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener">' + (index + 1) + ". " + escapeHtml(item.title) + "</a>" + (item.summary ? '<div class="news-summary">' + escapeHtml(item.summary) + "</div>" : "") + "</article>";
-      }).join("") : '<div class="empty">ยังไม่มีข่าวสำหรับแบรนด์นี้ใน data รอบปัจจุบัน ระบบอัปเดตจะเก็บสูงสุด 10 ข่าวจาก CnEVPost brand page เมื่อ workflow ดึง source สำเร็จ</div>';
+      }).join("") : '<div class="empty">ยังไม่มีข่าวสำหรับแบรนด์นี้ใน snapshot ปัจจุบัน ระบบอัปเดตจะดึงสูงสุด 20 ข่าวจาก CnEVPost brand page หน้า 1-2 เมื่อ workflow ดึง source สำเร็จ</div>';
     }
 
     function renderDataQuality() {
@@ -1533,6 +2000,7 @@
         renderMarketSignals();
         renderCompetition();
         renderQuality();
+        renderExports();
         renderCompany();
         renderDataQuality();
       } catch (error) {
