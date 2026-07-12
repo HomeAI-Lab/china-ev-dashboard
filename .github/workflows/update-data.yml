@@ -28,6 +28,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
+      - name: Verify data merge and snapshot policies
+        run: node scripts/test-accumulation.mjs
       - name: Update data from CnEVPost
         id: update
         run: node scripts/update-data.mjs

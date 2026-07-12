@@ -1,6 +1,7 @@
 import https from "node:https";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const sources = {
   "BYD": "https://cnevpost.com/byd/",
@@ -16,9 +17,13 @@ const sources = {
 
 const marketFallbackSources = {
   retail: "https://cnevpost.com/2026/07/08/china-nev-retail-sales-jun-2026/",
-  wholesale: "https://cnevpost.com/2026/07/03/chinas-nev-retail-jun-cpca-preliminary-data/",
+  wholesale: "https://cnevpost.com/2026/07/02/cpca-china-jun-2026-nev-wholesale/",
+  preliminary: "https://cnevpost.com/2026/07/03/chinas-nev-retail-jun-cpca-preliminary-data/",
   caam: "https://cnevpost.com/2026/07/09/china-jun-2026-nev-sales-caam/",
   brandRetail: "https://cnevpost.com/2026/07/10/automakers-share-china-nev-market-jun-2026/",
+  exportBrands: "https://cnevpost.com/2026/07/10/automakers-share-china-nev-exports-jun-2026/",
+  exportDestinations: "https://autonews.gasgoo.com/articles/news/chinas-passenger-vehicle-export-overview-jan-apr-2026-brazil-leads-overallgasgoo-automotive-research-institute-2069316207587815425",
+  exportDestinationTotal: "https://autonews.gasgoo.com/articles/news/chinas-passenger-vehicle-market-faces-yoy-drop-in-apr-retail-sales-wholesales-but-exports-surge-2054095851151056896",
   battery: "https://cnevpost.com/2026/06/11/china-may-2026-ev-battery-installations/",
   dealerInventory: "https://www.cada.cn/Data/list_85_1.html"
 };
@@ -27,6 +32,8 @@ const marketDefinitions = {
   passengerNevRetail: "Domestic end-customer retail sales of passenger NEVs reported by CPCA.",
   passengerNevWholesale: "Passenger NEV wholesale sales from automakers; includes vehicles that may be exported.",
   nevSalesCaam: "CAAM NEV sales including domestic sales and exports; covers BEV, PHEV and fuel-cell vehicles.",
+  passengerNevExportsCpca: "China-made passenger NEV exports reported by CPCA; narrower than CAAM's all-vehicle NEV export total.",
+  exportDestinations: "Destination-country ranking for China-made new-energy passenger vehicle exports; period may lag monthly market data.",
   companyReported: "Company-reported deliveries or sales. Geography and product scope differ by brand and must not be summed as China domestic retail.",
   dealerInventoryCoefficient: "Ending dealer inventory divided by sales for the month; above 1.5 is CADA's warning level."
 };
@@ -195,8 +202,101 @@ function parseRanking(html, titlePattern, scope, status = "final") {
     rows.push({ rank: Number(cells[0]), brand: cells[1] === "HIMA" ? "Huawei HIMA" : cells[1], value, sharePct });
   }
   if (!rows.length) return null;
-  const period = matched.context.match(/(?:Jan-[A-Za-z]{3}|[A-Za-z]{3})\s+20\d{2}/i)?.[0] || "latest";
+  const period = normalizedPeriodFromText(matched.context) || "latest";
   return { period, scope, status, rows };
+}
+
+function monthNumber(value) {
+  const key = String(value || "").trim().toLowerCase().slice(0, 3);
+  return {
+    jan: "01", feb: "02", mar: "03", apr: "04", may: "05", jun: "06",
+    jul: "07", aug: "08", sep: "09", oct: "10", nov: "11", dec: "12"
+  }[key] || null;
+}
+
+function normalizedPeriodFromText(value) {
+  const text = cleanText(value);
+  const ytd = text.match(/Jan(?:uary)?\s*[-–]\s*([A-Za-z]+)\s+(20\d{2})/i);
+  if (ytd) {
+    const endMonth = monthNumber(ytd[1]);
+    return endMonth ? `${ytd[2]}-01/${ytd[2]}-${endMonth}` : null;
+  }
+  const single = text.match(/\b([A-Za-z]{3,9})\s+(20\d{2})\b/i);
+  if (!single) return null;
+  const month = monthNumber(single[1]);
+  return month ? `${single[2]}-${month}` : null;
+}
+
+function exportRegion(country) {
+  return {
+    Brazil: "Latin America",
+    Belgium: "Europe",
+    UK: "Europe",
+    Australia: "Asia-Pacific",
+    Germany: "Europe",
+    Italy: "Europe",
+    UAE: "Middle East",
+    "South Korea": "Asia-Pacific",
+    Spain: "Europe",
+    Thailand: "Southeast Asia"
+  }[country] || "Other";
+}
+
+function parseExportDestinations(html) {
+  const text = cleanText(html);
+  const start = text.search(/Top 10 destination countries by China's new energy passenger vehicle exports/i);
+  const relevant = start >= 0 ? text.slice(start, start + 5000) : text;
+  const rows = [];
+  const pattern = /([A-Z][A-Za-z ]{1,30}):\s*([\d,]+)\s+NEV passenger vehicles\s+\(([+-]?\d+(?:\.\d+)?)% YoY\)/g;
+  for (const match of relevant.matchAll(pattern)) {
+    rows.push({
+      rank: rows.length + 1,
+      country: match[1].trim(),
+      region: exportRegion(match[1].trim()),
+      value: Number(match[2].replace(/,/g, "")),
+      yoyPct: Number(match[3])
+    });
+    if (rows.length === 10) break;
+  }
+  if (!rows.length) return null;
+  return {
+    period: normalizedPeriodFromText(text) || "latest",
+    scope: "China new-energy passenger vehicle exports by destination",
+    status: "final",
+    rows
+  };
+}
+
+function parseExportDestinationTotal(html) {
+  const text = cleanText(html);
+  const match = text.match(/cumulative new energy PV exports reached\s+([\d.]+)\s+million units/i);
+  if (!match) return null;
+  const between = text.match(/(?:between|from) January and ([A-Za-z]+)[^\d]{0,80}(20\d{2})/i);
+  const firstFour = text.match(/first four months of (20\d{2})/i);
+  const endMonth = between ? monthNumber(between[1]) : firstFour ? "04" : null;
+  const year = between?.[2] || firstFour?.[1] || null;
+  return {
+    period: year && endMonth ? `${year}-01/${year}-${endMonth}` : null,
+    value: Math.round(Number(match[1]) * 1_000_000)
+  };
+}
+
+function parsePassengerNevExportSummary(html) {
+  const text = cleanText(html);
+  const match = text.match(/NEV exports totaled\s+([\d,]+) units in ([A-Za-z]+),\s+a ([\d.]+)% [^.]*?from a year earlier and a ([\d.]+)% increase from ([A-Za-z]+)/i);
+  const publishedAt = articlePublishedAt(html);
+  if (!match || !publishedAt) return null;
+  const month = monthNumber(match[2]);
+  if (!month) return null;
+  const publishedYear = Number(publishedAt.slice(0, 4));
+  const publishedMonth = Number(publishedAt.slice(5, 7));
+  const year = Number(month) > publishedMonth ? publishedYear - 1 : publishedYear;
+  return {
+    period: `${year}-${month}`,
+    value: Number(match[1].replace(/,/g, "")),
+    yoyPct: Number(match[3]),
+    momPct: Number(match[4])
+  };
 }
 
 function parseCadaSeries(html) {
@@ -224,6 +324,15 @@ function parseNarrativeMonthlyPoint(html, valuePattern) {
   const publishedMonth = Number(publishedAt.slice(5, 7));
   const reportedYear = Number(month) > publishedMonth ? publishedYear - 1 : publishedYear;
   return { [`${reportedYear}-${month}`]: Number(match[1].replace(/,/g, "")) };
+}
+
+function parseWholesaleYtd(html) {
+  const match = cleanText(html).match(/Cumulative NEV wholesale volume[^.]*?([\d,]+) units,\s*(up|down)\s*([\d.]+)% year-on-year/i);
+  if (!match) return null;
+  return {
+    value: Number(match[1].replace(/,/g, "")),
+    yoyPct: Number(match[3]) * (match[2].toLowerCase() === "down" ? -1 : 1)
+  };
 }
 
 function parseBrandTable(html, brand) {
@@ -271,7 +380,7 @@ function parseBrandNews(html, brand) {
     if (!item.title || seen.has(item.url)) continue;
     seen.add(item.url);
     news.push(item);
-    if (news.length >= 10) return news;
+    if (news.length >= 20) return news;
   }
 
   for (const match of html.matchAll(fallbackRe)) {
@@ -285,11 +394,25 @@ function parseBrandNews(html, brand) {
     if (!item.title || seen.has(item.url)) continue;
     seen.add(item.url);
     news.push(item);
-    if (news.length >= 10) return news;
+    if (news.length >= 20) return news;
   }
 
   if (!news.length) console.warn(`No latest news found for ${brand}`);
   return news;
+}
+
+function latestNewsSnapshot(...groups) {
+  const byUrl = new Map();
+  const order = new Map();
+  groups.flat().forEach((item, index) => {
+    if (!item?.url || byUrl.has(item.url)) return;
+    byUrl.set(item.url, item);
+    order.set(item.url, index);
+  });
+  return [...byUrl.values()].sort((a, b) => {
+    const byDate = String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
+    return byDate || order.get(a.url) - order.get(b.url);
+  }).slice(0, 20);
 }
 
 async function discoverMarketSources() {
@@ -306,12 +429,19 @@ async function discoverMarketSources() {
       /china.*nev retail sales|nev retail sales.*china/i,
       /preliminary|forecast|first week|weekly|seen at|jan \d+-/i
     ) || discovered.retail;
-    discovered.wholesale = findArticle(
+    discovered.preliminary = findArticle(
       industryLinks,
       /cpca preliminary data.*nev retail|nev retail.*cpca preliminary/i
-    ) || findArticle(industryLinks, /nev wholesale/i, /week|forecast/i) || discovered.wholesale;
+    ) || discovered.preliminary;
+    discovered.wholesale = findArticle(
+      industryLinks,
+      /cpca.*nev wholesale|nev wholesale.*cpca|nev-wholesale/i,
+      /week|weekly/i
+    ) || discovered.wholesale;
     discovered.caam = findArticle(industryLinks, /nev-sales-caam|caam.*nev sales/i) || discovered.caam;
     discovered.brandRetail = findArticle(industryLinks, /automakers.*share.*china.*nev market/i) || discovered.brandRetail;
+    discovered.exportBrands = findArticle(industryLinks, /automakers.*share.*china.*nev exports|nev exports.*automakers/i) || discovered.exportBrands;
+    discovered.exportDestinations = findArticle(industryLinks, /nev exports.*destination countries|destination countries.*nev exports/i) || discovered.exportDestinations;
     discovered.battery = findArticle(batteryLinks, /battery installations/i) || discovered.battery;
   } catch (error) {
     console.warn(`Market source discovery fell back to known URLs: ${error.message}`);
@@ -343,8 +473,11 @@ async function scrapeMarketData() {
   }
   if (pages.wholesale) {
     records.passengerNevWholesale = parseYearGrid(pages.wholesale, /China NEV Monthly Wholesale Sales \(CPCA\)/i);
+  }
+  if (pages.preliminary) {
+    records.passengerNevWholesale ||= {};
     Object.assign(records.passengerNevWholesale, parseNarrativeMonthlyPoint(
-      pages.wholesale,
+      pages.preliminary,
       /Wholesale sales of passenger NEVs in China were ([\d,]+) units in ([A-Za-z]+)/i
     ));
   }
@@ -391,13 +524,61 @@ async function scrapeMarketData() {
       "China passenger NEV retail sales"
     )
     : null;
+  const exportSummary = pages.retail ? parsePassengerNevExportSummary(pages.retail) : null;
+  const latestBrandExports = pages.exportBrands
+    ? parseRanking(
+      pages.exportBrands,
+      /Top automakers in China with highest NEV exports in (?!Jan-)[A-Za-z]{3} 20\d{2}/i,
+      "China passenger NEV exports"
+    )
+    : null;
+  if (latestBrandExports && exportSummary && latestBrandExports.period === exportSummary.period) {
+    latestBrandExports.total = exportSummary.value;
+    latestBrandExports.totalYoyPct = exportSummary.yoyPct;
+    latestBrandExports.totalMomPct = exportSummary.momPct;
+  }
+  const ytdBrandExports = pages.exportBrands
+    ? parseRanking(
+      pages.exportBrands,
+      /Top automakers in China with highest NEV exports in Jan-[A-Za-z]{3} 20\d{2}/i,
+      "China passenger NEV exports"
+    )
+    : null;
+  const latestExportDestinations = pages.exportDestinations
+    ? parseExportDestinations(pages.exportDestinations)
+    : null;
+  const exportDestinationTotal = pages.exportDestinationTotal
+    ? parseExportDestinationTotal(pages.exportDestinationTotal)
+    : null;
+  if (latestExportDestinations) {
+    latestExportDestinations.total = exportDestinationTotal?.period === latestExportDestinations.period
+      ? exportDestinationTotal.value
+      : null;
+    latestExportDestinations.top10Total = latestExportDestinations.rows.reduce((sum, row) => sum + row.value, 0);
+    latestExportDestinations.coveragePct = exportDestinationTotal
+      ? latestExportDestinations.top10Total / exportDestinationTotal * 100
+      : null;
+  }
 
   const sourceMeta = (key, publisher, status) => pages[key] ? {
     publisher,
     url: urls[key],
-    publishedAt: articlePublishedAt(pages[key]),
+    publishedAt: articlePublishedAt(pages[key], urls[key]),
     status
   } : null;
+  const wholesaleYtd = pages.preliminary ? parseWholesaleYtd(pages.preliminary) : null;
+  const wholesalePeriod = Object.keys(records.passengerNevWholesale || {}).sort().at(-1) || null;
+  const wholesaleSource = pages.preliminary ? {
+    publisher: "CPCA via CnEVPost",
+    url: urls.preliminary,
+    publishedAt: articlePublishedAt(pages.preliminary),
+    status: "preliminary",
+    tableUrl: pages.wholesale ? urls.wholesale : null,
+    tablePublishedAt: pages.wholesale ? articlePublishedAt(pages.wholesale) : null,
+    reportedYtd: wholesaleYtd?.value ?? null,
+    reportedYtdYoyPct: wholesaleYtd?.yoyPct ?? null,
+    reportedYtdPeriod: wholesaleYtd ? wholesalePeriod : null
+  } : sourceMeta("wholesale", "CPCA via CnEVPost", "estimate");
 
   return {
     market: {
@@ -407,11 +588,17 @@ async function scrapeMarketData() {
       series,
       latestBrandRetail,
       ytdBrandRetail,
+      latestBrandExports,
+      ytdBrandExports,
+      latestExportDestinations,
       sources: Object.fromEntries(Object.entries({
         cpcaRetail: sourceMeta("retail", "CPCA via CnEVPost", "final"),
-        cpcaWholesale: sourceMeta("wholesale", "CPCA via CnEVPost", "preliminary"),
+        cpcaWholesale: wholesaleSource,
         caam: sourceMeta("caam", "CAAM via CnEVPost", "final"),
         brandRetail: sourceMeta("brandRetail", "CPCA via CnEVPost", "final"),
+        exportBrands: sourceMeta("exportBrands", "CPCA via CnEVPost", "final"),
+        exportDestinations: sourceMeta("exportDestinations", urls.exportDestinations.includes("cnevpost.com") ? "CnEVPost" : "Gasgoo Automotive Research Institute", "final"),
+        exportDestinationTotal: sourceMeta("exportDestinationTotal", "CPCA via Gasgoo", "final"),
         battery: sourceMeta("battery", "CABIA via CnEVPost", "final"),
         dealerInventory: sourceMeta("dealerInventory", "China Automobile Dealers Association", "final")
       }).filter(([, value]) => value)),
@@ -451,19 +638,66 @@ function recordsFromSeries(months = [], values = [], options = {}) {
   return records;
 }
 
+function mergeNewsSnapshots(existingData, freshData) {
+  const snapshots = { ...(existingData?.news || {}) };
+  for (const [brand, items] of Object.entries(freshData?.news || {})) {
+    if (items.length) snapshots[brand] = latestNewsSnapshot(items);
+  }
+  return snapshots;
+}
+
+function mergeSnapshotHistory(existingHistory = {}, ...snapshots) {
+  const merged = { ...existingHistory };
+  for (const snapshot of snapshots) {
+    if (!snapshot?.period) continue;
+    merged[snapshot.period] = { ...(merged[snapshot.period] || {}), ...snapshot };
+  }
+  return Object.fromEntries(Object.entries(merged).sort(([a], [b]) => a.localeCompare(b)));
+}
+
+function sourceSnapshotKey(source = {}) {
+  return [
+    source.publishedAt || "",
+    source.url || "",
+    source.status || ""
+  ].join("|");
+}
+
+function mergeSourceHistory(existingHistory = {}, existingSources = {}, freshSources = {}) {
+  const sourceNames = [...new Set([
+    ...Object.keys(existingHistory || {}),
+    ...Object.keys(existingSources || {}),
+    ...Object.keys(freshSources || {})
+  ])];
+  const history = {};
+  for (const name of sourceNames) {
+    const snapshots = new Map();
+    const previous = Array.isArray(existingHistory?.[name]) ? existingHistory[name] : [];
+    for (const source of [...previous, existingSources?.[name], freshSources?.[name]]) {
+      if (!source?.url) continue;
+      const key = sourceSnapshotKey(source);
+      snapshots.set(key, { ...(snapshots.get(key) || {}), ...source });
+    }
+    history[name] = [...snapshots.values()].sort((a, b) => {
+      const byDate = String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
+      return byDate || String(b.tablePublishedAt || "").localeCompare(String(a.tablePublishedAt || ""));
+    });
+  }
+  return history;
+}
+
 function mergeMarketData(existingMarket, freshMarket) {
-  if (!freshMarket?.months?.length) return existingMarket || null;
-  if (!existingMarket?.months?.length) return freshMarket;
+  if (!freshMarket?.months?.length && !existingMarket?.months?.length) return freshMarket || existingMarket || null;
 
   const seriesNames = [...new Set([
-    ...Object.keys(existingMarket.series || {}),
-    ...Object.keys(freshMarket.series || {})
+    ...Object.keys(existingMarket?.series || {}),
+    ...Object.keys(freshMarket?.series || {})
   ])];
   const mergedRecords = {};
   for (const name of seriesNames) {
     mergedRecords[name] = {
-      ...recordsFromSeries(existingMarket.months, existingMarket.series?.[name] || []),
-      ...recordsFromSeries(freshMarket.months, freshMarket.series?.[name] || [], { skipNull: true })
+      ...recordsFromSeries(existingMarket?.months, existingMarket?.series?.[name] || []),
+      ...recordsFromSeries(freshMarket?.months, freshMarket?.series?.[name] || [], { skipNull: true })
     };
   }
 
@@ -477,22 +711,81 @@ function mergeMarketData(existingMarket, freshMarket) {
     ));
   }
 
+  const brandRetailHistory = {
+    latest: mergeSnapshotHistory(
+      existingMarket?.brandRetailHistory?.latest,
+      existingMarket?.latestBrandRetail,
+      freshMarket?.latestBrandRetail
+    ),
+    ytd: mergeSnapshotHistory(
+      existingMarket?.brandRetailHistory?.ytd,
+      existingMarket?.ytdBrandRetail,
+      freshMarket?.ytdBrandRetail
+    )
+  };
+  const latestBrandPeriod = Object.keys(brandRetailHistory.latest).sort().at(-1);
+  const latestYtdPeriod = Object.keys(brandRetailHistory.ytd).sort().at(-1);
+  const exportHistory = {
+    brandLatest: mergeSnapshotHistory(
+      existingMarket?.exportHistory?.brandLatest,
+      existingMarket?.latestBrandExports,
+      freshMarket?.latestBrandExports
+    ),
+    brandYtd: mergeSnapshotHistory(
+      existingMarket?.exportHistory?.brandYtd,
+      existingMarket?.ytdBrandExports,
+      freshMarket?.ytdBrandExports
+    ),
+    destinations: mergeSnapshotHistory(
+      existingMarket?.exportHistory?.destinations,
+      existingMarket?.latestExportDestinations,
+      freshMarket?.latestExportDestinations
+    )
+  };
+  const latestExportBrandPeriod = Object.keys(exportHistory.brandLatest).sort().at(-1);
+  const latestExportYtdPeriod = Object.keys(exportHistory.brandYtd).sort().at(-1);
+  const latestDestinationPeriod = Object.keys(exportHistory.destinations).sort().at(-1);
+  const sourceHistory = mergeSourceHistory(
+    existingMarket?.sourceHistory,
+    existingMarket?.sources,
+    freshMarket?.sources
+  );
+  const currentSources = Object.fromEntries(
+    Object.entries(sourceHistory).flatMap(([name, snapshots]) => snapshots[0] ? [[name, snapshots[0]]] : [])
+  );
+
   return {
-    ...existingMarket,
-    ...freshMarket,
+    ...(existingMarket || {}),
+    ...(freshMarket || {}),
     months,
     series,
-    latestBrandRetail: freshMarket.latestBrandRetail || existingMarket.latestBrandRetail,
-    ytdBrandRetail: freshMarket.ytdBrandRetail || existingMarket.ytdBrandRetail,
-    sources: { ...(existingMarket.sources || {}), ...(freshMarket.sources || {}) },
-    definitions: { ...(existingMarket.definitions || {}), ...(freshMarket.definitions || {}) },
-    firstFetchedAt: existingMarket.firstFetchedAt || existingMarket.fetchedAt || freshMarket.fetchedAt,
-    historyPolicy: "append-and-merge: existing market months are retained; fresh source values overwrite matching metric-month cells."
+    latestBrandRetail: latestBrandPeriod ? brandRetailHistory.latest[latestBrandPeriod] : null,
+    ytdBrandRetail: latestYtdPeriod ? brandRetailHistory.ytd[latestYtdPeriod] : null,
+    brandRetailHistory,
+    latestBrandExports: latestExportBrandPeriod ? exportHistory.brandLatest[latestExportBrandPeriod] : null,
+    ytdBrandExports: latestExportYtdPeriod ? exportHistory.brandYtd[latestExportYtdPeriod] : null,
+    latestExportDestinations: latestDestinationPeriod ? exportHistory.destinations[latestDestinationPeriod] : null,
+    exportHistory,
+    sources: currentSources,
+    sourceHistory,
+    definitions: { ...(existingMarket?.definitions || {}), ...(freshMarket?.definitions || {}) },
+    firstFetchedAt: existingMarket?.firstFetchedAt || existingMarket?.fetchedAt || freshMarket?.fetchedAt,
+    historyPolicy: "append-and-merge: monthly metrics, ranking periods, and source snapshots are retained; fresh values overwrite matching identities."
   };
 }
 
 function mergeWithExisting(freshData, existingData) {
-  if (!existingData?.months?.length || !existingData?.brands) return freshData;
+  const newsSnapshots = mergeNewsSnapshots(existingData, freshData);
+  if (!existingData?.months?.length || !existingData?.brands) {
+    return {
+      ...freshData,
+      schemaVersion: 3,
+      market: mergeMarketData(existingData?.market, freshData.market),
+      news: newsSnapshots,
+      firstFetchedAt: existingData?.firstFetchedAt || existingData?.fetchedAt || freshData.fetchedAt,
+      historyPolicy: "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot."
+    };
+  }
 
   const brandNames = [...new Set([
     ...Object.keys(existingData.brands || {}),
@@ -518,13 +811,14 @@ function mergeWithExisting(freshData, existingData) {
 
   return {
     ...freshData,
+    schemaVersion: 3,
     months,
     brands,
     market: mergeMarketData(existingData.market, freshData.market),
-    news: { ...(existingData.news || {}), ...(freshData.news || {}) },
+    news: newsSnapshots,
     newsFetchedAt: freshData.newsFetchedAt || existingData.newsFetchedAt,
     firstFetchedAt: existingData.firstFetchedAt || existingData.fetchedAt || freshData.fetchedAt,
-    historyPolicy: "append-and-merge: existing months are retained; fresh CnEVPost values overwrite matching brand-month cells."
+    historyPolicy: "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot."
   };
 }
 
@@ -571,11 +865,56 @@ function summarizeDataChanges(existingData, nextData) {
     );
   }
   for (const [brand, stories] of Object.entries(nextData.news || {})) {
-    const previousUrls = new Set((existingData.news?.[brand] || []).map(item => item.url));
+    const previousStories = existingData.news?.[brand] || [];
+    const previousUrls = new Set(previousStories.map(item => item.url));
     const added = stories.filter(item => item.url && !previousUrls.has(item.url));
     if (added.length) items.push(`${brand} news: ${added.length} new article${added.length === 1 ? "" : "s"}`);
   }
-  return items.slice(0, 40);
+
+  for (const [historyRoot, historyKey, currentKey, label] of [
+    ["brandRetailHistory", "latest", "latestBrandRetail", "Monthly brand retail ranking"],
+    ["brandRetailHistory", "ytd", "ytdBrandRetail", "YTD brand retail ranking"],
+    ["exportHistory", "brandLatest", "latestBrandExports", "Monthly brand export ranking"],
+    ["exportHistory", "brandYtd", "ytdBrandExports", "YTD brand export ranking"],
+    ["exportHistory", "destinations", "latestExportDestinations", "Export destination ranking"]
+  ]) {
+    const previousPeriods = new Set(Object.keys(existingData.market?.[historyRoot]?.[historyKey] || {}));
+    const previousCurrent = existingData.market?.[currentKey];
+    if (previousCurrent?.period) previousPeriods.add(previousCurrent.period);
+    for (const period of Object.keys(nextData.market?.[historyRoot]?.[historyKey] || {})) {
+      if (!previousPeriods.has(period)) items.push(`${label}: added ${period}`);
+    }
+  }
+
+  for (const [name, snapshots] of Object.entries(nextData.market?.sourceHistory || {})) {
+    const previousSnapshots = [
+      ...(existingData.market?.sourceHistory?.[name] || []),
+      existingData.market?.sources?.[name]
+    ].filter(Boolean);
+    const previousKeys = new Set(previousSnapshots.map(sourceSnapshotKey));
+    for (const snapshot of snapshots) {
+      if (!previousKeys.has(sourceSnapshotKey(snapshot))) {
+        items.push(`Market source ${name}: added ${snapshot.publishedAt || snapshot.url}`);
+      }
+    }
+  }
+  return items;
+}
+
+function mergeChangeHistory(existingData, changedAt, changes = []) {
+  const history = Array.isArray(existingData?.changeHistory)
+    ? [...existingData.changeHistory]
+    : [];
+  if (!history.length && existingData?.latestChanges?.length) {
+    history.push({
+      changedAt: existingData.lastDataChangeAt || existingData.fetchedAt,
+      changes: [...existingData.latestChanges]
+    });
+  }
+  if (changes.length && !history.some(event => event.changedAt === changedAt)) {
+    history.push({ changedAt, changes: [...changes] });
+  }
+  return history;
 }
 
 async function readExistingData(filePath) {
@@ -592,7 +931,13 @@ async function scrapeData() {
     Promise.all(Object.entries(sources).map(async ([brand, url]) => {
       try {
         const html = await fetchText(url);
-        return [brand, parseBrandTable(html, brand), parseBrandNews(html, brand), null];
+        const page2Url = new URL("page/2/", url).toString();
+        const page2Html = await fetchText(page2Url).catch(() => "");
+        const brandNews = latestNewsSnapshot(
+          parseBrandNews(html, brand),
+          page2Html ? parseBrandNews(page2Html, brand) : []
+        );
+        return [brand, parseBrandTable(html, brand), brandNews, null];
       } catch (error) {
         return [brand, null, [], `${brand}: ${error.message}`];
       }
@@ -623,6 +968,7 @@ async function scrapeData() {
     brands,
     market: marketResult.market,
     news,
+    newsPolicy: { mode: "replace-snapshot", limitPerBrand: 20, sourcePages: 2, archivesOlderItems: false },
     sources,
     errors,
     assumptions: [
@@ -630,49 +976,69 @@ async function scrapeData() {
       "Missing brand-month cells are kept as null and are not estimated.",
       "BYD uses CnEVPost NEV sales; Tesla China uses CnEVPost monthly sales including exports.",
       "Historical months already saved in china-ev-data.json are retained when CnEVPost source pages stop listing them.",
-      "Latest news is scraped from each CnEVPost brand page and limited to 10 items per brand.",
+      "News is a replaceable snapshot of up to 20 latest items per brand from CnEVPost pages 1-2; older news is not archived.",
       "Company-reported brand series and China domestic retail market series are kept separate and are never summed together.",
       "When a company discloses only a threshold such as 'more than 30,000', the exact monthly value is kept null rather than estimated."
     ]
   };
 }
 
-const dataPath = path.join("data", "china-ev-data.json");
-const existingData = await readExistingData(dataPath);
-let data;
-try {
-  data = mergeWithExisting(await scrapeData(), existingData);
-} catch (error) {
-  if (!existingData) throw error;
-  data = {
-    ...existingData,
-    lastAttemptAt: new Date().toISOString(),
-    errors: [...(existingData.errors || []), `Update skipped: ${error.message}`]
-  };
-  console.warn(`Keeping existing data because update failed: ${error.message}`);
-}
-const checkedAt = new Date().toISOString();
-const substantiveChanges = summarizeDataChanges(existingData, data);
-data.lastCheckedAt = checkedAt;
-if (substantiveChanges.length) {
-  data.lastDataChangeAt = checkedAt;
-  data.latestChanges = substantiveChanges;
-} else {
-  data.lastDataChangeAt = existingData?.lastDataChangeAt || data.fetchedAt;
-  data.latestChanges = existingData?.latestChanges || [];
-}
-await fs.mkdir("data", { recursive: true });
-const jsonText = `${JSON.stringify(data, null, 2)}\n`;
-await Promise.all([
-  fs.writeFile(dataPath, jsonText, "utf8"),
-  fs.writeFile(path.join("data", "china-ev-data.js"), `window.CHINA_EV_DATA = ${JSON.stringify(data)};\n`, "utf8")
-]);
-if (process.env.GITHUB_OUTPUT) {
-  await fs.appendFile(process.env.GITHUB_OUTPUT, `data_changed=${substantiveChanges.length ? "true" : "false"}\n`, "utf8");
+async function main() {
+  const dataPath = path.join("data", "china-ev-data.json");
+  const existingData = await readExistingData(dataPath);
+  let data;
+  try {
+    data = mergeWithExisting(await scrapeData(), existingData);
+  } catch (error) {
+    if (!existingData) throw error;
+    data = {
+      ...existingData,
+      lastAttemptAt: new Date().toISOString(),
+      errors: [...(existingData.errors || []), `Update skipped: ${error.message}`]
+    };
+    console.warn(`Keeping existing data because update failed: ${error.message}`);
+  }
+  const checkedAt = new Date().toISOString();
+  const substantiveChanges = summarizeDataChanges(existingData, data);
+  const changeHistory = mergeChangeHistory(existingData, checkedAt, substantiveChanges);
+  data.lastCheckedAt = checkedAt;
+  if (substantiveChanges.length) {
+    data.lastDataChangeAt = checkedAt;
+    data.latestChanges = substantiveChanges.slice(0, 40);
+    changeHistory.push({ changedAt: checkedAt, changes: substantiveChanges });
+  } else {
+    data.lastDataChangeAt = existingData?.lastDataChangeAt || data.fetchedAt;
+    data.latestChanges = existingData?.latestChanges || [];
+  }
+  data.changeHistory = changeHistory;
+  await fs.mkdir("data", { recursive: true });
+  const jsonText = `${JSON.stringify(data, null, 2)}\n`;
+  await Promise.all([
+    fs.writeFile(dataPath, jsonText, "utf8"),
+    fs.writeFile(path.join("data", "china-ev-data.js"), `window.CHINA_EV_DATA = ${JSON.stringify(data)};\n`, "utf8")
+  ]);
+  if (process.env.GITHUB_OUTPUT) {
+    await fs.appendFile(process.env.GITHUB_OUTPUT, `data_changed=${substantiveChanges.length ? "true" : "false"}\n`, "utf8");
+  }
+
+  const total = Object.values(data.brands).flat().reduce((sum, value) => sum + (value ?? 0), 0);
+  console.log(`Updated ${data.months.length} months, ${Object.keys(data.brands).length} brands, total ${total.toLocaleString("en-US")} vehicles.`);
+  if (data.errors.length) {
+    console.warn(data.errors.join("\n"));
+  }
 }
 
-const total = Object.values(data.brands).flat().reduce((sum, value) => sum + (value ?? 0), 0);
-console.log(`Updated ${data.months.length} months, ${Object.keys(data.brands).length} brands, total ${total.toLocaleString("en-US")} vehicles.`);
-if (data.errors.length) {
-  console.warn(data.errors.join("\n"));
-}
+const isMain = process.argv[1]
+  && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+if (isMain) await main();
+
+export {
+  mergeChangeHistory,
+  mergeWithExisting,
+  normalizedPeriodFromText,
+  parseExportDestinationTotal,
+  parseExportDestinations,
+  parsePassengerNevExportSummary,
+  parseRanking,
+  summarizeDataChanges
+};
