@@ -3,12 +3,13 @@ name: Update China EV data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "12 * * * *"
   push:
     branches: ["main"]
 
 permissions:
   contents: write
+  issues: write
   pages: write
   id-token: write
 
@@ -28,13 +29,50 @@ jobs:
         with:
           node-version: "24"
       - name: Update data from CnEVPost
+        id: update
         run: node scripts/update-data.mjs
       - name: Commit data changes
-        continue-on-error: true
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update China EV delivery data"
-          file_pattern: data/china-ev-data.json
+          file_pattern: data/china-ev-data.json data/china-ev-data.js
+      - name: Notify substantive data update
+        if: steps.update.outputs.data_changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('data/china-ev-data.json', 'utf8'));
+            const title = 'China EV dashboard data updates';
+            const body = [
+              `Data changed at ${data.lastDataChangeAt}.`,
+              '',
+              ...(data.latestChanges || []).map(item => `- ${item}`),
+              '',
+              `[Open dashboard](https://homeai-lab.github.io/china-ev-dashboard/?updated=${encodeURIComponent(data.lastDataChangeAt || '')})`
+            ].join('\n');
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            const existing = issues.find(issue => issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body
+              });
+            }
       - uses: actions/configure-pages@v5
         with:
           enablement: true
@@ -43,5 +81,3 @@ jobs:
           path: "."
       - id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          timeout: 1800000
