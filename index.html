@@ -334,6 +334,7 @@
     }
     .news-item a { color: #17212c; font-weight: 600; line-height: 1.4; }
     .news-meta { display: flex; flex-wrap: wrap; gap: 7px; color: var(--muted); font-size: 11px; }
+    .news-date { color: #455468; font-weight: 500; }
     .news-summary { color: var(--muted); font-size: 12px; }
     .empty {
       padding: 18px;
@@ -815,6 +816,12 @@
     const $ = id => document.getElementById(id);
     const fmt = new Intl.NumberFormat("en-US");
     const compactFmt = new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 });
+    const newsDateFmt = new Intl.DateTimeFormat("th-TH-u-ca-gregory", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+      timeZone: "UTC"
+    });
     const brandColors = {
       "BYD": "#d75f62", "Nio": "#5b7fb2", "Xpeng": "#d07a43", "Li Auto": "#4e9877",
       "Tesla China": "#b64f5b", "Zeekr": "#7562a9", "Xiaomi EV": "#d08a20",
@@ -891,6 +898,26 @@
 
     function monthLabel(month) {
       return month.slice(5, 7) + "/" + month.slice(2, 4);
+    }
+
+    function articleDateFromUrl(url) {
+      const match = String(url || "").match(/\/(20\d{2})\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])(?:\/|$)/);
+      return match ? match[1] + "-" + match[2] + "-" + match[3] : null;
+    }
+
+    function newsPublishedAt(item) {
+      const value = item && (item.publishedAt || articleDateFromUrl(item.url));
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(value || "")) return null;
+      const parts = value.split("-").map(Number);
+      const date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+      if (date.getUTCFullYear() !== parts[0] || date.getUTCMonth() !== parts[1] - 1 || date.getUTCDate() !== parts[2]) return null;
+      return value;
+    }
+
+    function newsDateLabel(value) {
+      if (!value) return "ไม่พบวันที่ประกาศ";
+      const parts = value.split("-").map(Number);
+      return "ประกาศ " + newsDateFmt.format(new Date(Date.UTC(parts[0], parts[1] - 1, parts[2])));
     }
 
     function lastValueIndex(values) {
@@ -1412,7 +1439,11 @@
         ? activeNewsBrand + ": " + items.length + " ข่าวล่าสุดจาก CnEVPost"
         : activeNewsBrand + ": ยังไม่มีข่าวในไฟล์ข้อมูลรอบนี้";
       $("brandNews").innerHTML = items.length ? items.slice(0, 10).map((item, index) => {
-        return '<article class="news-item"><div class="news-meta"><span class="badge">' + classifyNews(item.title) + "</span><span>" + escapeHtml(item.publishedAt || "CnEVPost") + '</span></div><a href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener">' + (index + 1) + ". " + escapeHtml(item.title) + "</a>" + (item.summary ? '<div class="news-summary">' + escapeHtml(item.summary) + "</div>" : "") + "</article>";
+        const publishedAt = newsPublishedAt(item);
+        const dateMeta = publishedAt
+          ? '<time class="news-date" datetime="' + escapeHtml(publishedAt) + '">' + escapeHtml(newsDateLabel(publishedAt)) + "</time>"
+          : '<span class="news-date">' + escapeHtml(newsDateLabel(null)) + "</span>";
+        return '<article class="news-item"><div class="news-meta"><span class="badge">' + classifyNews(item.title) + '</span><span>CnEVPost</span><span aria-hidden="true">|</span>' + dateMeta + '</div><a href="' + escapeHtml(item.url) + '" target="_blank" rel="noopener">' + (index + 1) + ". " + escapeHtml(item.title) + "</a>" + (item.summary ? '<div class="news-summary">' + escapeHtml(item.summary) + "</div>" : "") + "</article>";
       }).join("") : '<div class="empty">ยังไม่มีข่าวสำหรับแบรนด์นี้ใน data รอบปัจจุบัน ระบบอัปเดตจะเก็บสูงสุด 10 ข่าวจาก CnEVPost brand page เมื่อ workflow ดึง source สำเร็จ</div>';
     }
 

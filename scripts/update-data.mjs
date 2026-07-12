@@ -94,11 +94,16 @@ function decimalFromCell(value) {
   return match ? Number(match[0]) : null;
 }
 
-function articlePublishedAt(html) {
+function articleDateFromUrl(url) {
+  const match = String(url || "").match(/\/(20\d{2})\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])(?:\/|$)/);
+  return match ? `${match[1]}-${match[2]}-${match[3]}` : null;
+}
+
+function articlePublishedAt(html, url = "") {
   const value = html.match(/<meta[^>]+(?:property|name)=["']article:published_time["'][^>]+content=["']([^"']+)/i)?.[1]
     || html.match(/<time[^>]+datetime=["']([^"']+)/i)?.[1]
     || null;
-  return value ? value.slice(0, 10) : null;
+  return value ? value.slice(0, 10) : articleDateFromUrl(url);
 }
 
 function extractArticleLinks(html) {
@@ -256,11 +261,12 @@ function parseBrandNews(html, brand) {
     const titleMatch = article.match(/<h[23][^>]*>\s*<a[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>\s*<\/h[23]>/i);
     if (!titleMatch) continue;
     const summary = cleanText(article.match(/<p[^>]*>([\s\S]*?)<\/p>/i)?.[1] || "");
+    const url = absoluteUrl(titleMatch[1]);
     const item = {
       title: cleanText(titleMatch[2]),
-      url: absoluteUrl(titleMatch[1]),
+      url,
       summary,
-      publishedAt: articlePublishedAt(article)
+      publishedAt: articlePublishedAt(article, url)
     };
     if (!item.title || seen.has(item.url)) continue;
     seen.add(item.url);
@@ -269,11 +275,12 @@ function parseBrandNews(html, brand) {
   }
 
   for (const match of html.matchAll(fallbackRe)) {
+    const url = absoluteUrl(match[1]);
     const item = {
       title: cleanText(match[2]),
-      url: absoluteUrl(match[1]),
+      url,
       summary: cleanText(match[3].match(/<p[^>]*>([\s\S]*?)<\/p>/i)?.[1] || ""),
-      publishedAt: articlePublishedAt(match[3])
+      publishedAt: articlePublishedAt(match[3], url)
     };
     if (!item.title || seen.has(item.url)) continue;
     seen.add(item.url);
