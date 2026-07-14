@@ -20,6 +20,7 @@ concurrency:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -33,6 +34,8 @@ jobs:
       - name: Update data from CnEVPost
         id: update
         run: node scripts/update-data.mjs
+      - name: Audit every dashboard dataset
+        run: node scripts/audit-data.mjs
       - name: Commit data changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
