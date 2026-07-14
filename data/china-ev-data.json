@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-14T12:51:28.480Z",
-  "newsFetchedAt": "2026-07-14T12:51:28.480Z",
+  "fetchedAt": "2026-07-14T17:39:44.350Z",
+  "newsFetchedAt": "2026-07-14T17:39:44.350Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-14T12:51:28.479Z",
+    "fetchedAt": "2026-07-14T17:39:44.350Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2438,6 +2438,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD tests high-performance appeal as Denza Z pre-orders pass 1,000",
+        "url": "https://cnevpost.com/2026/07/14/byd-denza-z-pre-orders-1000/",
+        "summary": "The Denza Z electric supercar began pre-sales in China on Monday, with a starting price of 680,000 yuan ($100,300).",
+        "publishedAt": "2026-07-14"
+      },
+      {
         "title": "BYD Thailand deliveries surpass 130,000 as local plant marks second anniversary",
         "url": "https://cnevpost.com/2026/07/14/byd-thailand-deliveries-130000-local-plant-2nd-anniversary/",
         "summary": "BYD launched the Sealion 5 DM-i in Thailand, expanding its plug-in hybrid lineup in Southeast Asia.",
@@ -2550,12 +2556,6 @@
         "url": "https://cnevpost.com/2026/07/02/byd-signs-poland-largest-battery-storage-project/",
         "summary": "BYD will supply Poland's 2.4 GWh Siedlce energy storage project.",
         "publishedAt": "2026-07-02"
-      },
-      {
-        "title": "BYD extends recovery in June as overseas sales hit new record",
-        "url": "https://cnevpost.com/2026/07/01/byd-jun-2026-sales/",
-        "summary": "BYD's June NEV wholesale sales rose 5.46% year-on-year to 403,472 units, marking a second straight month of annual growth.",
-        "publishedAt": "2026-07-01"
       }
     ],
     "Nio": [
@@ -3565,10 +3565,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-14T12:51:28.482Z",
-  "lastDataChangeAt": "2026-07-14T12:51:28.482Z",
+  "lastCheckedAt": "2026-07-14T17:39:44.353Z",
+  "lastDataChangeAt": "2026-07-14T17:39:44.353Z",
   "latestChanges": [
-    "Zeekr news: 1 new article"
+    "BYD news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3644,6 +3644,12 @@
       "changedAt": "2026-07-14T12:51:28.482Z",
       "changes": [
         "Zeekr news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-14T17:39:44.353Z",
+      "changes": [
+        "BYD news: 1 new article"
       ]
     }
   ]
