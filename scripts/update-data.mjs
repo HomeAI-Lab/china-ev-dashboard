@@ -216,7 +216,7 @@ function monthNumber(value) {
 
 function normalizedPeriodFromText(value) {
   const text = cleanText(value);
-  const ytd = text.match(/Jan(?:uary)?\s*[-–]\s*([A-Za-z]+)\s+(20\d{2})/i);
+  const ytd = text.match(/Jan(?:uary)?\s*[-\u2013\u2014]\s*([A-Za-z]+)\s+(20\d{2})/i);
   if (ytd) {
     const endMonth = monthNumber(ytd[1]);
     return endMonth ? `${ytd[2]}-01/${ytd[2]}-${endMonth}` : null;
@@ -260,7 +260,7 @@ function parseExportDestinations(html) {
   }
   if (!rows.length) return null;
   return {
-    period: normalizedPeriodFromText(text) || "latest",
+    period: normalizedPeriodFromText(relevant) || "latest",
     scope: "China new-energy passenger vehicle exports by destination",
     status: "final",
     rows
@@ -556,7 +556,7 @@ async function scrapeMarketData() {
       : null;
     latestExportDestinations.top10Total = latestExportDestinations.rows.reduce((sum, row) => sum + row.value, 0);
     latestExportDestinations.coveragePct = exportDestinationTotal
-      ? latestExportDestinations.top10Total / exportDestinationTotal * 100
+      ? latestExportDestinations.top10Total / exportDestinationTotal.value * 100
       : null;
   }
 
@@ -646,13 +646,42 @@ function mergeNewsSnapshots(existingData, freshData) {
   return snapshots;
 }
 
+function periodParts(period) {
+  return [...String(period || "").matchAll(/\b20\d{2}-(?:0[1-9]|1[0-2])\b/g)].map(match => match[0]);
+}
+
+function comparePeriodKeys(a, b) {
+  const aParts = periodParts(a);
+  const bParts = periodParts(b);
+  const byEnd = String(aParts.at(-1) || "").localeCompare(String(bParts.at(-1) || ""));
+  return byEnd || aParts.length - bParts.length || String(a).localeCompare(String(b));
+}
+
+function latestPeriodKey(history = {}) {
+  return Object.keys(history).sort(comparePeriodKeys).at(-1);
+}
+
 function mergeSnapshotHistory(existingHistory = {}, ...snapshots) {
   const merged = { ...existingHistory };
   for (const snapshot of snapshots) {
     if (!snapshot?.period) continue;
     merged[snapshot.period] = { ...(merged[snapshot.period] || {}), ...snapshot };
   }
-  return Object.fromEntries(Object.entries(merged).sort(([a], [b]) => a.localeCompare(b)));
+  return Object.fromEntries(Object.entries(merged).sort(([a], [b]) => comparePeriodKeys(a, b)));
+}
+
+function removeDuplicatePeriodAliases(history = {}) {
+  const cleaned = { ...history };
+  for (const [period, snapshot] of Object.entries(cleaned)) {
+    const parts = periodParts(period);
+    if (parts.length < 2) continue;
+    const endPeriod = parts.at(-1);
+    const endSnapshot = cleaned[endPeriod];
+    if (endSnapshot && JSON.stringify(endSnapshot.rows || []) === JSON.stringify(snapshot.rows || [])) {
+      delete cleaned[endPeriod];
+    }
+  }
+  return Object.fromEntries(Object.entries(cleaned).sort(([a], [b]) => comparePeriodKeys(a, b)));
 }
 
 function sourceSnapshotKey(source = {}) {
@@ -723,8 +752,8 @@ function mergeMarketData(existingMarket, freshMarket) {
       freshMarket?.ytdBrandRetail
     )
   };
-  const latestBrandPeriod = Object.keys(brandRetailHistory.latest).sort().at(-1);
-  const latestYtdPeriod = Object.keys(brandRetailHistory.ytd).sort().at(-1);
+  const latestBrandPeriod = latestPeriodKey(brandRetailHistory.latest);
+  const latestYtdPeriod = latestPeriodKey(brandRetailHistory.ytd);
   const exportHistory = {
     brandLatest: mergeSnapshotHistory(
       existingMarket?.exportHistory?.brandLatest,
@@ -736,15 +765,15 @@ function mergeMarketData(existingMarket, freshMarket) {
       existingMarket?.ytdBrandExports,
       freshMarket?.ytdBrandExports
     ),
-    destinations: mergeSnapshotHistory(
+    destinations: removeDuplicatePeriodAliases(mergeSnapshotHistory(
       existingMarket?.exportHistory?.destinations,
       existingMarket?.latestExportDestinations,
       freshMarket?.latestExportDestinations
-    )
+    ))
   };
-  const latestExportBrandPeriod = Object.keys(exportHistory.brandLatest).sort().at(-1);
-  const latestExportYtdPeriod = Object.keys(exportHistory.brandYtd).sort().at(-1);
-  const latestDestinationPeriod = Object.keys(exportHistory.destinations).sort().at(-1);
+  const latestExportBrandPeriod = latestPeriodKey(exportHistory.brandLatest);
+  const latestExportYtdPeriod = latestPeriodKey(exportHistory.brandYtd);
+  const latestDestinationPeriod = latestPeriodKey(exportHistory.destinations);
   const sourceHistory = mergeSourceHistory(
     existingMarket?.sourceHistory,
     existingMarket?.sources,
@@ -902,18 +931,23 @@ function summarizeDataChanges(existingData, nextData) {
 }
 
 function mergeChangeHistory(existingData, changedAt, changes = []) {
-  const history = Array.isArray(existingData?.changeHistory)
-    ? [...existingData.changeHistory]
-    : [];
+  const history = [];
+  const seen = new Set();
+  const append = event => {
+    if (!event?.changedAt || !Array.isArray(event.changes)) return;
+    const key = `${event.changedAt}|${JSON.stringify(event.changes)}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    history.push({ changedAt: event.changedAt, changes: [...event.changes] });
+  };
+  for (const event of existingData?.changeHistory || []) append(event);
   if (!history.length && existingData?.latestChanges?.length) {
-    history.push({
+    append({
       changedAt: existingData.lastDataChangeAt || existingData.fetchedAt,
       changes: [...existingData.latestChanges]
     });
   }
-  if (changes.length && !history.some(event => event.changedAt === changedAt)) {
-    history.push({ changedAt, changes: [...changes] });
-  }
+  if (changes.length) append({ changedAt, changes: [...changes] });
   return history;
 }
 
@@ -1005,7 +1039,6 @@ async function main() {
   if (substantiveChanges.length) {
     data.lastDataChangeAt = checkedAt;
     data.latestChanges = substantiveChanges.slice(0, 40);
-    changeHistory.push({ changedAt: checkedAt, changes: substantiveChanges });
   } else {
     data.lastDataChangeAt = existingData?.lastDataChangeAt || data.fetchedAt;
     data.latestChanges = existingData?.latestChanges || [];
@@ -1019,6 +1052,7 @@ async function main() {
   ]);
   if (process.env.GITHUB_OUTPUT) {
     await fs.appendFile(process.env.GITHUB_OUTPUT, `data_changed=${substantiveChanges.length ? "true" : "false"}\n`, "utf8");
+    await fs.appendFile(process.env.GITHUB_OUTPUT, `source_errors=${data.errors.length}\n`, "utf8");
   }
 
   const total = Object.values(data.brands).flat().reduce((sum, value) => sum + (value ?? 0), 0);
@@ -1033,6 +1067,8 @@ const isMain = process.argv[1]
 if (isMain) await main();
 
 export {
+  comparePeriodKeys,
+  latestPeriodKey,
   mergeChangeHistory,
   mergeWithExisting,
   normalizedPeriodFromText,
