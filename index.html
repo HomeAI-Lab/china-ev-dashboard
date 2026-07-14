@@ -83,6 +83,8 @@
     }
     .status strong { font-weight: 600; }
     .status small { color: #426d58; }
+    .status.warning { border-color: #d8c38c; background: #f4efdf; color: #7a5a12; }
+    .status.warning small { color: #705f37; }
     .status.error { border-color: #dab5b1; background: var(--red-soft); color: var(--red); }
     .status.error small { color: #874c47; }
 
@@ -1969,14 +1971,38 @@
       throw lastError || new Error("โหลดข้อมูลไม่สำเร็จ");
     }
 
+    function formatCheckedAt(value) {
+      const date = new Date(value);
+      if (!value || Number.isNaN(date.getTime())) return "-";
+      return new Intl.DateTimeFormat("th-TH", {
+        dateStyle: "medium",
+        timeStyle: "medium",
+        timeZone: "Asia/Bangkok"
+      }).format(date);
+    }
+
     function initHeader() {
       const latestMarketMonth = market.months[lastValueIndex(market.series.passengerNevRetail || [])];
       const latestCompanyMonth = months[months.length - 1];
       const publishedDates = Object.values(market.sources || {}).map(source => source.publishedAt).filter(Boolean).sort();
       const latestPublished = publishedDates[publishedDates.length - 1];
+      const checkedAt = data.lastCheckedAt || data.fetchedAt;
+      const changedAt = data.lastDataChangeAt || data.fetchedAt;
+      const ageHours = checkedAt ? (Date.now() - Date.parse(checkedAt)) / 3600000 : Infinity;
+      const sourceErrors = data.errors || [];
+      $("statusBox").classList.remove("warning", "error");
       $("subtitle").textContent = "ตลาดรวม CPCA/CAAM ถึง " + latestMarketMonth + " | Company-reported ถึง " + latestCompanyMonth + " | หน่วยหลัก: คัน";
-      $("status").textContent = "ข้อมูลต้นทางล่าสุด " + (latestPublished || "-");
-      $("statusMeta").textContent = "Market และ company-reported แยกขอบเขตแล้ว";
+      if (sourceErrors.length) {
+        $("statusBox").classList.add("error");
+        $("status").textContent = "ตรวจพบคำเตือนจาก source " + sourceErrors.length + " รายการ";
+      } else if (ageHours > 3) {
+        $("statusBox").classList.add("warning");
+        $("status").textContent = "ข้อมูลยังไม่ได้ตรวจเกิน 3 ชั่วโมง";
+      } else {
+        $("status").textContent = "ตรวจระบบล่าสุด " + formatCheckedAt(checkedAt);
+      }
+      $("statusMeta").textContent = "Source ล่าสุด " + (latestPublished || "-") + " | ข้อมูลเปลี่ยนล่าสุด " + formatCheckedAt(changedAt);
+      $("statusBox").title = sourceErrors.join("\n");
     }
 
     async function init() {
