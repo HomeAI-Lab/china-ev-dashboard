@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-14T11:38:39.657Z",
-  "newsFetchedAt": "2026-07-14T11:38:39.657Z",
+  "fetchedAt": "2026-07-14T12:51:28.480Z",
+  "newsFetchedAt": "2026-07-14T12:51:28.480Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-14T11:38:39.656Z",
+    "fetchedAt": "2026-07-14T12:51:28.479Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3048,6 +3048,12 @@
     ],
     "Zeekr": [
       {
+        "title": "Zeekr widens European reach for 007 GT shooting brake",
+        "url": "https://cnevpost.com/2026/07/14/zeekr-widens-european-reach-007-gt/",
+        "summary": "Zeekr 007 GT has been launched in 16 European countries, with a starting price of 45,990 euros ($52,460).",
+        "publishedAt": "2026-07-14"
+      },
+      {
         "title": "Zeekr plans to nearly double Malaysia outlets to 18 this year",
         "url": "https://cnevpost.com/2026/07/14/zeekr-plans-malaysia-outlets-18-2026/",
         "summary": "Zeekr Malaysia has added 3 authorized dealers, bringing its dealership outlets in Malaysia to 11.",
@@ -3160,12 +3166,6 @@
         "url": "https://cnevpost.com/2026/03/10/zeekr-8x-pre-sales-mar-16-q2-launch/",
         "summary": "Zeekr will hold a technology launch event on March 16 for the Zeekr 8X, its second hybrid model.",
         "publishedAt": "2026-03-10"
-      },
-      {
-        "title": "Zeekr reportedly plans price hike for facelifted 007 GT as memory chip costs surge",
-        "url": "https://cnevpost.com/2026/03/09/zeekr-plans-price-hike-facelifted-007-gt-memory-chip-costs-surge/",
-        "summary": "The updated Zeekr 007 GT, set to launch in the second quarter, will see a price increase amid rising chip and battery costs, according to a local media report.",
-        "publishedAt": "2026-03-09"
       }
     ],
     "Xiaomi EV": [
@@ -3565,11 +3565,9 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-14T11:38:39.659Z",
-  "lastDataChangeAt": "2026-07-14T11:20:02.633Z",
+  "lastCheckedAt": "2026-07-14T12:51:28.482Z",
+  "lastDataChangeAt": "2026-07-14T12:51:28.482Z",
   "latestChanges": [
-    "BYD news: 3 new articles",
-    "Xpeng news: 1 new article",
     "Zeekr news: 1 new article"
   ],
   "changeHistory": [
@@ -3639,6 +3637,12 @@
       "changes": [
         "BYD news: 3 new articles",
         "Xpeng news: 1 new article",
+        "Zeekr news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-14T12:51:28.482Z",
+      "changes": [
         "Zeekr news: 1 new article"
       ]
     }
