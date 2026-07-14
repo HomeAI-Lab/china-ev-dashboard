@@ -27,6 +27,10 @@ const parsedDestinations = parseExportDestinations(
 assert.equal(parsedDestinations.period, "2026-01/2026-04");
 assert.equal(parsedDestinations.rows.length, 2);
 assert.equal(parsedDestinations.rows[0].value, 218096);
+const parsedNoisyDestinations = parseExportDestinations(
+  "Apr 2026 unrelated context Top 10 destination countries by China's new energy passenger vehicle exports Jan\u2013Apr 2026 Brazil: 218,096 NEV passenger vehicles (+220.9% YoY)"
+);
+assert.equal(parsedNoisyDestinations.period, "2026-01/2026-04");
 assert.deepEqual(
   parseExportDestinationTotal("For the first four months of 2026, cumulative new energy PV exports reached 1.306 million units."),
   { period: "2026-01/2026-04", value: 1306000 }
@@ -43,6 +47,16 @@ const firstMarketMonth = existing.market.months[0];
 const firstRetailValue = existing.market.series.passengerNevRetail[0];
 const sourceCount = existing.market.sourceHistory.cpcaRetail.length;
 const oldBydNewsUrls = new Set(existing.news.BYD.map(item => item.url));
+const futureMonth = "2099-12";
+const futureYtdPeriod = "2099-01/2099-12";
+const retailPeriodCount = Object.keys(existing.market.brandRetailHistory.latest).length;
+const exportPeriodCount = Object.keys(existing.market.exportHistory.brandLatest).length;
+const destinationPeriodCount = new Set(Object.values(existing.market.exportHistory.destinations).map(snapshot => (
+  JSON.stringify(snapshot.rows || [])
+))).size;
+const existingChangeEventCount = new Set((existing.changeHistory || []).map(event => (
+  `${event.changedAt}|${JSON.stringify(event.changes)}`
+))).size;
 
 const freshNews = Array.from({ length: 22 }, (_, index) => ({
   brand: "BYD",
@@ -58,7 +72,7 @@ const fresh = {
   fetchedAt: "2026-08-01T00:00:00.000Z",
   newsFetchedAt: "2026-08-01T00:00:00.000Z",
   unit: "vehicles",
-  months: ["2026-07"],
+  months: [futureMonth],
   brands: Object.fromEntries(Object.keys(existing.brands).map(brand => [
     brand,
     [brand === "BYD" ? 1234567 : null]
@@ -66,35 +80,35 @@ const fresh = {
   market: {
     fetchedAt: "2026-08-01T00:00:00.000Z",
     unit: "vehicles",
-    months: ["2026-07"],
+    months: [futureMonth],
     series: { passengerNevRetail: [2345678] },
     latestBrandRetail: {
-      period: "2026-07",
+      period: futureMonth,
       scope: "accumulation test fixture",
       status: "test",
       rows: [{ rank: 1, brand: "Fixture Brand", value: 1, sharePct: 1 }]
     },
     ytdBrandRetail: {
-      period: "2026-01/2026-07",
+      period: futureYtdPeriod,
       scope: "accumulation test fixture",
       status: "test",
       rows: [{ rank: 1, brand: "Fixture Brand", value: 1, sharePct: 1 }]
     },
     latestBrandExports: {
-      period: "2026-07",
+      period: futureMonth,
       scope: "export accumulation test fixture",
       status: "test",
       total: 10,
       rows: [{ rank: 1, brand: "Fixture Brand", value: 10, sharePct: 100 }]
     },
     ytdBrandExports: {
-      period: "2026-01/2026-07",
+      period: futureYtdPeriod,
       scope: "export accumulation test fixture",
       status: "test",
       rows: [{ rank: 1, brand: "Fixture Brand", value: 70, sharePct: 100 }]
     },
     latestExportDestinations: {
-      period: "2026-01/2026-05",
+      period: futureYtdPeriod,
       scope: "destination accumulation test fixture",
       status: "test",
       total: 10,
@@ -122,51 +136,53 @@ const initialized = mergeWithExisting(fresh, null);
 assert.equal(initialized.schemaVersion, 3);
 assert.equal(initialized.news.BYD.length, 20);
 assert.equal(Object.hasOwn(initialized, "newsArchive"), false);
-assert.ok(initialized.market.brandRetailHistory.latest["2026-07"]);
-assert.ok(initialized.market.exportHistory.brandLatest["2026-07"]);
+assert.ok(initialized.market.brandRetailHistory.latest[futureMonth]);
+assert.ok(initialized.market.exportHistory.brandLatest[futureMonth]);
+assert.equal(initialized.market.latestExportDestinations.period, futureYtdPeriod);
 assert.equal(initialized.market.sourceHistory.cpcaRetail.length, 1);
 
 const merged = mergeWithExisting(fresh, existing);
 assert.equal(merged.brands.BYD[merged.months.indexOf(firstMonth)], firstBydValue);
-assert.equal(merged.brands.BYD[merged.months.indexOf("2026-07")], 1234567);
+assert.equal(merged.brands.BYD[merged.months.indexOf(futureMonth)], 1234567);
 assert.equal(
   merged.market.series.passengerNevRetail[merged.market.months.indexOf(firstMarketMonth)],
   firstRetailValue
 );
 assert.equal(
-  merged.market.series.passengerNevRetail[merged.market.months.indexOf("2026-07")],
+  merged.market.series.passengerNevRetail[merged.market.months.indexOf(futureMonth)],
   2345678
 );
 assert.equal(merged.news.BYD.length, 20);
 assert.equal(merged.news.BYD.some(item => oldBydNewsUrls.has(item.url)), false);
 assert.equal(Object.hasOwn(merged, "newsArchive"), false);
 assert.ok(merged.market.brandRetailHistory.latest[existing.market.latestBrandRetail.period]);
-assert.ok(merged.market.brandRetailHistory.latest["2026-07"]);
-assert.equal(merged.market.latestBrandRetail.period, "2026-07");
+assert.ok(merged.market.brandRetailHistory.latest[futureMonth]);
+assert.equal(merged.market.latestBrandRetail.period, futureMonth);
 assert.ok(merged.market.exportHistory.brandLatest[existing.market.latestBrandExports.period]);
-assert.ok(merged.market.exportHistory.brandLatest["2026-07"]);
+assert.ok(merged.market.exportHistory.brandLatest[futureMonth]);
 assert.ok(merged.market.exportHistory.destinations[existing.market.latestExportDestinations.period]);
-assert.ok(merged.market.exportHistory.destinations["2026-01/2026-05"]);
-assert.equal(merged.market.latestBrandExports.period, "2026-07");
-assert.equal(merged.market.latestExportDestinations.period, "2026-01/2026-05");
+assert.ok(merged.market.exportHistory.destinations[futureYtdPeriod]);
+assert.equal(merged.market.latestBrandExports.period, futureMonth);
+assert.equal(merged.market.latestExportDestinations.period, futureYtdPeriod);
 assert.equal(merged.market.sourceHistory.cpcaRetail.length, sourceCount + 1);
 assert.equal(merged.market.sources.cpcaRetail.url, "https://example.com/accumulation-source");
 
 const mergedTwice = mergeWithExisting(fresh, merged);
 assert.equal(mergedTwice.news.BYD.length, 20);
 assert.equal(mergedTwice.market.sourceHistory.cpcaRetail.length, sourceCount + 1);
-assert.equal(Object.keys(mergedTwice.market.brandRetailHistory.latest).length, 2);
-assert.equal(Object.keys(mergedTwice.market.exportHistory.brandLatest).length, 2);
-assert.equal(Object.keys(mergedTwice.market.exportHistory.destinations).length, 2);
+assert.equal(Object.keys(mergedTwice.market.brandRetailHistory.latest).length, retailPeriodCount + 1);
+assert.equal(Object.keys(mergedTwice.market.exportHistory.brandLatest).length, exportPeriodCount + 1);
+assert.equal(Object.keys(mergedTwice.market.exportHistory.destinations).length, destinationPeriodCount + 1);
 
 const changes = summarizeDataChanges(existing, merged);
 const eventTime = "2026-08-01T00:00:00.000Z";
 const history = mergeChangeHistory(existing, eventTime, changes);
 const repeatedHistory = mergeChangeHistory({ ...existing, changeHistory: history }, eventTime, changes);
 const initializedHistory = mergeChangeHistory(null, eventTime, ["Initialized test store"]);
-assert.equal(history.length, existing.changeHistory.length + 1);
+assert.equal(history.length, existingChangeEventCount + 1);
 assert.equal(repeatedHistory.length, history.length);
 assert.equal(initializedHistory.length, 1);
+assert.equal(new Set(history.map(event => `${event.changedAt}|${JSON.stringify(event.changes)}`)).size, history.length);
 
 console.log(JSON.stringify({
   retainedBrandStart: firstMonth,

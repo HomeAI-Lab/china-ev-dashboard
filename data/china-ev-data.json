@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-12T19:48:36.385Z",
-  "newsFetchedAt": "2026-07-12T19:48:36.385Z",
+  "fetchedAt": "2026-07-14T11:27:42.168Z",
+  "newsFetchedAt": "2026-07-14T11:27:42.168Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-12T19:48:36.384Z",
+    "fetchedAt": "2026-07-14T11:27:42.166Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2112,9 +2112,12 @@
       ]
     },
     "latestExportDestinations": {
-      "period": "2026-04",
+      "period": "2026-01/2026-04",
       "scope": "China new-energy passenger vehicle exports by destination",
       "status": "final",
+      "total": 1306000,
+      "top10Total": 802855,
+      "coveragePct": 61.474349157733535,
       "rows": [
         {
           "rank": 1,
@@ -2186,10 +2189,7 @@
           "value": 37057,
           "yoyPct": 18.4
         }
-      ],
-      "total": null,
-      "top10Total": 802855,
-      "coveragePct": null
+      ]
     },
     "exportHistory": {
       "brandLatest": {
@@ -2431,92 +2431,30 @@
               "yoyPct": 18.4
             }
           ]
-        },
-        "2026-04": {
-          "period": "2026-04",
-          "scope": "China new-energy passenger vehicle exports by destination",
-          "status": "final",
-          "rows": [
-            {
-              "rank": 1,
-              "country": "Brazil",
-              "region": "Latin America",
-              "value": 218096,
-              "yoyPct": 220.9
-            },
-            {
-              "rank": 2,
-              "country": "Belgium",
-              "region": "Europe",
-              "value": 125990,
-              "yoyPct": 41.7
-            },
-            {
-              "rank": 3,
-              "country": "UK",
-              "region": "Europe",
-              "value": 105094,
-              "yoyPct": 108.3
-            },
-            {
-              "rank": 4,
-              "country": "Australia",
-              "region": "Asia-Pacific",
-              "value": 68969,
-              "yoyPct": 115.7
-            },
-            {
-              "rank": 5,
-              "country": "Germany",
-              "region": "Europe",
-              "value": 53776,
-              "yoyPct": 295
-            },
-            {
-              "rank": 6,
-              "country": "Italy",
-              "region": "Europe",
-              "value": 52590,
-              "yoyPct": 460.7
-            },
-            {
-              "rank": 7,
-              "country": "UAE",
-              "region": "Middle East",
-              "value": 50199,
-              "yoyPct": 78.2
-            },
-            {
-              "rank": 8,
-              "country": "South Korea",
-              "region": "Asia-Pacific",
-              "value": 47815,
-              "yoyPct": 282.5
-            },
-            {
-              "rank": 9,
-              "country": "Spain",
-              "region": "Europe",
-              "value": 43269,
-              "yoyPct": 80.6
-            },
-            {
-              "rank": 10,
-              "country": "Thailand",
-              "region": "Southeast Asia",
-              "value": 37057,
-              "yoyPct": 18.4
-            }
-          ],
-          "total": null,
-          "top10Total": 802855,
-          "coveragePct": null
         }
       }
     }
   },
   "news": {
     "BYD": [
+      {
+        "title": "BYD Thailand deliveries surpass 130,000 as local plant marks second anniversary",
+        "url": "https://cnevpost.com/2026/07/14/byd-thailand-deliveries-130000-local-plant-2nd-anniversary/",
+        "summary": "BYD launched the Sealion 5 DM-i in Thailand, expanding its plug-in hybrid lineup in Southeast Asia.",
+        "publishedAt": "2026-07-14"
+      },
+      {
+        "title": "BYD Denza Z electric supercar starts pre-sales in China after Goodwood debut",
+        "url": "https://cnevpost.com/2026/07/13/byd-denza-z-electric-supercar-pre-sales-china/",
+        "summary": "The Denza Z started pre-sales in China at 680,000 yuan ($100,300), about half its UK price.",
+        "publishedAt": "2026-07-13"
+      },
+      {
+        "title": "BYD previews Qin Max sedan with flash charging, expanding Qin lineup",
+        "url": "https://cnevpost.com/2026/07/13/byd-previews-qin-max-sedan-flash-charging/",
+        "summary": "BYD Qin Max is the new flagship model in the Qin family, positioned above the Qin L, and is expected to be offered in BEV and PHEV variants.",
+        "publishedAt": "2026-07-13"
+      },
       {
         "title": "BYD Denza files all-electric N8 SUV, reviving short-lived nameplate",
         "url": "https://cnevpost.com/2026/07/11/byd-denza-files-all-electric-n8-suv/",
@@ -2618,24 +2556,6 @@
         "url": "https://cnevpost.com/2026/07/01/byd-jun-2026-sales/",
         "summary": "BYD's June NEV wholesale sales rose 5.46% year-on-year to 403,472 units, marking a second straight month of annual growth.",
         "publishedAt": "2026-07-01"
-      },
-      {
-        "title": "BYD Fang Cheng Bao sets Tai 9, Formula S for H2 launch",
-        "url": "https://cnevpost.com/2026/07/01/byd-fang-cheng-bao-tai-9-formula-s-h2-launch/",
-        "summary": "Fang Cheng Bao's sales chief confirmed the Tai 9 and Formula S will go on sale in the second half.",
-        "publishedAt": "2026-07-01"
-      },
-      {
-        "title": "China pushes battery makers to pay suppliers within 60 days",
-        "url": "https://cnevpost.com/2026/06/29/china-pushes-battery-makers-pay-suppliers-60-days/",
-        "summary": "Eleven battery makers, including CATL, BYD and CALB, have backed an initiative to speed up payments to suppliers.",
-        "publishedAt": "2026-06-29"
-      },
-      {
-        "title": "Linghui M9 MPV goes on sale as BYD broadens fleet lineup",
-        "url": "https://cnevpost.com/2026/06/29/linghui-m9-mpv-goes-on-sale/",
-        "summary": "Linghui M9 was launched in China with a starting price of 188,800 yuan ($27,750).",
-        "publishedAt": "2026-06-29"
       }
     ],
     "Nio": [
@@ -2762,6 +2682,12 @@
     ],
     "Xpeng": [
       {
+        "title": "Xpeng sets Mona L03 Munich launch time as global push widens",
+        "url": "https://cnevpost.com/2026/07/13/xpeng-sets-mona-l03-munich-launch-time/",
+        "summary": "Xpeng has set the global launch event for the Mona L03 SUV at 7:00 pm Beijing Time on July 16, or 1:00 pm local time in Munich.",
+        "publishedAt": "2026-07-13"
+      },
+      {
         "title": "Xpeng June deliveries breakdown: Mona M03 contributes over 35%, GX surges into second place",
         "url": "https://cnevpost.com/2026/07/11/xpeng-jun-2026-deliveries-breakdown/",
         "summary": "Mona M03 delivered 14,197 units in June, retaining its position as the best-selling Xpeng model.",
@@ -2874,12 +2800,6 @@
         "url": "https://cnevpost.com/2026/06/10/xpeng-enters-yacht-industry-report/",
         "summary": "Xpeng formed an R&D team of nearly 100 people early this year for a yacht project internally codenamed \"Flying Fish,\" according to a local media report.",
         "publishedAt": "2026-06-10"
-      },
-      {
-        "title": "Southern Chinese province plans 3 million EV chargers in boost for BYD and Xpeng",
-        "url": "https://cnevpost.com/2026/06/09/guangdong-plans-3-million-ev-chargers-boost-byd-xpeng/",
-        "summary": "Guangdong province aims to build over 3 million charging facilities by the end of 2027 to meet the demand of 8 million NEVs.",
-        "publishedAt": "2026-06-09"
       }
     ],
     "Li Auto": [
@@ -3128,6 +3048,12 @@
     ],
     "Zeekr": [
       {
+        "title": "Zeekr plans to nearly double Malaysia outlets to 18 this year",
+        "url": "https://cnevpost.com/2026/07/14/zeekr-plans-malaysia-outlets-18-2026/",
+        "summary": "Zeekr Malaysia has added 3 authorized dealers, bringing its dealership outlets in Malaysia to 11.",
+        "publishedAt": "2026-07-14"
+      },
+      {
         "title": "Zeekr kicks off pre-sales of 5-seat 9X to broaden flagship SUV's appeal",
         "url": "https://cnevpost.com/2026/07/08/zeekr-kicks-off-pre-sales-5-seat-9x/",
         "summary": "Zeekr's move echoes rivals' actions. Nio will officially launch the five-seat ES8 SUV on July 9.",
@@ -3240,12 +3166,6 @@
         "url": "https://cnevpost.com/2026/03/09/zeekr-plans-price-hike-facelifted-007-gt-memory-chip-costs-surge/",
         "summary": "The updated Zeekr 007 GT, set to launch in the second quarter, will see a price increase amid rising chip and battery costs, according to a local media report.",
         "publishedAt": "2026-03-09"
-      },
-      {
-        "title": "Zeekr completes 1st deliveries in Germany, targets France next",
-        "url": "https://cnevpost.com/2026/03/07/zeekr-1st-deliveries-germany-france-next/",
-        "summary": "Zeekr has completed its first deliveries of the Zeekr 7X in Germany and launched sales operations in three Southern European countries.",
-        "publishedAt": "2026-03-07"
       }
     ],
     "Xiaomi EV": [
@@ -3645,11 +3565,12 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-12T19:48:36.387Z",
-  "lastDataChangeAt": "2026-07-12T19:48:36.387Z",
+  "lastCheckedAt": "2026-07-14T11:27:42.170Z",
+  "lastDataChangeAt": "2026-07-14T11:20:02.633Z",
   "latestChanges": [
-    "Export destination ranking: added 2026-04",
-    "Market source exportDestinationTotal: added 2026-05-12"
+    "BYD news: 3 new articles",
+    "Xpeng news: 1 new article",
+    "Zeekr news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3714,10 +3635,11 @@
       ]
     },
     {
-      "changedAt": "2026-07-12T19:48:36.387Z",
+      "changedAt": "2026-07-14T11:20:02.633Z",
       "changes": [
-        "Export destination ranking: added 2026-04",
-        "Market source exportDestinationTotal: added 2026-05-12"
+        "BYD news: 3 new articles",
+        "Xpeng news: 1 new article",
+        "Zeekr news: 1 new article"
       ]
     }
   ]

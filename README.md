@@ -9,6 +9,7 @@ Online dashboard for China EV market demand, domestic retail share, exports, bat
 - `data/china-ev-data.js` mirrors the JSON so the dashboard can also be opened directly as a local HTML file.
 - `.github/workflows/update-data.yml` runs hourly and deploys GitHub Pages after checking for source changes.
 - `scripts/update-data.mjs` discovers recent CnEVPost market articles, reads CPCA/CAAM/CABIA tables, reads CADA inventory data, and merges fresh records into the accumulated history.
+- `scripts/audit-data.mjs` validates every brand, market series, ranking snapshot, source record, latest-20 news snapshot, change history, and the JSON/JavaScript mirror after each refresh.
 - Missing or threshold-only disclosures remain `null`; the updater never estimates an exact value.
 
 ## Data scopes
