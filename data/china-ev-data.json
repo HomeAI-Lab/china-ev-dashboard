@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-16T09:33:06.342Z",
-  "newsFetchedAt": "2026-07-16T09:33:06.342Z",
+  "fetchedAt": "2026-07-16T15:50:48.078Z",
+  "newsFetchedAt": "2026-07-16T15:50:48.078Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-16T09:33:06.341Z",
+    "fetchedAt": "2026-07-16T15:50:48.077Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2572,6 +2572,12 @@
     ],
     "Nio": [
       {
+        "title": "Nio Firefly reaches 70,000 deliveries after steady sales growth",
+        "url": "https://cnevpost.com/2026/07/16/nio-firefly-70000-deliveries/",
+        "summary": "Firefly has delivered its 70,000th vehicle, about 15 months after beginning deliveries in late April 2025.",
+        "publishedAt": "2026-07-16"
+      },
+      {
         "title": "Nio chip unit previews NX9031U as AI ambitions move beyond cars",
         "url": "https://cnevpost.com/2026/07/15/nio-chip-unit-previews-nx9031u/",
         "summary": "The NX9031U has up to 800 TOPS of equivalent computing power and targets embodied AI, intelligent computing and advanced manufacturing.",
@@ -2684,15 +2690,27 @@
         "url": "https://cnevpost.com/2026/06/30/mirattery-2-new-securitization-deals/",
         "summary": "Mirattery issued two new asset-backed securitization products with a combined size of 2.021 billion yuan.",
         "publishedAt": "2026-06-30"
-      },
-      {
-        "title": "Nio rolls out another ET9 limited edition in under 10 days",
-        "url": "https://cnevpost.com/2026/06/30/nio-rolls-out-another-et9-limited-edition/",
-        "summary": "Nio has added a new theme to the ET9 Horizon Edition, with prices starting at 838,000 yuan ($123,300) including the battery.",
-        "publishedAt": "2026-06-30"
       }
     ],
     "Xpeng": [
+      {
+        "title": "Xpeng Mona L03 racks up 20,000 firm orders 7 minutes after launch",
+        "url": "https://cnevpost.com/2026/07/16/xpeng-mona-l03-20000-orders-7-minutes/",
+        "summary": "The Mona L03 is Xpeng's first global model to launch simultaneously in China and Europe and will eventually be sold in 64 overseas markets.",
+        "publishedAt": "2026-07-16"
+      },
+      {
+        "title": "Xpeng launches Mona L03 SUV, betting on global mass market",
+        "url": "https://cnevpost.com/2026/07/16/xpeng-launches-mona-l03/",
+        "summary": "The Xpeng Mona L03 starts at 123,800 yuan ($18,300) in China and is offered in both BEV and EREV versions.",
+        "publishedAt": "2026-07-16"
+      },
+      {
+        "title": "Xpeng taps Google Maps to clear path for smart driving's global roll-out",
+        "url": "https://cnevpost.com/2026/07/16/xpeng-taps-google-maps-smart-driving-global-roll-out/",
+        "summary": "Google Maps in-vehicle Map Data Services will support Xpeng's driver-assistance systems, clearing obstacles for the global roll-out of VLA 2.0.",
+        "publishedAt": "2026-07-16"
+      },
       {
         "title": "Xpeng moves closer to bringing advanced driver assistance to Europe",
         "url": "https://cnevpost.com/2026/07/15/xpeng-closer-driver-assistance-europe/",
@@ -2733,18 +2751,6 @@
         "title": "Xpeng delivers 1,300 EVs to Car Inc, deepening mobility push",
         "url": "https://cnevpost.com/2026/07/03/xpeng-delivers-1300-evs-to-car-inc/",
         "summary": "Car Inc has bought over 5,000 Xpeng vehicles to date and plans to purchase at least 5,000 more within the next year.",
-        "publishedAt": "2026-07-03"
-      },
-      {
-        "title": "Xpeng's He echoes Nio's Li on China NEV penetration topping 90%",
-        "url": "https://cnevpost.com/2026/07/03/xpeng-he-echoes-nio-li-china-nev-penetration/",
-        "summary": "Xpeng chairman He Xiaopeng expects China's NEV penetration to exceed 90% by 2030.",
-        "publishedAt": "2026-07-03"
-      },
-      {
-        "title": "Xpeng to lift GX output 10% this month, eyes top-three segment spot",
-        "url": "https://cnevpost.com/2026/07/03/xpeng-lift-gx-output-this-month/",
-        "summary": "Xpeng GX delivered 6,739 units in June, with the 10,000th vehicle rolling off the line on July 1.",
         "publishedAt": "2026-07-03"
       },
       {
@@ -2806,15 +2812,15 @@
         "url": "https://cnevpost.com/2026/06/22/xpeng-teases-first-mona-suv-l03/",
         "summary": "Xpeng adds the L03 SUV to its Mona lineup, seeking to replicate the strong sales of the M03 sedan.",
         "publishedAt": "2026-06-22"
-      },
-      {
-        "title": "Xpeng X9 MPV lands in seven European countries amid export surge",
-        "url": "https://cnevpost.com/2026/06/16/xpeng-x9-lands-7-european-countries-export-surge/",
-        "summary": "The Xpeng X9 MPV is now available in Germany, Finland, Norway, Iceland, Croatia, Slovenia and Hungary.",
-        "publishedAt": "2026-06-16"
       }
     ],
     "Li Auto": [
+      {
+        "title": "Li Auto launches revamped L6 SUV at unchanged price to revive sales",
+        "url": "https://cnevpost.com/2026/07/16/li-auto-launches-revamped-l6/",
+        "summary": "The new Li L6 starts at 249,800 yuan ($36,910) and is equipped with Li Auto's in-house developed Mach M100 assisted driving chip.",
+        "publishedAt": "2026-07-16"
+      },
       {
         "title": "Li Auto's i9 SUV shows up in regulatory filing as company expands BEV lineup",
         "url": "https://cnevpost.com/2026/07/10/li-auto-i9-regulatory-filing/",
@@ -2928,12 +2934,6 @@
         "url": "https://cnevpost.com/2026/06/05/nio-es9-hit-10000-deliveries-this-month/",
         "summary": "A Nio executive publicly questioned an ES9 chassis test video posted on Li Auto's official platform, signaling intensifying competition in China's large SUV market.",
         "publishedAt": "2026-06-05"
-      },
-      {
-        "title": "Li Auto's May deliveries fall 18% as it pins hopes on new 5-seat flagship SUV to revive sales",
-        "url": "https://cnevpost.com/2026/06/01/li-auto-may-2026-deliveries/",
-        "summary": "In the January-May period, Li Auto delivered 162,577 vehicles, down 3.03% year-on-year.",
-        "publishedAt": "2026-06-01"
       }
     ],
     "Tesla China": [
@@ -3304,6 +3304,12 @@
     ],
     "Leapmotor": [
       {
+        "title": "Leapmotor launches refreshed B01, B10 to strengthen low-cost EV push",
+        "url": "https://cnevpost.com/2026/07/16/leapmotor-launches-refreshed-b01-b10/",
+        "summary": "The refreshed B01 sedan starts at 95,800 yuan ($14,150), while the B10 SUV starts at 99,800 yuan.",
+        "publishedAt": "2026-07-16"
+      },
+      {
         "title": "Leapmotor previews LiDAR-equipped A05s compact EV in push toward 1 million delivery goal",
         "url": "https://cnevpost.com/2026/07/10/leapmotor-previews-a05s-compact-ev/",
         "summary": "The Leapmotor A05s is the second A-series model after the A10, offering roof-mounted LiDAR.",
@@ -3356,12 +3362,6 @@
         "url": "https://cnevpost.com/2026/06/18/leapmotor-1-5-million-deliveries-launches-lafa-5-hk/",
         "summary": "Leapmotor's cumulative global deliveries reached 1.5 million units, taking just 8 months to climb from 1 million to 1.5 million.",
         "publishedAt": "2026-06-18"
-      },
-      {
-        "title": "Leapmotor refreshes top-selling SUV trio in bid to sustain growth",
-        "url": "https://cnevpost.com/2026/06/16/leapmotor-refreshes-suv-trio-c10-c11-c16/",
-        "summary": "Leapmotor launched updated versions of the C10, C11 and C16, with starting prices as low as 125,800 yuan ($18,620).",
-        "publishedAt": "2026-06-16"
       },
       {
         "title": "Leapmotor opens pre-orders for updated C-series SUVs ahead of June 16 launch",
@@ -3577,14 +3577,13 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-16T09:33:06.345Z",
-  "lastDataChangeAt": "2026-07-16T09:33:06.345Z",
+  "lastCheckedAt": "2026-07-16T15:50:48.081Z",
+  "lastDataChangeAt": "2026-07-16T15:50:48.081Z",
   "latestChanges": [
-    "Market batteryInstallationsGwh 2026-06: added 76.5",
-    "BYD news: 2 new articles",
-    "Zeekr news: 1 new article",
-    "Xiaomi EV news: 1 new article",
-    "Market source battery: added 2026-07-16"
+    "Nio news: 1 new article",
+    "Xpeng news: 3 new articles",
+    "Li Auto news: 1 new article",
+    "Leapmotor news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3698,6 +3697,15 @@
         "Zeekr news: 1 new article",
         "Xiaomi EV news: 1 new article",
         "Market source battery: added 2026-07-16"
+      ]
+    },
+    {
+      "changedAt": "2026-07-16T15:50:48.081Z",
+      "changes": [
+        "Nio news: 1 new article",
+        "Xpeng news: 3 new articles",
+        "Li Auto news: 1 new article",
+        "Leapmotor news: 1 new article"
       ]
     }
   ]
