@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-16T00:14:51.571Z",
-  "newsFetchedAt": "2026-07-16T00:14:51.571Z",
+  "fetchedAt": "2026-07-16T09:33:06.342Z",
+  "newsFetchedAt": "2026-07-16T09:33:06.342Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-16T00:14:51.570Z",
+    "fetchedAt": "2026-07-16T09:33:06.341Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -1082,7 +1082,7 @@
         56.5,
         62.4,
         71.9,
-        null
+        76.5
       ],
       "batteryLfpGwh": [
         null,
@@ -1692,8 +1692,8 @@
       },
       "battery": {
         "publisher": "CABIA via CnEVPost",
-        "url": "https://cnevpost.com/2026/06/11/china-may-2026-ev-battery-installations/",
-        "publishedAt": "2026-06-11",
+        "url": "https://cnevpost.com/2026/07/16/china-battery-installations-jun-2026/",
+        "publishedAt": "2026-07-16",
         "status": "final"
       },
       "dealerInventory": {
@@ -1917,6 +1917,12 @@
         }
       ],
       "battery": [
+        {
+          "publisher": "CABIA via CnEVPost",
+          "url": "https://cnevpost.com/2026/07/16/china-battery-installations-jun-2026/",
+          "publishedAt": "2026-07-16",
+          "status": "final"
+        },
         {
           "publisher": "CABIA via CnEVPost",
           "url": "https://cnevpost.com/2026/06/11/china-may-2026-ev-battery-installations/",
@@ -2444,6 +2450,18 @@
   "news": {
     "BYD": [
       {
+        "title": "Top battery makers' market share in China in June 2026: CATL 42.70%, BYD 18.49%",
+        "url": "https://cnevpost.com/2026/07/16/top-battery-makers-share-china-jun-2026/",
+        "summary": "CATL remained China's largest power battery maker in June, though its market share fell 3.43 percentage points from May.",
+        "publishedAt": "2026-07-16"
+      },
+      {
+        "title": "BYD hires Hungary's ex-foreign minister as Europe push deepens",
+        "url": "https://cnevpost.com/2026/07/16/byd-hires-hungary-ex-foreign-minister/",
+        "summary": "Peter Szijjarto will oversee BYD's external relations and new business development, bringing the company a political figure familiar with both Beijing and Brussels.",
+        "publishedAt": "2026-07-16"
+      },
+      {
         "title": "BYD overhauls overseas brand structure, betting on channel integration and flash charging network",
         "url": "https://cnevpost.com/2026/07/15/byd-overhauls-overseas-brand-structure/",
         "summary": "BYD will integrate its Dynasty and Ocean lineups into the BYD brand overseas, merge operations for Denza and Fang Cheng Bao, and keep Yangwang independent.",
@@ -2549,18 +2567,6 @@
         "title": "BYD's BEV sales beat Tesla again in Q2 despite US EV maker's strong rebound",
         "url": "https://cnevpost.com/2026/07/02/byd-bev-sales-beat-tesla-again/",
         "summary": "BYD sold 557,090 BEVs in the second quarter, about 77,000 units more than Tesla's 480,126.",
-        "publishedAt": "2026-07-02"
-      },
-      {
-        "title": "BYD launches Seal 08 sedan as first model with flash charging standard on both BEV and PHEV versions",
-        "url": "https://cnevpost.com/2026/07/02/byd-launches-seal-08-sedan/",
-        "summary": "The Seal 08 starts at 196,900 yuan ($29,030) and is BYD's first model to offer flash charging as standard across all trims.",
-        "publishedAt": "2026-07-02"
-      },
-      {
-        "title": "BYD shares rebound strongly from 2-year low as June sales extend recovery",
-        "url": "https://cnevpost.com/2026/07/02/byd-shares-rebound-sales-recovery/",
-        "summary": "BYD shares jumped about 9% after the company reported its second straight month of year-on-year growth in June NEV sales.",
         "publishedAt": "2026-07-02"
       }
     ],
@@ -3054,6 +3060,12 @@
     ],
     "Zeekr": [
       {
+        "title": "Zeekr 9X 5-seat version to launch on July 28, skipping launch event",
+        "url": "https://cnevpost.com/2026/07/16/zeekr-9x-5-seat-launch-jul-28-2026/",
+        "summary": "Zeekr's approach is unusual in China's auto industry, where new vehicle launches are typically accompanied by high-profile promotional events.",
+        "publishedAt": "2026-07-16"
+      },
+      {
         "title": "Zeekr widens European reach for 007 GT shooting brake",
         "url": "https://cnevpost.com/2026/07/14/zeekr-widens-european-reach-007-gt/",
         "summary": "Zeekr 007 GT has been launched in 16 European countries, with a starting price of 45,990 euros ($52,460).",
@@ -3166,15 +3178,15 @@
         "url": "https://cnevpost.com/2026/03/16/zeekr-starts-pre-sales-8x-hybrid-suv/",
         "summary": "The Zeekr 8X pre-sales start at 376,800 yuan ($54,640), marking Zeekr's further expansion into the premium plug-in hybrid market.",
         "publishedAt": "2026-03-16"
-      },
-      {
-        "title": "Zeekr 8X hybrid SUV set to start pre-sales on Mar 16 ahead of Q2 launch",
-        "url": "https://cnevpost.com/2026/03/10/zeekr-8x-pre-sales-mar-16-q2-launch/",
-        "summary": "Zeekr will hold a technology launch event on March 16 for the Zeekr 8X, its second hybrid model.",
-        "publishedAt": "2026-03-10"
       }
     ],
     "Xiaomi EV": [
+      {
+        "title": "Xiaomi Sky Nomad lineup offers up to 505 km of electric range with 76-kWh battery",
+        "url": "https://cnevpost.com/2026/07/16/xiaomi-sky-nomad-505-km-electric-range-76-kwh-battery/",
+        "summary": "This means some Sky Nomad variants offer an all-electric range approaching that of mainstream battery electric vehicles.",
+        "publishedAt": "2026-07-16"
+      },
       {
         "title": "Chengdu Auto Show to kick off Aug 21, featuring Xiaomi Sky Nomad N90, Freelander 8",
         "url": "https://cnevpost.com/2026/07/15/chengdu-auto-show-kick-off-aug-21/",
@@ -3288,12 +3300,6 @@
         "url": "https://cnevpost.com/2026/05/20/xiaomi-ceo-yu7-gt-a-bit-expensive/",
         "summary": "Xiaomi's Lei Jun said the YU7 GT is designed for the elites of the era.",
         "publishedAt": "2026-05-20"
-      },
-      {
-        "title": "Xiaomi YU7 GT breaks Nürburgring SUV record ahead of official launch",
-        "url": "https://cnevpost.com/2026/05/19/xiaomi-yu7-gt-breaks-nurburgring-suv-record/",
-        "summary": "Xiaomi YU7 GT clocked a lap time of 7:34.931 minutes at the Nürburgring Nordschleife, beating the previous record held by the Audi RS Q8 Performance.",
-        "publishedAt": "2026-05-19"
       }
     ],
     "Leapmotor": [
@@ -3571,10 +3577,14 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-16T00:14:51.573Z",
-  "lastDataChangeAt": "2026-07-15T16:53:52.133Z",
+  "lastCheckedAt": "2026-07-16T09:33:06.345Z",
+  "lastDataChangeAt": "2026-07-16T09:33:06.345Z",
   "latestChanges": [
-    "Xpeng news: 1 new article"
+    "Market batteryInstallationsGwh 2026-06: added 76.5",
+    "BYD news: 2 new articles",
+    "Zeekr news: 1 new article",
+    "Xiaomi EV news: 1 new article",
+    "Market source battery: added 2026-07-16"
   ],
   "changeHistory": [
     {
@@ -3678,6 +3688,16 @@
       "changedAt": "2026-07-15T16:53:52.133Z",
       "changes": [
         "Xpeng news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-16T09:33:06.345Z",
+      "changes": [
+        "Market batteryInstallationsGwh 2026-06: added 76.5",
+        "BYD news: 2 new articles",
+        "Zeekr news: 1 new article",
+        "Xiaomi EV news: 1 new article",
+        "Market source battery: added 2026-07-16"
       ]
     }
   ]
