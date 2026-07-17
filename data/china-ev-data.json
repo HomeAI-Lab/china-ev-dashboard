@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-16T23:15:33.739Z",
-  "newsFetchedAt": "2026-07-16T23:15:33.739Z",
+  "fetchedAt": "2026-07-17T07:36:08.362Z",
+  "newsFetchedAt": "2026-07-17T07:36:08.362Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-16T23:15:33.739Z",
+    "fetchedAt": "2026-07-17T07:36:08.361Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2450,6 +2450,18 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD Denza previews Z9S sedan, expanding product lineup",
+        "url": "https://cnevpost.com/2026/07/17/byd-denza-previews-z9s/",
+        "summary": "Denza shared the first official images of the Z9S, which is expected to compete with the Xiaomi SU7.",
+        "publishedAt": "2026-07-17"
+      },
+      {
+        "title": "BYD teases new 8-series Tang SUV with over 800 km of battery range",
+        "url": "https://cnevpost.com/2026/07/17/byd-teases-8-series-tang-800-km-range/",
+        "summary": "A BYD executive previewed the electric 8-series Tang SUV, which is expected to launch in the second half of this year.",
+        "publishedAt": "2026-07-17"
+      },
+      {
         "title": "Top battery makers' market share in China in June 2026: CATL 42.70%, BYD 18.49%",
         "url": "https://cnevpost.com/2026/07/16/top-battery-makers-share-china-jun-2026/",
         "summary": "CATL remained China's largest power battery maker in June, though its market share fell 3.43 percentage points from May.",
@@ -2556,21 +2568,15 @@
         "url": "https://cnevpost.com/2026/07/07/byd-denza-z-launch-globally-jul-9/",
         "summary": "Denza will hold a global launch event for the Denza Z at the UK's Goodwood Festival of Speed on July 9.",
         "publishedAt": "2026-07-07"
-      },
-      {
-        "title": "Global EV battery market share in January-May 2026: CATL 40.2%, BYD 14.4%",
-        "url": "https://cnevpost.com/2026/07/03/global-ev-battery-market-share-jan-may-2026/",
-        "summary": "Among the top 10 companies, seven were Chinese firms, together accounting for 72.6% of the global EV battery market.",
-        "publishedAt": "2026-07-03"
-      },
-      {
-        "title": "BYD's BEV sales beat Tesla again in Q2 despite US EV maker's strong rebound",
-        "url": "https://cnevpost.com/2026/07/02/byd-bev-sales-beat-tesla-again/",
-        "summary": "BYD sold 557,090 BEVs in the second quarter, about 77,000 units more than Tesla's 480,126.",
-        "publishedAt": "2026-07-02"
       }
     ],
     "Nio": [
+      {
+        "title": "Nio Firefly unveils new Halo series, first model to debut on July 20",
+        "url": "https://cnevpost.com/2026/07/17/nio-firefly-unveils-halo-series-first-model-jul-20/",
+        "summary": "The Halo series is Firefly's first product line centered on design-driven development.",
+        "publishedAt": "2026-07-17"
+      },
       {
         "title": "Nio Firefly reaches 70,000 deliveries after steady sales growth",
         "url": "https://cnevpost.com/2026/07/16/nio-firefly-70000-deliveries/",
@@ -2684,12 +2690,6 @@
         "url": "https://cnevpost.com/2026/07/01/nio-jun-2026-deliveries/",
         "summary": "Nio Inc delivered 40,597 vehicles in June, up 62.88% year-on-year, setting a new monthly record so far this year.",
         "publishedAt": "2026-07-01"
-      },
-      {
-        "title": "Nio's battery operator Mirattery raises fresh funds via two securitization deals",
-        "url": "https://cnevpost.com/2026/06/30/mirattery-2-new-securitization-deals/",
-        "summary": "Mirattery issued two new asset-backed securitization products with a combined size of 2.021 billion yuan.",
-        "publishedAt": "2026-06-30"
       }
     ],
     "Xpeng": [
@@ -2754,6 +2754,18 @@
         "publishedAt": "2026-07-03"
       },
       {
+        "title": "Xpeng's He echoes Nio's Li on China NEV penetration topping 90%",
+        "url": "https://cnevpost.com/2026/07/03/xpeng-he-echoes-nio-li-china-nev-penetration/",
+        "summary": "Xpeng chairman He Xiaopeng expects China's NEV penetration to exceed 90% by 2030.",
+        "publishedAt": "2026-07-03"
+      },
+      {
+        "title": "Xpeng to lift GX output 10% this month, eyes top-three segment spot",
+        "url": "https://cnevpost.com/2026/07/03/xpeng-lift-gx-output-this-month/",
+        "summary": "Xpeng GX delivered 6,739 units in June, with the 10,000th vehicle rolling off the line on July 1.",
+        "publishedAt": "2026-07-03"
+      },
+      {
         "title": "Deutsche Bank sees Xpeng Mona L03 SUV selling 12,500 units a month",
         "url": "https://cnevpost.com/2026/07/03/xpeng-mona-l03-12500-a-month-db/",
         "summary": "Deutsche Bank analysts expect the Mona L03 to average about 12,500 units in monthly sales, replicating the success of the Mona M03 sedan.",
@@ -2800,18 +2812,6 @@
         "url": "https://cnevpost.com/2026/06/23/xpeng-debut-mona-l03-jul/",
         "summary": "Xpeng CEO said the L03 won't be priced above 300,000 yuan ($44,290), but its development was aligned with the standards of 300,000-yuan-class EVs.",
         "publishedAt": "2026-06-23"
-      },
-      {
-        "title": "Xpeng's He Xiaopeng returns to Alibaba orbit with Ant board seat",
-        "url": "https://cnevpost.com/2026/06/22/xpeng-he-xiaopeng-ant-board-seat/",
-        "summary": "Xpeng CEO joined Ant Group's board, set to advise on AI strategy.",
-        "publishedAt": "2026-06-22"
-      },
-      {
-        "title": "Xpeng teases first SUV in Mona lineup as L03 nears official debut",
-        "url": "https://cnevpost.com/2026/06/22/xpeng-teases-first-mona-suv-l03/",
-        "summary": "Xpeng adds the L03 SUV to its Mona lineup, seeking to replicate the strong sales of the M03 sedan.",
-        "publishedAt": "2026-06-22"
       }
     ],
     "Li Auto": [
@@ -3304,6 +3304,18 @@
     ],
     "Leapmotor": [
       {
+        "title": "Leapmotor reveals A05s interior for first time as compact EV nears launch",
+        "url": "https://cnevpost.com/2026/07/17/leapmotor-reveals-a05s-interior/",
+        "summary": "Leapmotor shared the first interior images of the A05s after previewing the vehicle last week.",
+        "publishedAt": "2026-07-17"
+      },
+      {
+        "title": "Leapmotor sticks to 1 million sales target despite 35.6% completion rate at half-year mark",
+        "url": "https://cnevpost.com/2026/07/17/leapmotor-sticks-to-1-million-2026-sales-target/",
+        "summary": "An executive said Leapmotor will make efforts across multiple areas in the second half to get as close as possible to its sales target.",
+        "publishedAt": "2026-07-17"
+      },
+      {
         "title": "Leapmotor launches refreshed B01, B10 to strengthen low-cost EV push",
         "url": "https://cnevpost.com/2026/07/16/leapmotor-launches-refreshed-b01-b10/",
         "summary": "The refreshed B01 sedan starts at 95,800 yuan ($14,150), while the B10 SUV starts at 99,800 yuan.",
@@ -3352,16 +3364,16 @@
         "publishedAt": "2026-07-01"
       },
       {
-        "title": "Leapmotor enters MPV market with D99 launch",
-        "url": "https://cnevpost.com/2026/06/25/leapmotor-d99-launch/",
-        "summary": "Leapmotor's first MPV, the D99, goes on sale starting at 249,800 yuan ($36,790).",
-        "publishedAt": "2026-06-25"
-      },
-      {
         "title": "Leapmotor tops 1.5 million deliveries, launches Lafa 5 in Hong Kong",
         "url": "https://cnevpost.com/2026/06/18/leapmotor-1-5-million-deliveries-launches-lafa-5-hk/",
         "summary": "Leapmotor's cumulative global deliveries reached 1.5 million units, taking just 8 months to climb from 1 million to 1.5 million.",
         "publishedAt": "2026-06-18"
+      },
+      {
+        "title": "Leapmotor refreshes top-selling SUV trio in bid to sustain growth",
+        "url": "https://cnevpost.com/2026/06/16/leapmotor-refreshes-suv-trio-c10-c11-c16/",
+        "summary": "Leapmotor launched updated versions of the C10, C11 and C16, with starting prices as low as 125,800 yuan ($18,620).",
+        "publishedAt": "2026-06-16"
       },
       {
         "title": "Leapmotor opens pre-orders for updated C-series SUVs ahead of June 16 launch",
@@ -3410,18 +3422,6 @@
         "url": "https://cnevpost.com/2026/05/15/leapmotor-q1-net-loss-widen-sales-growth/",
         "summary": "Leapmotor's first-quarter revenue reached 10.82 billion yuan, its best first quarter on record, but gross margin dropped significantly.",
         "publishedAt": "2026-05-15"
-      },
-      {
-        "title": "Leapmotor offers T03 lease in Germany for less than monthly phone bill",
-        "url": "https://cnevpost.com/2026/05/11/leapmotor-offers-t03-lease-germany-less-than-monthly-phone-bill/",
-        "summary": "Leapmotor rolled out a €49 monthly lease plan for the T03 in Germany, costing only half the price of its European rivals in the same class.",
-        "publishedAt": "2026-05-11"
-      },
-      {
-        "title": "Stellantis deepens Leapmotor tie-up with new Opel EV, Spanish plant transfer",
-        "url": "https://cnevpost.com/2026/05/08/stellantis-deepens-leapmotor-tie-up-opel-ev-spanish-plant-transfer/",
-        "summary": "Stellantis and Leapmotor plan to add a new line at the Zaragoza plant in Spain to produce an all-new Opel electric SUV and Leapmotor's B10 model.",
-        "publishedAt": "2026-05-08"
       }
     ],
     "Huawei HIMA": [
@@ -3577,13 +3577,13 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-16T23:15:33.742Z",
-  "lastDataChangeAt": "2026-07-16T15:50:48.081Z",
+  "lastCheckedAt": "2026-07-17T07:36:08.364Z",
+  "lastDataChangeAt": "2026-07-17T07:36:08.364Z",
   "latestChanges": [
+    "BYD news: 2 new articles",
     "Nio news: 1 new article",
-    "Xpeng news: 3 new articles",
-    "Li Auto news: 1 new article",
-    "Leapmotor news: 1 new article"
+    "Xpeng news: 2 new articles",
+    "Leapmotor news: 3 new articles"
   ],
   "changeHistory": [
     {
@@ -3706,6 +3706,15 @@
         "Xpeng news: 3 new articles",
         "Li Auto news: 1 new article",
         "Leapmotor news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-17T07:36:08.364Z",
+      "changes": [
+        "BYD news: 2 new articles",
+        "Nio news: 1 new article",
+        "Xpeng news: 2 new articles",
+        "Leapmotor news: 3 new articles"
       ]
     }
   ]
