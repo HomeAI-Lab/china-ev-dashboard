@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-18T00:13:40.152Z",
-  "newsFetchedAt": "2026-07-18T00:13:40.152Z",
+  "fetchedAt": "2026-07-18T07:18:10.439Z",
+  "newsFetchedAt": "2026-07-18T07:18:10.439Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-18T00:13:40.152Z",
+    "fetchedAt": "2026-07-18T07:18:10.438Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2450,6 +2450,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD's Brazil plant sees 100,000th NEV roll off line as workforce tops 5,500",
+        "url": "https://cnevpost.com/2026/07/18/byd-brazil-plant-100000th-nev-workforce-5500/",
+        "summary": "BYD's passenger vehicle plant in Brazil began production on July 1, 2025, with planned annual capacity of 150,000 vehicles in its first phase.",
+        "publishedAt": "2026-07-18"
+      },
+      {
         "title": "BYD Denza previews Z9S sedan, expanding product lineup",
         "url": "https://cnevpost.com/2026/07/17/byd-denza-previews-z9s/",
         "summary": "Denza shared the first official images of the Z9S, which is expected to compete with the Xiaomi SU7.",
@@ -2562,12 +2568,6 @@
         "url": "https://cnevpost.com/2026/07/08/byd-donation-disaster-hit-guangxi/",
         "summary": "Typhoon Maysak has affected 375,000 people in Guangxi, leaving 6 dead and 11 missing.",
         "publishedAt": "2026-07-08"
-      },
-      {
-        "title": "BYD's Porsche 911-rivaling Denza Z to launch globally on July 9",
-        "url": "https://cnevpost.com/2026/07/07/byd-denza-z-launch-globally-jul-9/",
-        "summary": "Denza will hold a global launch event for the Denza Z at the UK's Goodwood Festival of Speed on July 9.",
-        "publishedAt": "2026-07-07"
       }
     ],
     "Nio": [
@@ -3577,11 +3577,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-18T00:13:40.155Z",
-  "lastDataChangeAt": "2026-07-17T17:34:50.174Z",
+  "lastCheckedAt": "2026-07-18T07:18:10.442Z",
+  "lastDataChangeAt": "2026-07-18T07:18:10.442Z",
   "latestChanges": [
-    "Nio news: 1 new article",
-    "Leapmotor news: 1 new article"
+    "BYD news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3726,6 +3725,12 @@
       "changes": [
         "Nio news: 1 new article",
         "Leapmotor news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-18T07:18:10.442Z",
+      "changes": [
+        "BYD news: 1 new article"
       ]
     }
   ]
