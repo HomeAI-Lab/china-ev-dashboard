@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-18T11:33:05.875Z",
-  "newsFetchedAt": "2026-07-18T11:33:05.875Z",
+  "fetchedAt": "2026-07-18T15:35:00.779Z",
+  "newsFetchedAt": "2026-07-18T15:35:00.779Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-18T11:33:05.874Z",
+    "fetchedAt": "2026-07-18T15:35:00.778Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2572,6 +2572,12 @@
     ],
     "Nio": [
       {
+        "title": "Nio Day 2026 to be held in Wuhan after user vote",
+        "url": "https://cnevpost.com/2026/07/18/nio-day-2026-to-be-held-in-wuhan/",
+        "summary": "Wuhan, the capital of Hubei province in central China, is a major industrial and commercial hub along the Yangtze River.",
+        "publishedAt": "2026-07-18"
+      },
+      {
         "title": "Nio chip unit showcases multiple chips at WAIC 2026 in Shanghai",
         "url": "https://cnevpost.com/2026/07/17/nio-shenji-showcases-chips-waic-2026/",
         "summary": "Shenji displayed several chips including the NX9031X, NX9031U and NX9031C, covering assisted driving, embodied intelligence and agent inference.",
@@ -2624,12 +2630,6 @@
         "url": "https://cnevpost.com/2026/07/09/nio-jun-2026-deliveries-breakdown/",
         "summary": "The ES9 delivered 8,595 units in June, contributing 21.17% of Nio Inc's deliveries for the month in its first full delivery month.",
         "publishedAt": "2026-07-09"
-      },
-      {
-        "title": "Nio hits 150,000 cumulative deliveries in Shanghai, its home city",
-        "url": "https://cnevpost.com/2026/07/08/nio-hits-150000-deliveries-shanghai/",
-        "summary": "As of the end of June, Nio Inc had delivered 1.19 million vehicles in China, with Shanghai accounting for more than one-tenth of that figure.",
-        "publishedAt": "2026-07-08"
       },
       {
         "title": "BYD follows Nio's relief efforts with donation to disaster-hit Guangxi",
@@ -3577,10 +3577,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-18T11:33:05.878Z",
-  "lastDataChangeAt": "2026-07-18T07:18:10.442Z",
+  "lastCheckedAt": "2026-07-18T15:35:00.782Z",
+  "lastDataChangeAt": "2026-07-18T15:35:00.782Z",
   "latestChanges": [
-    "BYD news: 1 new article"
+    "Nio news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3731,6 +3731,12 @@
       "changedAt": "2026-07-18T07:18:10.442Z",
       "changes": [
         "BYD news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-18T15:35:00.782Z",
+      "changes": [
+        "Nio news: 1 new article"
       ]
     }
   ]
