@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-18T07:18:10.439Z",
-  "newsFetchedAt": "2026-07-18T07:18:10.439Z",
+  "fetchedAt": "2026-07-18T11:33:05.875Z",
+  "newsFetchedAt": "2026-07-18T11:33:05.875Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-18T07:18:10.438Z",
+    "fetchedAt": "2026-07-18T11:33:05.874Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3577,7 +3577,7 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-18T07:18:10.442Z",
+  "lastCheckedAt": "2026-07-18T11:33:05.878Z",
   "lastDataChangeAt": "2026-07-18T07:18:10.442Z",
   "latestChanges": [
     "BYD news: 1 new article"
