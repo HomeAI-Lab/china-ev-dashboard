@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-18T22:34:16.454Z",
-  "newsFetchedAt": "2026-07-18T22:34:16.454Z",
+  "fetchedAt": "2026-07-19T07:41:51.395Z",
+  "newsFetchedAt": "2026-07-19T07:41:51.395Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -292,21 +292,21 @@
       93376
     ],
     "Huawei HIMA": [
-      null,
-      null,
-      31727,
-      29632,
-      30578,
-      46141,
-      44090,
-      33699,
-      39931,
-      41643,
-      41931,
-      49474,
-      34987,
+      31458,
+      28034,
+      27550,
+      30085,
+      37247,
+      43128,
+      41093,
+      33951,
+      38355,
+      43384,
+      44786,
+      49021,
+      34989,
       21517,
-      22914,
+      22912,
       27555,
       44448,
       52585,
@@ -318,14 +318,14 @@
       89611,
       57915,
       28212,
-      26597,
+      26582,
       32759,
-      46122,
+      46124,
       50624
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-18T22:34:16.453Z",
+    "fetchedAt": "2026-07-19T07:41:51.394Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2632,6 +2632,12 @@
         "publishedAt": "2026-07-09"
       },
       {
+        "title": "Nio hits 150,000 cumulative deliveries in Shanghai, its home city",
+        "url": "https://cnevpost.com/2026/07/08/nio-hits-150000-deliveries-shanghai/",
+        "summary": "As of the end of June, Nio Inc had delivered 1.19 million vehicles in China, with Shanghai accounting for more than one-tenth of that figure.",
+        "publishedAt": "2026-07-08"
+      },
+      {
         "title": "BYD follows Nio's relief efforts with donation to disaster-hit Guangxi",
         "url": "https://cnevpost.com/2026/07/08/byd-donation-disaster-hit-guangxi/",
         "summary": "Typhoon Maysak has affected 375,000 people in Guangxi, leaving 6 dead and 11 missing.",
@@ -2683,12 +2689,6 @@
         "title": "Nio's William Li returns to Peking University 30 years after graduation, reflecting on six career lows",
         "url": "https://cnevpost.com/2026/07/02/nio-william-li-peking-university-speech/",
         "summary": "Nio founder William Li spoke as an alumni representative at Peking University's 2026 undergraduate commencement ceremony.",
-        "publishedAt": "2026-07-02"
-      },
-      {
-        "title": "Analysts explain why Nio's June deliveries missed guidance",
-        "url": "https://cnevpost.com/2026/07/02/analysts-why-nio-deliveries-missed-guidance/",
-        "summary": "Deutsche Bank said Nio's June deliveries came in slightly below guidance, mainly because some customers were waiting for the upcoming five-seat ES8.",
         "publishedAt": "2026-07-02"
       }
     ],
@@ -3564,7 +3564,9 @@
     "Leapmotor": "https://cnevpost.com/leapmotor/",
     "Huawei HIMA": "https://cnevpost.com/huawei/"
   },
-  "errors": [],
+  "errors": [
+    "Market dealerInventory: connect ECONNREFUSED 127.0.0.1:443"
+  ],
   "assumptions": [
     "CnEVPost reports vehicles/units, not tons.",
     "Missing brand-month cells are kept as null and are not estimated.",
@@ -3577,9 +3579,25 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-18T22:34:16.457Z",
-  "lastDataChangeAt": "2026-07-18T15:35:00.782Z",
+  "lastCheckedAt": "2026-07-19T07:41:51.398Z",
+  "lastDataChangeAt": "2026-07-19T07:41:51.398Z",
   "latestChanges": [
+    "Huawei HIMA company-reported 2024-01: added 31458",
+    "Huawei HIMA company-reported 2024-02: added 28034",
+    "Huawei HIMA company-reported 2024-03: revised 31727 -> 27550",
+    "Huawei HIMA company-reported 2024-04: revised 29632 -> 30085",
+    "Huawei HIMA company-reported 2024-05: revised 30578 -> 37247",
+    "Huawei HIMA company-reported 2024-06: revised 46141 -> 43128",
+    "Huawei HIMA company-reported 2024-07: revised 44090 -> 41093",
+    "Huawei HIMA company-reported 2024-08: revised 33699 -> 33951",
+    "Huawei HIMA company-reported 2024-09: revised 39931 -> 38355",
+    "Huawei HIMA company-reported 2024-10: revised 41643 -> 43384",
+    "Huawei HIMA company-reported 2024-11: revised 41931 -> 44786",
+    "Huawei HIMA company-reported 2024-12: revised 49474 -> 49021",
+    "Huawei HIMA company-reported 2025-01: revised 34987 -> 34989",
+    "Huawei HIMA company-reported 2025-03: revised 22914 -> 22912",
+    "Huawei HIMA company-reported 2026-03: revised 26597 -> 26582",
+    "Huawei HIMA company-reported 2026-05: revised 46122 -> 46124",
     "Nio news: 1 new article"
   ],
   "changeHistory": [
@@ -3736,6 +3754,28 @@
     {
       "changedAt": "2026-07-18T15:35:00.782Z",
       "changes": [
+        "Nio news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-19T07:41:51.398Z",
+      "changes": [
+        "Huawei HIMA company-reported 2024-01: added 31458",
+        "Huawei HIMA company-reported 2024-02: added 28034",
+        "Huawei HIMA company-reported 2024-03: revised 31727 -> 27550",
+        "Huawei HIMA company-reported 2024-04: revised 29632 -> 30085",
+        "Huawei HIMA company-reported 2024-05: revised 30578 -> 37247",
+        "Huawei HIMA company-reported 2024-06: revised 46141 -> 43128",
+        "Huawei HIMA company-reported 2024-07: revised 44090 -> 41093",
+        "Huawei HIMA company-reported 2024-08: revised 33699 -> 33951",
+        "Huawei HIMA company-reported 2024-09: revised 39931 -> 38355",
+        "Huawei HIMA company-reported 2024-10: revised 41643 -> 43384",
+        "Huawei HIMA company-reported 2024-11: revised 41931 -> 44786",
+        "Huawei HIMA company-reported 2024-12: revised 49474 -> 49021",
+        "Huawei HIMA company-reported 2025-01: revised 34987 -> 34989",
+        "Huawei HIMA company-reported 2025-03: revised 22914 -> 22912",
+        "Huawei HIMA company-reported 2026-03: revised 26597 -> 26582",
+        "Huawei HIMA company-reported 2026-05: revised 46122 -> 46124",
         "Nio news: 1 new article"
       ]
     }
