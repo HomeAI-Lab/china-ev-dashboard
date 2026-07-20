@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-20T03:04:39.941Z",
-  "newsFetchedAt": "2026-07-20T03:04:39.941Z",
+  "fetchedAt": "2026-07-20T11:23:08.461Z",
+  "newsFetchedAt": "2026-07-20T11:23:08.461Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-20T03:04:39.940Z",
+    "fetchedAt": "2026-07-20T11:23:08.460Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2450,6 +2450,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD Fang Cheng Bao Tai 7 surpasses 200,000 sales in about 10 months",
+        "url": "https://cnevpost.com/2026/07/20/byd-fang-cheng-bao-tai-7-200000-sales/",
+        "summary": "The Tai 7 surpassed 200,000 cumulative sales about 10 months after launch, becoming the fastest boxy SUV in China to reach the milestone.",
+        "publishedAt": "2026-07-20"
+      },
+      {
         "title": "BYD offers closer look at Qin Max, flagship of its hot-selling Qin family",
         "url": "https://cnevpost.com/2026/07/20/byd-offers-closer-look-qin-max/",
         "summary": "The Qin series is one of BYD's best-selling vehicle lineups, but its sales have declined significantly this year.",
@@ -2510,6 +2516,12 @@
         "publishedAt": "2026-07-13"
       },
       {
+        "title": "BYD previews Qin Max sedan with flash charging, expanding Qin lineup",
+        "url": "https://cnevpost.com/2026/07/13/byd-previews-qin-max-sedan-flash-charging/",
+        "summary": "BYD Qin Max is the new flagship model in the Qin family, positioned above the Qin L, and is expected to be offered in BEV and PHEV variants.",
+        "publishedAt": "2026-07-13"
+      },
+      {
         "title": "BYD Denza files all-electric N8 SUV, reviving short-lived nameplate",
         "url": "https://cnevpost.com/2026/07/11/byd-denza-files-all-electric-n8-suv/",
         "summary": "The plug-in hybrid Denza N8 hit the market in August 2023 and was discontinued less than a year later.",
@@ -2556,21 +2568,15 @@
         "url": "https://cnevpost.com/2026/07/09/denza-z-debuts-uk/",
         "summary": "The Denza Z comes in three variants and will open for pre-orders in the UK in October, with the earliest deliveries expected by year-end.",
         "publishedAt": "2026-07-09"
-      },
-      {
-        "title": "BYD's 17 millionth NEV rolls off line as newly launched Seal 08 takes milestone spot",
-        "url": "https://cnevpost.com/2026/07/08/byd-17-millionth-nev-rolls-off-line/",
-        "summary": "BYD's 17 millionth NEV comes just 82 days after its 16 millionth rolled off the line.",
-        "publishedAt": "2026-07-08"
-      },
-      {
-        "title": "BYD follows Nio's relief efforts with donation to disaster-hit Guangxi",
-        "url": "https://cnevpost.com/2026/07/08/byd-donation-disaster-hit-guangxi/",
-        "summary": "Typhoon Maysak has affected 375,000 people in Guangxi, leaving 6 dead and 11 missing.",
-        "publishedAt": "2026-07-08"
       }
     ],
     "Nio": [
+      {
+        "title": "Nio to deliver 130,000th new ES8 this week as 5-seat variant revives momentum",
+        "url": "https://cnevpost.com/2026/07/20/nio-to-deliver-130000th-new-es8-this-week/",
+        "summary": "The latest 10,000 ES8 deliveries took only about 1 month, putting the model on track to return to a monthly pace of 10,000 units.",
+        "publishedAt": "2026-07-20"
+      },
       {
         "title": "Nio's Onvo brand sees L90 SUV deliveries top 60,000",
         "url": "https://cnevpost.com/2026/07/19/nio-onvo-l90-deliveries-60000/",
@@ -2684,12 +2690,6 @@
         "url": "https://cnevpost.com/2026/07/04/nio-names-3-candidate-cities-nio-day-2026/",
         "summary": "Harbin, Wuhan and Xiamen beat out 5 other bidding cities to enter the final vote.",
         "publishedAt": "2026-07-04"
-      },
-      {
-        "title": "Nio says suspects face criminal measures over fake promotion scams",
-        "url": "https://cnevpost.com/2026/07/03/nio-says-suspects-face-criminal-measures-fake-promotion/",
-        "summary": "Several online accounts posted fake promotional information and illegally harvested consumers' personal information.",
-        "publishedAt": "2026-07-03"
       }
     ],
     "Xpeng": [
@@ -2816,6 +2816,12 @@
     ],
     "Li Auto": [
       {
+        "title": "Li Auto begins deliveries of new L6, once its best-selling SUV",
+        "url": "https://cnevpost.com/2026/07/20/li-auto-begins-deliveries-new-l6/",
+        "summary": "Li Auto manufacturing chief Li Bin handed over vehicles to owners at a delivery event in Changzhou.",
+        "publishedAt": "2026-07-20"
+      },
+      {
         "title": "Li Auto launches revamped L6 SUV at unchanged price to revive sales",
         "url": "https://cnevpost.com/2026/07/16/li-auto-launches-revamped-l6/",
         "summary": "The new Li L6 starts at 249,800 yuan ($36,910) and is equipped with Li Auto's in-house developed Mach M100 assisted driving chip.",
@@ -2928,12 +2934,6 @@
         "url": "https://cnevpost.com/2026/06/08/li-auto-schedules-software-ai-event-jun-15/",
         "summary": "Li Auto will detail what embodied intelligence is and its roadmap in the software and AI fields.",
         "publishedAt": "2026-06-08"
-      },
-      {
-        "title": "Nio ES9 to hit 10,000 deliveries this month as exec disputes Li Auto chassis test",
-        "url": "https://cnevpost.com/2026/06/05/nio-es9-hit-10000-deliveries-this-month/",
-        "summary": "A Nio executive publicly questioned an ES9 chassis test video posted on Li Auto's official platform, signaling intensifying competition in China's large SUV market.",
-        "publishedAt": "2026-06-05"
       }
     ],
     "Tesla China": [
@@ -3577,10 +3577,12 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-20T03:04:39.944Z",
-  "lastDataChangeAt": "2026-07-20T03:04:39.944Z",
+  "lastCheckedAt": "2026-07-20T11:23:08.464Z",
+  "lastDataChangeAt": "2026-07-20T11:23:08.464Z",
   "latestChanges": [
-    "BYD news: 1 new article"
+    "BYD news: 2 new articles",
+    "Nio news: 1 new article",
+    "Li Auto news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3771,6 +3773,14 @@
       "changedAt": "2026-07-20T03:04:39.944Z",
       "changes": [
         "BYD news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-20T11:23:08.464Z",
+      "changes": [
+        "BYD news: 2 new articles",
+        "Nio news: 1 new article",
+        "Li Auto news: 1 new article"
       ]
     }
   ]
