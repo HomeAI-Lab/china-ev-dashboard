@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-20T11:23:08.461Z",
-  "newsFetchedAt": "2026-07-20T11:23:08.461Z",
+  "fetchedAt": "2026-07-20T17:11:06.915Z",
+  "newsFetchedAt": "2026-07-20T17:11:06.915Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-20T11:23:08.460Z",
+    "fetchedAt": "2026-07-20T17:11:06.914Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2572,6 +2572,12 @@
     ],
     "Nio": [
       {
+        "title": "Nio Firefly launches first model of design-driven Halo series",
+        "url": "https://cnevpost.com/2026/07/20/nio-firefly-launches-first-model-halo-series/",
+        "summary": "The starting price for the new model is 133,300 yuan ($19,680), which is 11% higher than that of the standard Firefly EV.",
+        "publishedAt": "2026-07-20"
+      },
+      {
         "title": "Nio to deliver 130,000th new ES8 this week as 5-seat variant revives momentum",
         "url": "https://cnevpost.com/2026/07/20/nio-to-deliver-130000th-new-es8-this-week/",
         "summary": "The latest 10,000 ES8 deliveries took only about 1 month, putting the model on track to return to a monthly pace of 10,000 units.",
@@ -2623,12 +2629,6 @@
         "title": "Nio kicks off 5-seat ES8 deliveries as its best-selling SUV eyes broader customer base",
         "url": "https://cnevpost.com/2026/07/10/nio-kicks-off-5-seat-es8-deliveries/",
         "summary": "ES8 deliveries fell 21.85% sequentially in June and the launch of the 5-seat version is expected to revive the model's momentum.",
-        "publishedAt": "2026-07-10"
-      },
-      {
-        "title": "Nio says ES8 per-vehicle cost up nearly $3,000 on raw material price surge",
-        "url": "https://cnevpost.com/2026/07/10/nio-es8-per-vehicle-cost-up-3000-material-price-surge/",
-        "summary": "William Li said that Nio is working with its supply chain partners to find ways to offset some of the costs and strive to keep prices stable.",
         "publishedAt": "2026-07-10"
       },
       {
@@ -2694,6 +2694,12 @@
     ],
     "Xpeng": [
       {
+        "title": "Xpeng loses AI infrastructure chief to OpenAI's robotics push, report says",
+        "url": "https://cnevpost.com/2026/07/20/xpeng-loses-ai-infra-chief-to-openai/",
+        "summary": "Lu Siyuan is set to leave Xpeng and join OpenAI to work on embodied AI robotics research and development.",
+        "publishedAt": "2026-07-20"
+      },
+      {
         "title": "Xpeng Mona L03 racks up 20,000 firm orders 7 minutes after launch",
         "url": "https://cnevpost.com/2026/07/16/xpeng-mona-l03-20000-orders-7-minutes/",
         "summary": "The Mona L03 is Xpeng's first global model to launch simultaneously in China and Europe and will eventually be sold in 64 overseas markets.",
@@ -2746,12 +2752,6 @@
         "url": "https://cnevpost.com/2026/07/08/xpeng-plans-2-more-mona-models/",
         "summary": "Xpeng is planning an A-segment SUV and a station wagon for the Mona lineup, codenamed D11 and D11T respectively.",
         "publishedAt": "2026-07-08"
-      },
-      {
-        "title": "Xpeng delivers 1,300 EVs to Car Inc, deepening mobility push",
-        "url": "https://cnevpost.com/2026/07/03/xpeng-delivers-1300-evs-to-car-inc/",
-        "summary": "Car Inc has bought over 5,000 Xpeng vehicles to date and plans to purchase at least 5,000 more within the next year.",
-        "publishedAt": "2026-07-03"
       },
       {
         "title": "Xpeng's He echoes Nio's Li on China NEV penetration topping 90%",
@@ -3577,12 +3577,11 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-20T11:23:08.464Z",
-  "lastDataChangeAt": "2026-07-20T11:23:08.464Z",
+  "lastCheckedAt": "2026-07-20T17:11:06.918Z",
+  "lastDataChangeAt": "2026-07-20T17:11:06.918Z",
   "latestChanges": [
-    "BYD news: 2 new articles",
     "Nio news: 1 new article",
-    "Li Auto news: 1 new article"
+    "Xpeng news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3781,6 +3780,13 @@
         "BYD news: 2 new articles",
         "Nio news: 1 new article",
         "Li Auto news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-20T17:11:06.918Z",
+      "changes": [
+        "Nio news: 1 new article",
+        "Xpeng news: 1 new article"
       ]
     }
   ]
