@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-20T21:45:33.205Z",
-  "newsFetchedAt": "2026-07-20T21:45:33.205Z",
+  "fetchedAt": "2026-07-21T07:42:52.836Z",
+  "newsFetchedAt": "2026-07-21T07:42:52.836Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-20T21:45:33.204Z",
+    "fetchedAt": "2026-07-21T07:42:52.835Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2450,6 +2450,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD launches Seal 05 DM-i plug-in hybrid sedan in Mexico under BYD King name",
+        "url": "https://cnevpost.com/2026/07/21/byd-launches-seal-05-dm-i-mexico-byd-king/",
+        "summary": "The plug-in hybrid sedan features BYD's fifth-generation DM technology and offers a combined range of up to 1,680 km.",
+        "publishedAt": "2026-07-21"
+      },
+      {
         "title": "BYD Fang Cheng Bao Tai 7 surpasses 200,000 sales in about 10 months",
         "url": "https://cnevpost.com/2026/07/20/byd-fang-cheng-bao-tai-7-200000-sales/",
         "summary": "The Tai 7 surpassed 200,000 cumulative sales about 10 months after launch, becoming the fastest boxy SUV in China to reach the milestone.",
@@ -2501,12 +2507,6 @@
         "title": "BYD tests high-performance appeal as Denza Z pre-orders pass 1,000",
         "url": "https://cnevpost.com/2026/07/14/byd-denza-z-pre-orders-1000/",
         "summary": "The Denza Z electric supercar began pre-sales in China on Monday, with a starting price of 680,000 yuan ($100,300).",
-        "publishedAt": "2026-07-14"
-      },
-      {
-        "title": "BYD Thailand deliveries surpass 130,000 as local plant marks second anniversary",
-        "url": "https://cnevpost.com/2026/07/14/byd-thailand-deliveries-130000-local-plant-2nd-anniversary/",
-        "summary": "BYD launched the Sealion 5 DM-i in Thailand, expanding its plug-in hybrid lineup in Southeast Asia.",
         "publishedAt": "2026-07-14"
       },
       {
@@ -2572,6 +2572,12 @@
     ],
     "Nio": [
       {
+        "title": "Shanghai contributes 11% of Nio's China retail sales in H1",
+        "url": "https://cnevpost.com/2026/07/21/shanghai-share-nio-retail-h1/",
+        "summary": "Nio Inc recorded retail sales of 20,736 vehicles in Shanghai in the first half of 2026.",
+        "publishedAt": "2026-07-21"
+      },
+      {
         "title": "Nio Firefly launches first model of design-driven Halo series",
         "url": "https://cnevpost.com/2026/07/20/nio-firefly-launches-first-model-halo-series/",
         "summary": "The starting price for the new model is 133,300 yuan ($19,680), which is 11% higher than that of the standard Firefly EV.",
@@ -2624,12 +2630,6 @@
         "url": "https://cnevpost.com/2026/07/15/nio-on-investor-list-cxmt-ipo/",
         "summary": "A Nio subsidiary has committed to subscribe for 158 million yuan of CXMT shares, with an 18-month lock-up period.",
         "publishedAt": "2026-07-15"
-      },
-      {
-        "title": "Nio kicks off 5-seat ES8 deliveries as its best-selling SUV eyes broader customer base",
-        "url": "https://cnevpost.com/2026/07/10/nio-kicks-off-5-seat-es8-deliveries/",
-        "summary": "ES8 deliveries fell 21.85% sequentially in June and the launch of the 5-seat version is expected to revive the model's momentum.",
-        "publishedAt": "2026-07-10"
       },
       {
         "title": "Nio launches 5-seat ES8 to broaden appeal of best-selling SUV",
@@ -2816,6 +2816,12 @@
     ],
     "Li Auto": [
       {
+        "title": "Li Auto sets up chip company, echoing Nio's spin-off playbook",
+        "url": "https://cnevpost.com/2026/07/21/li-auto-sets-up-chip-company/",
+        "summary": "Li Auto's in-house developed Mach M100 chip is already in mass production on the new L9, L8 and L6 models.",
+        "publishedAt": "2026-07-21"
+      },
+      {
         "title": "Li Auto begins deliveries of new L6, once its best-selling SUV",
         "url": "https://cnevpost.com/2026/07/20/li-auto-begins-deliveries-new-l6/",
         "summary": "Li Auto manufacturing chief Li Bin handed over vehicles to owners at a delivery event in Changzhou.",
@@ -2868,12 +2874,6 @@
         "url": "https://cnevpost.com/2026/07/01/li-auto-jun-2026-deliveries/",
         "summary": "Li Auto delivered a cumulative 193,472 vehicles in the first half, down 5.13% from a year earlier.",
         "publishedAt": "2026-07-01"
-      },
-      {
-        "title": "Li Auto enters Macau with localized EVs for cross-border drivers",
-        "url": "https://cnevpost.com/2026/06/27/li-auto-enters-macau/",
-        "summary": "Li Auto opened its first retail center in Macau, showcasing the i6 and i8 electric models.",
-        "publishedAt": "2026-06-27"
       },
       {
         "title": "Analysts see upgraded Li L8 averaging 5,000 units in monthly sales",
@@ -3577,11 +3577,12 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-20T21:45:33.208Z",
-  "lastDataChangeAt": "2026-07-20T17:11:06.918Z",
+  "lastCheckedAt": "2026-07-21T07:42:52.839Z",
+  "lastDataChangeAt": "2026-07-21T07:42:52.839Z",
   "latestChanges": [
+    "BYD news: 1 new article",
     "Nio news: 1 new article",
-    "Xpeng news: 1 new article"
+    "Li Auto news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3787,6 +3788,14 @@
       "changes": [
         "Nio news: 1 new article",
         "Xpeng news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-21T07:42:52.839Z",
+      "changes": [
+        "BYD news: 1 new article",
+        "Nio news: 1 new article",
+        "Li Auto news: 1 new article"
       ]
     }
   ]
