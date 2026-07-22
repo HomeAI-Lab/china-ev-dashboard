@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-22T07:43:09.632Z",
-  "newsFetchedAt": "2026-07-22T07:43:09.632Z",
+  "fetchedAt": "2026-07-22T13:12:11.917Z",
+  "newsFetchedAt": "2026-07-22T13:12:11.917Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-22T07:43:09.631Z",
+    "fetchedAt": "2026-07-22T13:12:11.917Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -1663,8 +1663,8 @@
     "sources": {
       "cpcaRetail": {
         "publisher": "CPCA via CnEVPost",
-        "url": "https://cnevpost.com/2026/07/15/china-nev-retail-fall-first-2-weeks-jul-2026/",
-        "publishedAt": "2026-07-15",
+        "url": "https://cnevpost.com/2026/07/22/china-nev-retail-sales-first-three-weeks-jul/",
+        "publishedAt": "2026-07-22",
         "status": "final"
       },
       "cpcaWholesale": {
@@ -1874,6 +1874,12 @@
     },
     "sourceHistory": {
       "cpcaRetail": [
+        {
+          "publisher": "CPCA via CnEVPost",
+          "url": "https://cnevpost.com/2026/07/22/china-nev-retail-sales-first-three-weeks-jul/",
+          "publishedAt": "2026-07-22",
+          "status": "final"
+        },
         {
           "publisher": "CPCA via CnEVPost",
           "url": "https://cnevpost.com/2026/07/15/china-nev-retail-fall-first-2-weeks-jul-2026/",
@@ -3577,12 +3583,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-22T07:43:09.635Z",
-  "lastDataChangeAt": "2026-07-22T07:43:09.635Z",
+  "lastCheckedAt": "2026-07-22T13:12:11.920Z",
+  "lastDataChangeAt": "2026-07-22T13:12:11.920Z",
   "latestChanges": [
-    "BYD news: 2 new articles",
-    "Nio news: 2 new articles",
-    "Xpeng news: 1 new article"
+    "Market source cpcaRetail: added 2026-07-22"
   ],
   "changeHistory": [
     {
@@ -3813,6 +3817,12 @@
         "BYD news: 2 new articles",
         "Nio news: 2 new articles",
         "Xpeng news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-22T13:12:11.920Z",
+      "changes": [
+        "Market source cpcaRetail: added 2026-07-22"
       ]
     }
   ]
