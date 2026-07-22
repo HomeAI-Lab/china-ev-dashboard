@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-21T21:46:52.731Z",
-  "newsFetchedAt": "2026-07-21T21:46:52.731Z",
+  "fetchedAt": "2026-07-22T07:43:09.632Z",
+  "newsFetchedAt": "2026-07-22T07:43:09.632Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-21T21:46:52.730Z",
+    "fetchedAt": "2026-07-22T07:43:09.631Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2450,6 +2450,18 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD Da Tang EV to reach 10,000 deliveries about 1 month after launch",
+        "url": "https://cnevpost.com/2026/07/22/byd-da-tang-to-reach-10000-deliveries-1-month/",
+        "summary": "The delivery ceremony for the 10,000th Da Tang EV will be held on July 23.",
+        "publishedAt": "2026-07-22"
+      },
+      {
+        "title": "BYD unveils Qin Max interior as launch nears",
+        "url": "https://cnevpost.com/2026/07/22/byd-qin-max-interior/",
+        "summary": "BYD has yet to announce the model's planned launch date, though rumors suggest it could be on August 13.",
+        "publishedAt": "2026-07-22"
+      },
+      {
         "title": "BYD launches Seal 05 DM-i plug-in hybrid sedan in Mexico under BYD King name",
         "url": "https://cnevpost.com/2026/07/21/byd-launches-seal-05-dm-i-mexico-byd-king/",
         "summary": "The plug-in hybrid sedan features BYD's fifth-generation DM technology and offers a combined range of up to 1,680 km.",
@@ -2556,21 +2568,21 @@
         "url": "https://cnevpost.com/2026/07/10/byd-shark-pickup-china-regulatory-filing/",
         "summary": "The Shark pickup went on sale in Mexico in May 2024, and is now sold only in overseas markets.",
         "publishedAt": "2026-07-10"
-      },
-      {
-        "title": "Automakers' share in China NEV exports in June: BYD leads with 34.2%, Tesla 4th with 7.2%",
-        "url": "https://cnevpost.com/2026/07/10/automakers-share-china-nev-exports-jun-2026/",
-        "summary": "BYD dominated China's NEV export market in June with 170,897 units shipped, while Tesla China exported 36,171 units.",
-        "publishedAt": "2026-07-10"
-      },
-      {
-        "title": "Automakers' share in China's NEV market in June: BYD leads with 22.3%, Tesla 5th for second consecutive month",
-        "url": "https://cnevpost.com/2026/07/10/automakers-share-china-nev-market-jun-2026/",
-        "summary": "Nio's retail sales jumped 62.6% year-on-year in June, ranking 8th in China's NEV market.",
-        "publishedAt": "2026-07-10"
       }
     ],
     "Nio": [
+      {
+        "title": "Nio delivers 130,000th third-gen ES8 with latest 10,000 units taking just 1 month",
+        "url": "https://cnevpost.com/2026/07/22/nio-delivers-130000th-third-gen-es8/",
+        "summary": "The latest 10,000 deliveries took just 1 month, suggesting the third-generation ES8's delivery pace is returning to the 10,000-per-month level.",
+        "publishedAt": "2026-07-22"
+      },
+      {
+        "title": "Nio moves beyond cash-burning EV label on chip unit's AI push, Morgan Stanley says",
+        "url": "https://cnevpost.com/2026/07/22/nio-moves-beyond-cash-burning-ev-label-chip-ai-push-morgan-stanley/",
+        "summary": "Morgan Stanley says GeniTech's debut at WAIC 2026 takes Nio's stock narrative one step further toward a vertically integrated AI chip platform.",
+        "publishedAt": "2026-07-22"
+      },
       {
         "title": "Shanghai contributes 11% of Nio's China retail sales in H1",
         "url": "https://cnevpost.com/2026/07/21/shanghai-share-nio-retail-h1/",
@@ -2678,21 +2690,15 @@
         "url": "https://cnevpost.com/2026/07/07/nio-to-start-construction-shanghai-battery-facility-h2/",
         "summary": "The project, when completed, will house 31 lithium battery testing laboratories, 1 lithium-ion cell pilot line and 1 battery pack line.",
         "publishedAt": "2026-07-07"
-      },
-      {
-        "title": "Nio sets 5-seat ES8 launch event for 7:30 pm on July 9",
-        "url": "https://cnevpost.com/2026/07/06/nio-5-seat-es8-launch-730-pm-jul-9/",
-        "summary": "The launch event for the 5-seat Nio ES8 will begin at 7:30 pm Beijing Time on July 9. Users can watch it via Nio's official livestream.",
-        "publishedAt": "2026-07-06"
-      },
-      {
-        "title": "Nio brand's average selling price hits $65,300 in June as flagship SUV boosts premium pricing power",
-        "url": "https://cnevpost.com/2026/07/06/nio-brand-average-selling-price-jun-2026/",
-        "summary": "The Nio brand's average transaction price reached 443,000 yuan ($65,300) in June, as deliveries of the ES9, which starts at 498,000 yuan, ramped up.",
-        "publishedAt": "2026-07-06"
       }
     ],
     "Xpeng": [
+      {
+        "title": "Xpeng flying car unit gets certification boost as China unveils eVTOL compliance list",
+        "url": "https://cnevpost.com/2026/07/22/xpeng-aridge-certification-boost-evtol-compliance-list/",
+        "summary": "Xpeng Aridge, Ehang, Volant and Autoflight were included in the first batch of compliant companies.",
+        "publishedAt": "2026-07-22"
+      },
       {
         "title": "Xpeng loses AI infrastructure chief to OpenAI's robotics push, report says",
         "url": "https://cnevpost.com/2026/07/20/xpeng-loses-ai-infra-chief-to-openai/",
@@ -2806,12 +2812,6 @@
         "url": "https://cnevpost.com/2026/06/29/xpeng-mona-l03-china-debut-jul-2/",
         "summary": "Xpeng will hold the Mona L03's debut event in Beijing on July 2, with display vehicles arriving at stores starting July 1.",
         "publishedAt": "2026-06-29"
-      },
-      {
-        "title": "Xpeng overhauls robotics unit, adds nine departments in production push",
-        "url": "https://cnevpost.com/2026/06/26/xpeng-overhauls-robotics-unit-production-push/",
-        "summary": "Xpeng's robotics center has added nine second-tier departments, with chairman He Xiaopeng concurrently heading the product department.",
-        "publishedAt": "2026-06-26"
       }
     ],
     "Li Auto": [
@@ -3577,13 +3577,12 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-21T21:46:52.733Z",
-  "lastDataChangeAt": "2026-07-21T13:05:53.803Z",
+  "lastCheckedAt": "2026-07-22T07:43:09.635Z",
+  "lastDataChangeAt": "2026-07-22T07:43:09.635Z",
   "latestChanges": [
-    "BYD news: 1 new article",
+    "BYD news: 2 new articles",
     "Nio news: 2 new articles",
-    "Xpeng news: 1 new article",
-    "Li Auto news: 1 new article"
+    "Xpeng news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3806,6 +3805,14 @@
         "Nio news: 2 new articles",
         "Xpeng news: 1 new article",
         "Li Auto news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-22T07:43:09.635Z",
+      "changes": [
+        "BYD news: 2 new articles",
+        "Nio news: 2 new articles",
+        "Xpeng news: 1 new article"
       ]
     }
   ]
