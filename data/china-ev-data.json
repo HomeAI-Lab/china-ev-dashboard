@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-22T21:55:13.475Z",
-  "newsFetchedAt": "2026-07-22T21:55:13.475Z",
+  "fetchedAt": "2026-07-23T07:44:45.155Z",
+  "newsFetchedAt": "2026-07-23T07:44:45.155Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-22T21:55:13.475Z",
+    "fetchedAt": "2026-07-23T07:44:45.154Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2700,6 +2700,12 @@
     ],
     "Xpeng": [
       {
+        "title": "Xpeng launches 4 models in Bahrain, delivers 200,000th G6 globally",
+        "url": "https://cnevpost.com/2026/07/23/xpeng-launches-4-models-bahrain/",
+        "summary": "Xpeng launched the X9, G9, G6 and P7+ in Bahrain, extending its overseas expansion into the Middle East's Gulf region.",
+        "publishedAt": "2026-07-23"
+      },
+      {
         "title": "Xpeng delivers first Mona L03 SUVs in China, plans nationwide ramp-up in August",
         "url": "https://cnevpost.com/2026/07/22/xpeng-delivers-first-mona-l03-suvs-china/",
         "summary": "Deutsche Bank expects Mona L03 monthly deliveries to reach about 15,000 units in 2026, followed by full-year volume of around 150,000 in 2027.",
@@ -2760,6 +2766,12 @@
         "publishedAt": "2026-07-11"
       },
       {
+        "title": "Xpeng CEO takes company's first robotaxi ride as internal testing begins",
+        "url": "https://cnevpost.com/2026/07/09/xpeng-ceo-first-robotaxi-ride-internal-testing-begins/",
+        "summary": "Xpeng has completed the first order of its robotaxi closed beta, with chairman and CEO He Xiaopeng becoming the first user.",
+        "publishedAt": "2026-07-09"
+      },
+      {
         "title": "Xpeng plans 2 more Mona models as budget lineup expands to at least 5 vehicles",
         "url": "https://cnevpost.com/2026/07/08/xpeng-plans-2-more-mona-models/",
         "summary": "Xpeng is planning an A-segment SUV and a station wagon for the Mona lineup, codenamed D11 and D11T respectively.",
@@ -2806,18 +2818,6 @@
         "url": "https://cnevpost.com/2026/06/30/xpeng-loses-another-robotics-veteran/",
         "summary": "Mi Liangchuan, head of Xpeng's robotics business, has departed recently, becoming the second key executive to leave its robotics team within a month.",
         "publishedAt": "2026-06-30"
-      },
-      {
-        "title": "Xpeng to hold global launch for Mona L03 in Europe after China debut",
-        "url": "https://cnevpost.com/2026/06/29/xpeng-global-launch-mona-l03-europe-after-china-debut/",
-        "summary": "Xpeng will start pre-sales of the Mona L03 in China on July 2, which will be the SUV's only major event in China.",
-        "publishedAt": "2026-06-29"
-      },
-      {
-        "title": "Xpeng Mona L03 to make China debut on July 2, targeting young buyers",
-        "url": "https://cnevpost.com/2026/06/29/xpeng-mona-l03-china-debut-jul-2/",
-        "summary": "Xpeng will hold the Mona L03's debut event in Beijing on July 2, with display vehicles arriving at stores starting July 1.",
-        "publishedAt": "2026-06-29"
       }
     ],
     "Li Auto": [
@@ -3583,10 +3583,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-22T21:55:13.478Z",
-  "lastDataChangeAt": "2026-07-22T17:51:57.221Z",
+  "lastCheckedAt": "2026-07-23T07:44:45.157Z",
+  "lastDataChangeAt": "2026-07-23T07:44:45.157Z",
   "latestChanges": [
-    "Xpeng news: 1 new article"
+    "Xpeng news: 2 new articles"
   ],
   "changeHistory": [
     {
@@ -3829,6 +3829,12 @@
       "changedAt": "2026-07-22T17:51:57.221Z",
       "changes": [
         "Xpeng news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-23T07:44:45.157Z",
+      "changes": [
+        "Xpeng news: 2 new articles"
       ]
     }
   ]
