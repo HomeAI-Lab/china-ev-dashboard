@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-23T07:44:45.155Z",
-  "newsFetchedAt": "2026-07-23T07:44:45.155Z",
+  "fetchedAt": "2026-07-23T15:35:07.989Z",
+  "newsFetchedAt": "2026-07-23T15:35:07.989Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-23T07:44:45.154Z",
+    "fetchedAt": "2026-07-23T15:35:07.989Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2456,6 +2456,18 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD marks 10,000th Da Tang EV delivery as flagship SUV ramps up",
+        "url": "https://cnevpost.com/2026/07/23/byd-10000th-da-tang-ev-delivery/",
+        "summary": "The 10,000th Da Tang EV was delivered today, with the owner being Dong Lu, founder of China's grassroots youth football development program Chinese Football Boy.",
+        "publishedAt": "2026-07-23"
+      },
+      {
+        "title": "BYD previews 2027 Seal 06 sedan with LiDAR for enhanced driver assistance",
+        "url": "https://cnevpost.com/2026/07/23/byd-previews-2027-seal-06-sedan/",
+        "summary": "The current Seal 06 EV was launched in June 2025 with a starting price of 109,800 yuan ($16,170) and BYD's LiDAR-free God's Eye C driver-assistance system.",
+        "publishedAt": "2026-07-23"
+      },
+      {
         "title": "BYD Da Tang EV to reach 10,000 deliveries about 1 month after launch",
         "url": "https://cnevpost.com/2026/07/22/byd-da-tang-to-reach-10000-deliveries-1-month/",
         "summary": "The delivery ceremony for the 10,000th Da Tang EV will be held on July 23.",
@@ -2502,12 +2514,6 @@
         "url": "https://cnevpost.com/2026/07/17/byd-teases-8-series-tang-800-km-range/",
         "summary": "A BYD executive previewed the electric 8-series Tang SUV, which is expected to launch in the second half of this year.",
         "publishedAt": "2026-07-17"
-      },
-      {
-        "title": "Top battery makers' market share in China in June 2026: CATL 42.70%, BYD 18.49%",
-        "url": "https://cnevpost.com/2026/07/16/top-battery-makers-share-china-jun-2026/",
-        "summary": "CATL remained China's largest power battery maker in June, though its market share fell 3.43 percentage points from May.",
-        "publishedAt": "2026-07-16"
       },
       {
         "title": "BYD hires Hungary's ex-foreign minister as Europe push deepens",
@@ -2567,12 +2573,6 @@
         "title": "BYD deepens Middle East push with 11.275 GWh storage deal for Abu Dhabi project",
         "url": "https://cnevpost.com/2026/07/10/byd-11-275-gwh-storage-deal-abu-dhabi-project/",
         "summary": "BYD signed 11.275 GWh deal with UAE's Masdar to provide energy storage systems for the world's first GW-scale round-the-clock renewable energy project.",
-        "publishedAt": "2026-07-10"
-      },
-      {
-        "title": "BYD Shark pickup appears in China regulatory filing 2 years after overseas launch",
-        "url": "https://cnevpost.com/2026/07/10/byd-shark-pickup-china-regulatory-filing/",
-        "summary": "The Shark pickup went on sale in Mexico in May 2024, and is now sold only in overseas markets.",
         "publishedAt": "2026-07-10"
       }
     ],
@@ -3583,10 +3583,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-23T07:44:45.157Z",
-  "lastDataChangeAt": "2026-07-23T07:44:45.157Z",
+  "lastCheckedAt": "2026-07-23T15:35:07.992Z",
+  "lastDataChangeAt": "2026-07-23T15:35:07.992Z",
   "latestChanges": [
-    "Xpeng news: 2 new articles"
+    "BYD news: 2 new articles"
   ],
   "changeHistory": [
     {
@@ -3835,6 +3835,12 @@
       "changedAt": "2026-07-23T07:44:45.157Z",
       "changes": [
         "Xpeng news: 2 new articles"
+      ]
+    },
+    {
+      "changedAt": "2026-07-23T15:35:07.992Z",
+      "changes": [
+        "BYD news: 2 new articles"
       ]
     }
   ]
