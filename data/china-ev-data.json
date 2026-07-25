@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-25T10:54:17.481Z",
-  "newsFetchedAt": "2026-07-25T10:54:17.481Z",
+  "fetchedAt": "2026-07-25T14:52:31.686Z",
+  "newsFetchedAt": "2026-07-25T14:52:31.686Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-25T10:54:17.481Z",
+    "fetchedAt": "2026-07-25T14:52:31.685Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3583,7 +3583,7 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-25T10:54:17.484Z",
+  "lastCheckedAt": "2026-07-25T14:52:31.688Z",
   "lastDataChangeAt": "2026-07-24T15:47:13.497Z",
   "latestChanges": [
     "Xpeng news: 2 new articles",
