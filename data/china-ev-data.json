@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-25T22:13:43.571Z",
-  "newsFetchedAt": "2026-07-25T22:13:43.571Z",
+  "fetchedAt": "2026-07-26T07:57:17.149Z",
+  "newsFetchedAt": "2026-07-26T07:57:17.149Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-25T22:13:43.570Z",
+    "fetchedAt": "2026-07-26T07:57:17.149Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2456,6 +2456,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD may unveil humanoid robot in early August, teaser suggests",
+        "url": "https://cnevpost.com/2026/07/26/byd-may-unveil-humanoid-robot-aug/",
+        "summary": "A BYD offline experience venue released a teaser poster hinting that a new humanoid robot will debut in early August.",
+        "publishedAt": "2026-07-26"
+      },
+      {
         "title": "BYD unveils design sketches of Da Han flagship sedan ahead of August debut",
         "url": "https://cnevpost.com/2026/07/24/byd-unveils-design-sketches-da-han/",
         "summary": "The BEV version of the BYD Da Han has a range of up to 1,008 km and will make its public debut at the Chengdu Auto Show, which opens on August 21.",
@@ -2568,12 +2574,6 @@
         "url": "https://cnevpost.com/2026/07/13/byd-previews-qin-max-sedan-flash-charging/",
         "summary": "BYD Qin Max is the new flagship model in the Qin family, positioned above the Qin L, and is expected to be offered in BEV and PHEV variants.",
         "publishedAt": "2026-07-13"
-      },
-      {
-        "title": "BYD Denza files all-electric N8 SUV, reviving short-lived nameplate",
-        "url": "https://cnevpost.com/2026/07/11/byd-denza-files-all-electric-n8-suv/",
-        "summary": "The plug-in hybrid Denza N8 hit the market in August 2023 and was discontinued less than a year later.",
-        "publishedAt": "2026-07-11"
       }
     ],
     "Nio": [
@@ -3583,11 +3583,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-25T22:13:43.574Z",
-  "lastDataChangeAt": "2026-07-24T15:47:13.497Z",
+  "lastCheckedAt": "2026-07-26T07:57:17.152Z",
+  "lastDataChangeAt": "2026-07-26T07:57:17.152Z",
   "latestChanges": [
-    "Xpeng news: 2 new articles",
-    "Li Auto news: 1 new article"
+    "BYD news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3862,6 +3861,12 @@
       "changes": [
         "Xpeng news: 2 new articles",
         "Li Auto news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-26T07:57:17.152Z",
+      "changes": [
+        "BYD news: 1 new article"
       ]
     }
   ]
