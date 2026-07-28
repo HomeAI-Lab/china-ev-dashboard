@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-27T22:17:14.499Z",
-  "newsFetchedAt": "2026-07-27T22:17:14.499Z",
+  "fetchedAt": "2026-07-28T00:10:53.489Z",
+  "newsFetchedAt": "2026-07-28T00:10:53.489Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-27T22:17:14.499Z",
+    "fetchedAt": "2026-07-28T00:10:53.489Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2456,12 +2456,6 @@
   "news": {
     "BYD": [
       {
-        "title": "Avatr sets August 8 launch for 07L family SUV",
-        "url": "https://cnevpost.com/2026/07/27/avatr-aug-8-launch-07l/",
-        "summary": "The Avatr 07L has a starting pre-sales price of 249,900 yuan ($36,800) and features Huawei's Qiankun ADS 5 driver-assistance system.",
-        "publishedAt": "2026-07-27"
-      },
-      {
         "title": "BYD releases official images of Da Han flagship sedan ahead of Chengdu Auto Show debut",
         "url": "https://cnevpost.com/2026/07/27/byd-releases-official-images-da-han/",
         "summary": "BYD released official images showing the Da Han from multiple angles, with the model set to make its public debut at the Chengdu Auto Show in August.",
@@ -2514,6 +2508,12 @@
         "url": "https://cnevpost.com/2026/07/21/byd-launches-seal-05-dm-i-mexico-byd-king/",
         "summary": "The plug-in hybrid sedan features BYD's fifth-generation DM technology and offers a combined range of up to 1,680 km.",
         "publishedAt": "2026-07-21"
+      },
+      {
+        "title": "BYD Fang Cheng Bao Tai 7 surpasses 200,000 sales in about 10 months",
+        "url": "https://cnevpost.com/2026/07/20/byd-fang-cheng-bao-tai-7-200000-sales/",
+        "summary": "The Tai 7 surpassed 200,000 cumulative sales about 10 months after launch, becoming the fastest boxy SUV in China to reach the milestone.",
+        "publishedAt": "2026-07-20"
       },
       {
         "title": "BYD's Brazil plant sees 100,000th NEV roll off line as workforce tops 5,500",
@@ -3583,11 +3583,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-27T22:17:14.502Z",
-  "lastDataChangeAt": "2026-07-27T22:17:14.502Z",
+  "lastCheckedAt": "2026-07-28T00:10:53.492Z",
+  "lastDataChangeAt": "2026-07-28T00:10:53.492Z",
   "latestChanges": [
-    "Xpeng news: 1 new article",
-    "Li Auto news: 1 new article"
+    "BYD news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3887,6 +3886,12 @@
       "changes": [
         "Xpeng news: 1 new article",
         "Li Auto news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-28T00:10:53.492Z",
+      "changes": [
+        "BYD news: 1 new article"
       ]
     }
   ]
