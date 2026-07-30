@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-30T06:40:40.351Z",
-  "newsFetchedAt": "2026-07-30T06:40:40.351Z",
+  "fetchedAt": "2026-07-30T09:40:55.759Z",
+  "newsFetchedAt": "2026-07-30T09:40:55.759Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-30T06:40:40.350Z",
+    "fetchedAt": "2026-07-30T09:40:55.758Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3589,7 +3589,7 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-30T06:40:40.353Z",
+  "lastCheckedAt": "2026-07-30T09:40:55.763Z",
   "lastDataChangeAt": "2026-07-29T12:20:22.216Z",
   "latestChanges": [
     "Market source cpcaRetail: added 2026-07-29"
