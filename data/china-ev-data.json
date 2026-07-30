@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-30T12:03:40.833Z",
-  "newsFetchedAt": "2026-07-30T12:03:40.833Z",
+  "fetchedAt": "2026-07-30T14:30:48.784Z",
+  "newsFetchedAt": "2026-07-30T14:30:48.784Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-30T12:03:40.832Z",
+    "fetchedAt": "2026-07-30T14:30:48.783Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3194,6 +3194,12 @@
     ],
     "Xiaomi EV": [
       {
+        "title": "Xiaomi Sky Nomad EREV SUVs go on pre-sale, launch set for September",
+        "url": "https://cnevpost.com/2026/07/30/xiaomi-sky-nomad-suvs-pre-sale/",
+        "summary": "The N90 Max is priced at 299,900 yuan ($44,170) in pre-sales and the N70 Max at 259,900 yuan, below the 339,000 yuan Tesla Model Y L.",
+        "publishedAt": "2026-07-30"
+      },
+      {
         "title": "Xiaomi's Lei Jun cites Li Auto's new L6 to defend EREV timing",
         "url": "https://cnevpost.com/2026/07/29/xiaomi-lei-jun-defend-erev-timing/",
         "summary": "The Xiaomi founder pointed to strong demand for Li Auto's new-generation Li L6 as evidence that demand for EREVs is real and robust.",
@@ -3245,12 +3251,6 @@
         "title": "Xiaomi EV June deliveries rise 36% as new YU7 variants lift sales",
         "url": "https://cnevpost.com/2026/07/08/xiaomi-ev-jun-2026-deliveries/",
         "summary": "Xiaomi EV's June deliveries rose 36.45% year-on-year and 6.04% from the previous month, marking the third consecutive month above the 30,000-unit mark.",
-        "publishedAt": "2026-07-08"
-      },
-      {
-        "title": "Xiaomi officially unveils Sky Nomad name, possibly new brand or series for EREV SUV push",
-        "url": "https://cnevpost.com/2026/07/08/xiaomi-officially-unveils-sky-nomad/",
-        "summary": "Xiaomi EV officially announced the Sky Nomad name, calling it \"a new name about space and life.\"",
         "publishedAt": "2026-07-08"
       },
       {
@@ -3589,10 +3589,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-30T12:03:40.836Z",
-  "lastDataChangeAt": "2026-07-29T12:20:22.216Z",
+  "lastCheckedAt": "2026-07-30T14:30:48.787Z",
+  "lastDataChangeAt": "2026-07-30T14:30:48.787Z",
   "latestChanges": [
-    "Market source cpcaRetail: added 2026-07-29"
+    "Xiaomi EV news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3931,6 +3931,12 @@
       "changedAt": "2026-07-29T12:20:22.216Z",
       "changes": [
         "Market source cpcaRetail: added 2026-07-29"
+      ]
+    },
+    {
+      "changedAt": "2026-07-30T14:30:48.787Z",
+      "changes": [
+        "Xiaomi EV news: 1 new article"
       ]
     }
   ]
