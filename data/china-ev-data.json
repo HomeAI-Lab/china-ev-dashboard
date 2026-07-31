@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-31T08:09:42.594Z",
-  "newsFetchedAt": "2026-07-31T08:09:42.594Z",
+  "fetchedAt": "2026-07-31T10:59:57.819Z",
+  "newsFetchedAt": "2026-07-31T10:59:57.819Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-31T08:09:42.593Z",
+    "fetchedAt": "2026-07-31T10:59:57.818Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2584,6 +2584,18 @@
     ],
     "Nio": [
       {
+        "title": "Nio battery operator Mirattery deepens securitization push with new REITs",
+        "url": "https://cnevpost.com/2026/07/31/mirattery-securitization-new-reits/",
+        "summary": "The first tranche is 337 million yuan, backed by a 5 billion yuan shelf quota.",
+        "publishedAt": "2026-07-31"
+      },
+      {
+        "title": "China's MIIT inspects Nio, Chery and JAC, extending scrutiny to Anhui car plants",
+        "url": "https://cnevpost.com/2026/07/31/china-miit-inspects-nio-chery-jac/",
+        "summary": "Inspectors randomly took sample vehicles and battery packs on site, sending them to institutions for national standard compliance testing.",
+        "publishedAt": "2026-07-31"
+      },
+      {
         "title": "Nio CEO attends CXMT listing dinner as memory maker becomes China's most valuable stock",
         "url": "https://cnevpost.com/2026/07/27/nio-ceo-attends-cxmt-listing-dinner/",
         "summary": "CXMT closed up 466% on its trading debut, delivering a striking paper return on Nio's investment.",
@@ -2630,18 +2642,6 @@
         "url": "https://cnevpost.com/2026/07/18/nio-day-2026-to-be-held-in-wuhan/",
         "summary": "Wuhan, the capital of Hubei province in central China, is a major industrial and commercial hub along the Yangtze River.",
         "publishedAt": "2026-07-18"
-      },
-      {
-        "title": "Nio chip unit showcases multiple chips at WAIC 2026 in Shanghai",
-        "url": "https://cnevpost.com/2026/07/17/nio-shenji-showcases-chips-waic-2026/",
-        "summary": "Shenji displayed several chips including the NX9031X, NX9031U and NX9031C, covering assisted driving, embodied intelligence and agent inference.",
-        "publishedAt": "2026-07-17"
-      },
-      {
-        "title": "Nio Firefly unveils new Halo series, first model to debut on July 20",
-        "url": "https://cnevpost.com/2026/07/17/nio-firefly-unveils-halo-series-first-model-jul-20/",
-        "summary": "The Halo series is Firefly's first product line centered on design-driven development.",
-        "publishedAt": "2026-07-17"
       },
       {
         "title": "Nio Firefly reaches 70,000 deliveries after steady sales growth",
@@ -3589,12 +3589,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-31T08:09:42.597Z",
-  "lastDataChangeAt": "2026-07-31T08:09:42.597Z",
+  "lastCheckedAt": "2026-07-31T10:59:57.823Z",
+  "lastDataChangeAt": "2026-07-31T10:59:57.823Z",
   "latestChanges": [
-    "Tesla China news: 2 new articles",
-    "Xiaomi EV news: 1 new article",
-    "Huawei HIMA news: 1 new article"
+    "Nio news: 2 new articles"
   ],
   "changeHistory": [
     {
@@ -3953,6 +3951,12 @@
         "Tesla China news: 2 new articles",
         "Xiaomi EV news: 1 new article",
         "Huawei HIMA news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-31T10:59:57.823Z",
+      "changes": [
+        "Nio news: 2 new articles"
       ]
     }
   ]
