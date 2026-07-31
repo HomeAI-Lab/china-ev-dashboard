@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-31T04:38:52.450Z",
-  "newsFetchedAt": "2026-07-31T04:38:52.450Z",
+  "fetchedAt": "2026-07-31T08:09:42.594Z",
+  "newsFetchedAt": "2026-07-31T08:09:42.594Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-31T04:38:52.449Z",
+    "fetchedAt": "2026-07-31T08:09:42.593Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2950,6 +2950,18 @@
     ],
     "Tesla China": [
       {
+        "title": "Tesla brings ByteDance's Doubao AI model to its cars in China",
+        "url": "https://cnevpost.com/2026/07/31/tesla-brings-doubao-ai-cars-china/",
+        "summary": "It marks a substantive step in Tesla's efforts to localize its cabin experience in China.",
+        "publishedAt": "2026-07-31"
+      },
+      {
+        "title": "Musk says Tesla China spinoff 'has never even come up in a discussion'",
+        "url": "https://cnevpost.com/2026/07/31/musk-tesla-china-spinoff-never-in-discussion/",
+        "summary": "Musk said on X the idea \"has never even come up in a discussion,\" calling it absurdly fake news.",
+        "publishedAt": "2026-07-31"
+      },
+      {
         "title": "Tesla weighs sale of China business to clear path for SpaceX merger, report says",
         "url": "https://cnevpost.com/2026/07/31/tesla-weighs-sale-china-business-spacex-merger-wsj/",
         "summary": "Some Tesla executives have been told to prepare for a separation of the China business, according to the Wall Street Journal.",
@@ -2996,18 +3008,6 @@
         "url": "https://cnevpost.com/2026/07/02/tesla-china-jun-2026-wholesale/",
         "summary": "Tesla China's wholesale volume reached 89,091 units in June, up 24.43% year-on-year, marking the 8th consecutive month of growth.",
         "publishedAt": "2026-07-02"
-      },
-      {
-        "title": "Li Auto exec says Tesla FSD stands alone, urges peers to face the gap",
-        "url": "https://cnevpost.com/2026/06/17/li-auto-exec-tesla-fsd-stands-alone-urges-peers-face-gap/",
-        "summary": "There is no system other than Tesla's FSD that can rank among the first tier, a Li Auto executive said.",
-        "publishedAt": "2026-06-17"
-      },
-      {
-        "title": "Automakers' share in China's NEV exports in May: BYD ranks first with 36.7%, Tesla 4th with 9.1%",
-        "url": "https://cnevpost.com/2026/06/10/automakers-share-china-nev-exports-may-2026/",
-        "summary": "BYD dominated China's NEV export market in May with 155,944 units exported, while Tesla China exported 38,701 units.",
-        "publishedAt": "2026-06-10"
       },
       {
         "title": "Tesla ends two-month retail slump in China with strong May performance",
@@ -3194,6 +3194,12 @@
     ],
     "Xiaomi EV": [
       {
+        "title": "Xiaomi shares slide after Sky Nomad SUVs debut",
+        "url": "https://cnevpost.com/2026/07/31/xiaomi-shares-slide-sky-nomad-debut/",
+        "summary": "Xiaomi was down 8% at the time of writing, after falling as much as 11% intraday.",
+        "publishedAt": "2026-07-31"
+      },
+      {
         "title": "Xiaomi Sky Nomad EREV SUVs go on pre-sale, launch set for September",
         "url": "https://cnevpost.com/2026/07/30/xiaomi-sky-nomad-suvs-pre-sale/",
         "summary": "The N90 Max is priced at 299,900 yuan ($44,170) in pre-sales and the N70 Max at 259,900 yuan, below the 339,000 yuan Tesla Model Y L.",
@@ -3246,12 +3252,6 @@
         "url": "https://cnevpost.com/2026/07/09/xiaomi-ev-sky-nomad-new-series-offers-first-look-suv/",
         "summary": "Xiaomi EV said Sky Nomad is its second product series after the SU7/YU7 series, positioned as an \"intelligent, transformable large-space SUV.\"",
         "publishedAt": "2026-07-09"
-      },
-      {
-        "title": "Xiaomi EV June deliveries rise 36% as new YU7 variants lift sales",
-        "url": "https://cnevpost.com/2026/07/08/xiaomi-ev-jun-2026-deliveries/",
-        "summary": "Xiaomi EV's June deliveries rose 36.45% year-on-year and 6.04% from the previous month, marking the third consecutive month above the 30,000-unit mark.",
-        "publishedAt": "2026-07-08"
       },
       {
         "title": "Xiaomi EV says it delivered over 30,000 units again in June",
@@ -3438,6 +3438,12 @@
     ],
     "Huawei HIMA": [
       {
+        "title": "Huawei-backed Luxeed to open RX SUV pre-orders in August",
+        "url": "https://cnevpost.com/2026/07/31/luxeed-rx-pre-orders-aug/",
+        "summary": "The Luxeed RX is the first Huawei HIMA model to use an X in its name and features a four-LiDAR array.",
+        "publishedAt": "2026-07-31"
+      },
+      {
         "title": "Huawei-backed Stelato G9 off-road SUV to open pre-orders on August 5",
         "url": "https://cnevpost.com/2026/07/28/stelato-g9-open-pre-orders-aug-5/",
         "summary": "The Stelato G9 is a boxy, large SUV measuring 5.2 meters long.",
@@ -3490,12 +3496,6 @@
         "url": "https://cnevpost.com/2026/06/22/huawei-aistaland-to-launch-gt7-jun-26/",
         "summary": "Aistaland GT7 opened pre-sales on May 29, with a starting pre-sales price of 219,900 yuan ($32,460).",
         "publishedAt": "2026-06-22"
-      },
-      {
-        "title": "Huawei's premium driver-assist package to cost more on chip prices",
-        "url": "https://cnevpost.com/2026/06/18/huawei-driver-assist-package-cost-more-chip-prices/",
-        "summary": "The actual purchase cost of Huawei's Qiankun ADS advanced feature package will rise by 3,000 yuan ($440).",
-        "publishedAt": "2026-06-18"
       },
       {
         "title": "Huawei-SAIC brand Shangjie launches refreshed H5 SUV with upgraded Huawei smart driving system",
@@ -3589,10 +3589,12 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-31T04:38:52.452Z",
-  "lastDataChangeAt": "2026-07-31T04:38:52.452Z",
+  "lastCheckedAt": "2026-07-31T08:09:42.597Z",
+  "lastDataChangeAt": "2026-07-31T08:09:42.597Z",
   "latestChanges": [
-    "Tesla China news: 1 new article"
+    "Tesla China news: 2 new articles",
+    "Xiaomi EV news: 1 new article",
+    "Huawei HIMA news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3943,6 +3945,14 @@
       "changedAt": "2026-07-31T04:38:52.452Z",
       "changes": [
         "Tesla China news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-31T08:09:42.597Z",
+      "changes": [
+        "Tesla China news: 2 new articles",
+        "Xiaomi EV news: 1 new article",
+        "Huawei HIMA news: 1 new article"
       ]
     }
   ]
