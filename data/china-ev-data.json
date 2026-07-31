@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-31T00:15:10.915Z",
-  "newsFetchedAt": "2026-07-31T00:15:10.915Z",
+  "fetchedAt": "2026-07-31T04:38:52.450Z",
+  "newsFetchedAt": "2026-07-31T04:38:52.450Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-31T00:15:10.914Z",
+    "fetchedAt": "2026-07-31T04:38:52.449Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2950,6 +2950,12 @@
     ],
     "Tesla China": [
       {
+        "title": "Tesla weighs sale of China business to clear path for SpaceX merger, report says",
+        "url": "https://cnevpost.com/2026/07/31/tesla-weighs-sale-china-business-spacex-merger-wsj/",
+        "summary": "Some Tesla executives have been told to prepare for a separation of the China business, according to the Wall Street Journal.",
+        "publishedAt": "2026-07-31"
+      },
+      {
         "title": "Tesla files new Model Y variant in China, likely Performance version",
         "url": "https://cnevpost.com/2026/07/10/tesla-files-new-model-y-variant-china/",
         "summary": "The new Model Y variant tops out at 250 km/h, with performance specs exceeding all versions currently on sale.",
@@ -3001,12 +3007,6 @@
         "title": "Automakers' share in China's NEV exports in May: BYD ranks first with 36.7%, Tesla 4th with 9.1%",
         "url": "https://cnevpost.com/2026/06/10/automakers-share-china-nev-exports-may-2026/",
         "summary": "BYD dominated China's NEV export market in May with 155,944 units exported, while Tesla China exported 38,701 units.",
-        "publishedAt": "2026-06-10"
-      },
-      {
-        "title": "Automakers' share in China's NEV market in May: BYD ranks first with 21.8%, Tesla returns to top five",
-        "url": "https://cnevpost.com/2026/06/10/automakers-share-china-nev-market-may-2026/",
-        "summary": "Tesla's retail sales in China rebounded sharply to 47,281 units in May, returning to the top 10 NEV list and entering the top 10 in the overall passenger car market.",
         "publishedAt": "2026-06-10"
       },
       {
@@ -3589,10 +3589,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-31T00:15:10.918Z",
-  "lastDataChangeAt": "2026-07-30T14:30:48.787Z",
+  "lastCheckedAt": "2026-07-31T04:38:52.452Z",
+  "lastDataChangeAt": "2026-07-31T04:38:52.452Z",
   "latestChanges": [
-    "Xiaomi EV news: 1 new article"
+    "Tesla China news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3937,6 +3937,12 @@
       "changedAt": "2026-07-30T14:30:48.787Z",
       "changes": [
         "Xiaomi EV news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-31T04:38:52.452Z",
+      "changes": [
+        "Tesla China news: 1 new article"
       ]
     }
   ]
