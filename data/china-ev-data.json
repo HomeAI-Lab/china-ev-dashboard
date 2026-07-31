@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-31T21:21:30.618Z",
-  "newsFetchedAt": "2026-07-31T21:21:30.618Z",
+  "fetchedAt": "2026-07-31T23:15:17.896Z",
+  "newsFetchedAt": "2026-07-31T23:15:17.896Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-31T21:21:30.617Z",
+    "fetchedAt": "2026-07-31T23:15:17.895Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3376,12 +3376,6 @@
         "publishedAt": "2026-07-06"
       },
       {
-        "title": "Leapmotor chairman buys more shares again as stock hovers near 16-month low",
-        "url": "https://cnevpost.com/2026/07/02/leapmotor-chairman-buys-more-shares-again/",
-        "summary": "This is the second stake increase by Leapmotor's chairman within a month, bringing the combined purchases over the past six months to about HK$900 million.",
-        "publishedAt": "2026-07-02"
-      },
-      {
         "title": "Leapmotor June deliveries jump 95% to fresh monthly high",
         "url": "https://cnevpost.com/2026/07/01/leapmotor-jun-2026-deliveries/",
         "summary": "Leapmotor delivered 93,376 vehicles globally in June, a new monthly record.",
@@ -3434,6 +3428,12 @@
         "url": "https://cnevpost.com/2026/06/01/leapmotor-may-2026-deliveries/",
         "summary": "Leapmotor delivered 81,569 vehicles in May, hitting a record high for the second consecutive month.",
         "publishedAt": "2026-06-01"
+      },
+      {
+        "title": "Leapmotor Hong Kong shares plunge to 2-month low as Q1 loss widens",
+        "url": "https://cnevpost.com/2026/05/18/leapmotor-hk-shares-plunge-q1-loss-widens/",
+        "summary": "Leapmotor reported Friday its first-quarter net loss widened to 390 million yuan ($57.3 million), compared with a net loss of 130 million yuan a year earlier.",
+        "publishedAt": "2026-05-18"
       }
     ],
     "Huawei HIMA": [
@@ -3591,8 +3591,8 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-31T21:21:30.621Z",
-  "lastDataChangeAt": "2026-07-31T21:21:30.621Z",
+  "lastCheckedAt": "2026-07-31T23:15:17.899Z",
+  "lastDataChangeAt": "2026-07-31T23:15:17.899Z",
   "latestChanges": [
     "Leapmotor news: 1 new article"
   ],
@@ -3969,6 +3969,12 @@
     },
     {
       "changedAt": "2026-07-31T21:21:30.621Z",
+      "changes": [
+        "Leapmotor news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-07-31T23:15:17.899Z",
       "changes": [
         "Leapmotor news: 1 new article"
       ]
