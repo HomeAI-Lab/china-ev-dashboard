@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-31T10:59:57.819Z",
-  "newsFetchedAt": "2026-07-31T10:59:57.819Z",
+  "fetchedAt": "2026-07-31T13:05:40.138Z",
+  "newsFetchedAt": "2026-07-31T13:05:40.138Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -325,7 +325,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-31T10:59:57.818Z",
+    "fetchedAt": "2026-07-31T13:05:40.137Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3316,6 +3316,12 @@
     ],
     "Leapmotor": [
       {
+        "title": "Leapmotor enters Indonesia as local KD plant starts production",
+        "url": "https://cnevpost.com/2026/07/31/leapmotor-enters-indonesia-kd-plant-production/",
+        "summary": "The first Indonesia-assembled B10 and C10 vehicles are expected to begin deliveries in August.",
+        "publishedAt": "2026-07-31"
+      },
+      {
         "title": "Leapmotor opens pre-orders for A05 compact EV with up to 510 km range",
         "url": "https://cnevpost.com/2026/07/27/leapmotor-opens-pre-orders-a05/",
         "summary": "The Leapmotor A05 offers 405-km and 510-km range options and will compete with the BYD Dolphin and Geely Xingyuan.",
@@ -3368,12 +3374,6 @@
         "url": "https://cnevpost.com/2026/07/06/leapmotor-enters-mexico/",
         "summary": "Leapmotor's B10 SUV has started deliveries in Mexico, becoming the brand's first model to enter North America.",
         "publishedAt": "2026-07-06"
-      },
-      {
-        "title": "Leapmotor chairman buys more shares again as stock hovers near 16-month low",
-        "url": "https://cnevpost.com/2026/07/02/leapmotor-chairman-buys-more-shares-again/",
-        "summary": "This is the second stake increase by Leapmotor's chairman within a month, bringing the combined purchases over the past six months to about HK$900 million.",
-        "publishedAt": "2026-07-02"
       },
       {
         "title": "Leapmotor June deliveries jump 95% to fresh monthly high",
@@ -3589,10 +3589,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-31T10:59:57.823Z",
-  "lastDataChangeAt": "2026-07-31T10:59:57.823Z",
+  "lastCheckedAt": "2026-07-31T13:05:40.140Z",
+  "lastDataChangeAt": "2026-07-31T13:05:40.140Z",
   "latestChanges": [
-    "Nio news: 2 new articles"
+    "Leapmotor news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -3957,6 +3957,12 @@
       "changedAt": "2026-07-31T10:59:57.823Z",
       "changes": [
         "Nio news: 2 new articles"
+      ]
+    },
+    {
+      "changedAt": "2026-07-31T13:05:40.140Z",
+      "changes": [
+        "Leapmotor news: 1 new article"
       ]
     }
   ]
