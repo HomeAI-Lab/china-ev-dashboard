@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-07-31T23:15:17.896Z",
-  "newsFetchedAt": "2026-07-31T23:15:17.896Z",
+  "fetchedAt": "2026-08-01T03:48:45.181Z",
+  "newsFetchedAt": "2026-08-01T03:48:45.182Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -32,7 +32,8 @@
     "2026-03",
     "2026-04",
     "2026-05",
-    "2026-06"
+    "2026-06",
+    "2026-07"
   ],
   "brands": {
     "BYD": [
@@ -65,7 +66,8 @@
       300222,
       321123,
       383453,
-      403472
+      403472,
+      null
     ],
     "Nio": [
       10055,
@@ -97,7 +99,8 @@
       35486,
       29356,
       37705,
-      40597
+      40597,
+      null
     ],
     "Xpeng": [
       8250,
@@ -129,7 +132,8 @@
       27415,
       31011,
       32158,
-      40126
+      40126,
+      null
     ],
     "Li Auto": [
       31165,
@@ -161,7 +165,8 @@
       41053,
       34085,
       33350,
-      30895
+      30895,
+      30468
     ],
     "Tesla China": [
       71447,
@@ -193,7 +198,8 @@
       85670,
       79478,
       85982,
-      89091
+      89091,
+      null
     ],
     "Zeekr": [
       12537,
@@ -225,7 +231,8 @@
       29318,
       31787,
       34377,
-      35169
+      35169,
+      null
     ],
     "Xiaomi EV": [
       null,
@@ -257,7 +264,8 @@
       21440,
       36702,
       32759,
-      34738
+      34738,
+      null
     ],
     "Leapmotor": [
       12277,
@@ -289,7 +297,8 @@
       50029,
       71387,
       81569,
-      93376
+      93376,
+      101267
     ],
     "Huawei HIMA": [
       31458,
@@ -321,11 +330,12 @@
       26582,
       32759,
       46124,
-      50624
+      50624,
+      null
     ]
   },
   "market": {
-    "fetchedAt": "2026-07-31T23:15:17.895Z",
+    "fetchedAt": "2026-08-01T03:48:45.181Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2828,6 +2838,12 @@
     ],
     "Li Auto": [
       {
+        "title": "Li Auto's delivery slide eases in July despite headlight supply hiccup",
+        "url": "https://cnevpost.com/2026/08/01/li-auto-deliveries-jul-2026/",
+        "summary": "Li Auto delivered 30,468 vehicles in July, down 0.86% year-on-year, better than June's 14.84% drop.",
+        "publishedAt": "2026-08-01"
+      },
+      {
         "title": "Li Auto exec says headlight supply issues cut i6 production by about 4,000 units",
         "url": "https://cnevpost.com/2026/07/27/li-auto-i6-production-cut-4000/",
         "summary": "The Li i6 accounted for nearly 70% of Li Auto's deliveries in June, making it the company's most important sales pillar at present.",
@@ -2880,12 +2896,6 @@
         "url": "https://cnevpost.com/2026/07/09/li-auto-jul-16-revamped-l6-launch/",
         "summary": "Li Auto will launch the next-generation Li L6 on July 16, delivering a revamp of one of its best-selling models.",
         "publishedAt": "2026-07-09"
-      },
-      {
-        "title": "Li Auto's new L6 set for potential price hike as costs surge",
-        "url": "https://cnevpost.com/2026/07/06/li-auto-new-l6-potential-price-hike/",
-        "summary": "Rising prices for memory chips and lithium carbonate are putting unprecedented cost pressure on nearly all new vehicles.",
-        "publishedAt": "2026-07-06"
       },
       {
         "title": "Li Auto revamps structure to speed up product decisions",
@@ -3194,6 +3204,12 @@
     ],
     "Xiaomi EV": [
       {
+        "title": "Xiaomi EV tops 30,000 deliveries for fourth straight month",
+        "url": "https://cnevpost.com/2026/08/01/xiaomi-ev-tops-30000-deliveries-jul-2026/",
+        "summary": "Xiaomi EV didn't disclose a specific figure, sticking with the vague wording it has always used.",
+        "publishedAt": "2026-08-01"
+      },
+      {
         "title": "Xiaomi shares slide after Sky Nomad SUVs debut",
         "url": "https://cnevpost.com/2026/07/31/xiaomi-shares-slide-sky-nomad-debut/",
         "summary": "Xiaomi was down 8% at the time of writing, after falling as much as 11% intraday.",
@@ -3245,12 +3261,6 @@
         "title": "Xiaomi details Sky Nomad SUV with images of transformable interior",
         "url": "https://cnevpost.com/2026/07/09/xiaomi-details-sky-nomad-transformable-interior/",
         "summary": "Xiaomi showed the interior space of the Sky Nomad's first model for the first time, with rotating front-row seats and an in-car \"bar counter\" that can be set up.",
-        "publishedAt": "2026-07-09"
-      },
-      {
-        "title": "Xiaomi EV says Sky Nomad is new series, offers first look at new SUV",
-        "url": "https://cnevpost.com/2026/07/09/xiaomi-ev-sky-nomad-new-series-offers-first-look-suv/",
-        "summary": "Xiaomi EV said Sky Nomad is its second product series after the SU7/YU7 series, positioned as an \"intelligent, transformable large-space SUV.\"",
         "publishedAt": "2026-07-09"
       },
       {
@@ -3316,6 +3326,12 @@
     ],
     "Leapmotor": [
       {
+        "title": "Leapmotor tops 100,000 monthly deliveries for first time",
+        "url": "https://cnevpost.com/2026/08/01/leapmotor-tops-100000-monthly-deliveries/",
+        "summary": "Leapmotor's July global deliveries reached 101,267 units, up 102% year-on-year and 8.45% from June.",
+        "publishedAt": "2026-08-01"
+      },
+      {
         "title": "Leapmotor enters Indonesia as local KD plant starts production",
         "url": "https://cnevpost.com/2026/07/31/leapmotor-enters-indonesia-kd-plant-production/",
         "summary": "The first Indonesia-assembled B10 and C10 vehicles are expected to begin deliveries in August.",
@@ -3370,10 +3386,10 @@
         "publishedAt": "2026-07-07"
       },
       {
-        "title": "Leapmotor enters Mexico, marking first step into North America",
-        "url": "https://cnevpost.com/2026/07/06/leapmotor-enters-mexico/",
-        "summary": "Leapmotor's B10 SUV has started deliveries in Mexico, becoming the brand's first model to enter North America.",
-        "publishedAt": "2026-07-06"
+        "title": "Leapmotor chairman buys more shares again as stock hovers near 16-month low",
+        "url": "https://cnevpost.com/2026/07/02/leapmotor-chairman-buys-more-shares-again/",
+        "summary": "This is the second stake increase by Leapmotor's chairman within a month, bringing the combined purchases over the past six months to about HK$900 million.",
+        "publishedAt": "2026-07-02"
       },
       {
         "title": "Leapmotor June deliveries jump 95% to fresh monthly high",
@@ -3428,12 +3444,6 @@
         "url": "https://cnevpost.com/2026/06/01/leapmotor-may-2026-deliveries/",
         "summary": "Leapmotor delivered 81,569 vehicles in May, hitting a record high for the second consecutive month.",
         "publishedAt": "2026-06-01"
-      },
-      {
-        "title": "Leapmotor Hong Kong shares plunge to 2-month low as Q1 loss widens",
-        "url": "https://cnevpost.com/2026/05/18/leapmotor-hk-shares-plunge-q1-loss-widens/",
-        "summary": "Leapmotor reported Friday its first-quarter net loss widened to 390 million yuan ($57.3 million), compared with a net loss of 130 million yuan a year earlier.",
-        "publishedAt": "2026-05-18"
       }
     ],
     "Huawei HIMA": [
@@ -3591,10 +3601,14 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-07-31T23:15:17.899Z",
-  "lastDataChangeAt": "2026-07-31T23:15:17.899Z",
+  "lastCheckedAt": "2026-08-01T03:48:45.184Z",
+  "lastDataChangeAt": "2026-08-01T03:48:45.184Z",
   "latestChanges": [
-    "Leapmotor news: 1 new article"
+    "Li Auto company-reported 2026-07: added 30468",
+    "Leapmotor company-reported 2026-07: added 101267",
+    "Li Auto news: 1 new article",
+    "Xiaomi EV news: 1 new article",
+    "Leapmotor news: 2 new articles"
   ],
   "changeHistory": [
     {
@@ -3977,6 +3991,16 @@
       "changedAt": "2026-07-31T23:15:17.899Z",
       "changes": [
         "Leapmotor news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-08-01T03:48:45.184Z",
+      "changes": [
+        "Li Auto company-reported 2026-07: added 30468",
+        "Leapmotor company-reported 2026-07: added 101267",
+        "Li Auto news: 1 new article",
+        "Xiaomi EV news: 1 new article",
+        "Leapmotor news: 2 new articles"
       ]
     }
   ]
