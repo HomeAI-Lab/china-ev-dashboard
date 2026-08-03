@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-03T03:53:24.665Z",
-  "newsFetchedAt": "2026-08-03T03:53:24.665Z",
+  "fetchedAt": "2026-08-03T07:45:32.498Z",
+  "newsFetchedAt": "2026-08-03T07:45:32.498Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-03T03:53:24.664Z",
+    "fetchedAt": "2026-08-03T07:45:32.497Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2594,6 +2594,18 @@
     ],
     "Nio": [
       {
+        "title": "Nio's first fifth-gen swap station to go live on August 7, supporting Firefly for first time",
+        "url": "https://cnevpost.com/2026/08/03/nio-first-fifth-gen-swap-station-go-live-aug-7/",
+        "summary": "The new station is compatible with all three brands — Nio, Onvo and Firefly — with the compact Firefly joining the swap network for the first time.",
+        "publishedAt": "2026-08-03"
+      },
+      {
+        "title": "Nio brand's July average transaction price hits $64,010 as ES8, ES9 anchor premium push",
+        "url": "https://cnevpost.com/2026/08/03/nio-brand-jul-2026-average-transaction-price/",
+        "summary": "Based on 20,008 deliveries, the main Nio brand generated about 8.7 billion yuan in revenue for the month.",
+        "publishedAt": "2026-08-03"
+      },
+      {
         "title": "Nio to open first fifth-gen swap station in early August, also its 4,000th in China",
         "url": "https://cnevpost.com/2026/08/01/nio-open-first-fifth-gen-swap-station-early-aug/",
         "summary": "All three of Nio Inc's brands will share the same swap network once fifth-gen sites go live.",
@@ -2640,18 +2652,6 @@
         "url": "https://cnevpost.com/2026/07/22/nio-moves-beyond-cash-burning-ev-label-chip-ai-push-morgan-stanley/",
         "summary": "Morgan Stanley says GeniTech's debut at WAIC 2026 takes Nio's stock narrative one step further toward a vertically integrated AI chip platform.",
         "publishedAt": "2026-07-22"
-      },
-      {
-        "title": "Shanghai contributes 11% of Nio's China retail sales in H1",
-        "url": "https://cnevpost.com/2026/07/21/shanghai-share-nio-retail-h1/",
-        "summary": "Nio Inc recorded retail sales of 20,736 vehicles in Shanghai in the first half of 2026.",
-        "publishedAt": "2026-07-21"
-      },
-      {
-        "title": "Nio Firefly launches first model of design-driven Halo series",
-        "url": "https://cnevpost.com/2026/07/20/nio-firefly-launches-first-model-halo-series/",
-        "summary": "The starting price for the new model is 133,300 yuan ($19,680), which is 11% higher than that of the standard Firefly EV.",
-        "publishedAt": "2026-07-20"
       },
       {
         "title": "Nio to deliver 130,000th new ES8 this week as 5-seat variant revives momentum",
@@ -3599,18 +3599,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-03T03:53:24.668Z",
-  "lastDataChangeAt": "2026-08-03T03:53:24.668Z",
+  "lastCheckedAt": "2026-08-03T07:45:32.500Z",
+  "lastDataChangeAt": "2026-08-03T07:45:32.500Z",
   "latestChanges": [
-    "BYD news: 2 new articles",
-    "Nio news: 5 new articles",
-    "Xpeng news: 2 new articles",
-    "Li Auto news: 1 new article",
-    "Tesla China news: 3 new articles",
-    "Zeekr news: 1 new article",
-    "Xiaomi EV news: 3 new articles",
-    "Leapmotor news: 1 new article",
-    "Huawei HIMA news: 2 new articles"
+    "Nio news: 2 new articles"
   ],
   "changeHistory": [
     {
@@ -4043,6 +4035,12 @@
         "Xiaomi EV news: 3 new articles",
         "Leapmotor news: 1 new article",
         "Huawei HIMA news: 2 new articles"
+      ]
+    },
+    {
+      "changedAt": "2026-08-03T07:45:32.500Z",
+      "changes": [
+        "Nio news: 2 new articles"
       ]
     }
   ]
