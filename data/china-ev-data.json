@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-03T11:43:04.915Z",
-  "newsFetchedAt": "2026-08-03T11:43:04.915Z",
+  "fetchedAt": "2026-08-03T15:14:54.186Z",
+  "newsFetchedAt": "2026-08-03T15:14:54.186Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-03T11:43:04.914Z",
+    "fetchedAt": "2026-08-03T15:14:54.185Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2472,6 +2472,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD Denza opens Z9S pre-orders from $47,100 with 1,100-km range",
+        "url": "https://cnevpost.com/2026/08/03/byd-denza-opens-z9s-pre-orders/",
+        "summary": "Denza said the Z9S has the longest range of any mass-produced all-electric model, breaking the 1,036-km record previously held by the Denza Z9GT.",
+        "publishedAt": "2026-08-03"
+      },
+      {
         "title": "BYD Fang Cheng Bao teases Tai 9 as full-size boxy SUV nears debut",
         "url": "https://cnevpost.com/2026/08/03/byd-fang-cheng-bao-teases-tai-9/",
         "summary": "Fang Cheng Bao has released the first official teaser video for the Tai 9, showing the model's side silhouette.",
@@ -2523,12 +2529,6 @@
         "title": "BYD teases 1,008-km Da Han EV ahead of Chengdu Auto Show debut in August",
         "url": "https://cnevpost.com/2026/07/23/byd-teases-da-han-ev-chengdu-auto-show-debut/",
         "summary": "The Da Han is the Dynasty lineup's first D-segment flagship sedan, with its battery electric version offering a range of 1,008 km.",
-        "publishedAt": "2026-07-23"
-      },
-      {
-        "title": "BYD marks 10,000th Da Tang EV delivery as flagship SUV ramps up",
-        "url": "https://cnevpost.com/2026/07/23/byd-10000th-da-tang-ev-delivery/",
-        "summary": "The 10,000th Da Tang EV was delivered today, with the owner being Dong Lu, founder of China's grassroots youth football development program Chinese Football Boy.",
         "publishedAt": "2026-07-23"
       },
       {
@@ -3599,11 +3599,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-03T11:43:04.918Z",
-  "lastDataChangeAt": "2026-08-03T11:43:04.918Z",
+  "lastCheckedAt": "2026-08-03T15:14:54.189Z",
+  "lastDataChangeAt": "2026-08-03T15:14:54.189Z",
   "latestChanges": [
-    "Li Auto news: 1 new article",
-    "Leapmotor news: 1 new article"
+    "BYD news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -4049,6 +4048,12 @@
       "changes": [
         "Li Auto news: 1 new article",
         "Leapmotor news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-08-03T15:14:54.189Z",
+      "changes": [
+        "BYD news: 1 new article"
       ]
     }
   ]
