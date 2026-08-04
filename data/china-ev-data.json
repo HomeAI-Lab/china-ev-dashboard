@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-04T09:49:58.314Z",
-  "newsFetchedAt": "2026-08-04T09:49:58.314Z",
+  "fetchedAt": "2026-08-04T12:17:41.604Z",
+  "newsFetchedAt": "2026-08-04T12:17:41.604Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -199,7 +199,7 @@
       79478,
       85982,
       89091,
-      null
+      93579
     ],
     "Zeekr": [
       12537,
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-04T09:49:58.313Z",
+    "fetchedAt": "2026-08-04T12:17:41.604Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2716,6 +2716,12 @@
     ],
     "Xpeng": [
       {
+        "title": "Xpeng sets August 24 for Q2 earnings after 65% sequential jump in deliveries",
+        "url": "https://cnevpost.com/2026/08/04/xpeng-sets-aug-24-q2-earnings/",
+        "summary": "Xpeng delivered 103,295 vehicles in the second quarter, within its earlier guidance range of 100,000 to 106,000 units.",
+        "publishedAt": "2026-08-04"
+      },
+      {
         "title": "Xpeng details G9L interior with 'first-class cabin' pitch",
         "url": "https://cnevpost.com/2026/08/04/xpeng-details-g9l-interior/",
         "summary": "The G9L features an 88-inch AR-HUD, a 21.4-inch rear infotainment screen and a 9-inch streaming rearview mirror.",
@@ -2768,12 +2774,6 @@
         "url": "https://cnevpost.com/2026/07/22/xpeng-aridge-certification-boost-evtol-compliance-list/",
         "summary": "Xpeng Aridge, Ehang, Volant and Autoflight were said to be included in the first batch of compliant companies.",
         "publishedAt": "2026-07-22"
-      },
-      {
-        "title": "Xpeng loses AI infrastructure chief to OpenAI's robotics push, report says",
-        "url": "https://cnevpost.com/2026/07/20/xpeng-loses-ai-infra-chief-to-openai/",
-        "summary": "Lu Siyuan is set to leave Xpeng and join OpenAI to work on embodied AI robotics research and development.",
-        "publishedAt": "2026-07-20"
       },
       {
         "title": "Xpeng launches Mona L03 SUV, betting on global mass market",
@@ -2960,6 +2960,12 @@
     ],
     "Tesla China": [
       {
+        "title": "Tesla China's July wholesale sales at 93,579 units, highest so far this year",
+        "url": "https://cnevpost.com/2026/08/04/tesla-china-jul-2026-wholesale-sales/",
+        "summary": "Tesla China's July wholesale sales rose 37.85% year-on-year, marking the ninth consecutive month of year-on-year growth.",
+        "publishedAt": "2026-08-04"
+      },
+      {
         "title": "Tesla brings ByteDance's Doubao AI model to its cars in China",
         "url": "https://cnevpost.com/2026/07/31/tesla-brings-doubao-ai-cars-china/",
         "summary": "It marks a substantive step in Tesla's efforts to localize its cabin experience in China.",
@@ -3011,12 +3017,6 @@
         "title": "BYD's BEV sales beat Tesla again in Q2 despite US EV maker's strong rebound",
         "url": "https://cnevpost.com/2026/07/02/byd-bev-sales-beat-tesla-again/",
         "summary": "BYD sold 557,090 BEVs in the second quarter, about 77,000 units more than Tesla's 480,126.",
-        "publishedAt": "2026-07-02"
-      },
-      {
-        "title": "Tesla China's June wholesale volume hits 2026 monthly high as growth streak extends",
-        "url": "https://cnevpost.com/2026/07/02/tesla-china-jun-2026-wholesale/",
-        "summary": "Tesla China's wholesale volume reached 89,091 units in June, up 24.43% year-on-year, marking the 8th consecutive month of growth.",
         "publishedAt": "2026-07-02"
       },
       {
@@ -3599,10 +3599,12 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-04T09:49:58.317Z",
-  "lastDataChangeAt": "2026-08-04T09:49:58.317Z",
+  "lastCheckedAt": "2026-08-04T12:17:41.607Z",
+  "lastDataChangeAt": "2026-08-04T12:17:41.607Z",
   "latestChanges": [
-    "BYD news: 1 new article"
+    "Tesla China company-reported 2026-07: added 93579",
+    "Xpeng news: 1 new article",
+    "Tesla China news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -4074,6 +4076,14 @@
       "changedAt": "2026-08-04T09:49:58.317Z",
       "changes": [
         "BYD news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-08-04T12:17:41.607Z",
+      "changes": [
+        "Tesla China company-reported 2026-07: added 93579",
+        "Xpeng news: 1 new article",
+        "Tesla China news: 1 new article"
       ]
     }
   ]
