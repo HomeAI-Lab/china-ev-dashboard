@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-04T03:35:47.140Z",
-  "newsFetchedAt": "2026-08-04T03:35:47.140Z",
+  "fetchedAt": "2026-08-04T06:40:09.237Z",
+  "newsFetchedAt": "2026-08-04T06:40:09.237Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-04T03:35:47.139Z",
+    "fetchedAt": "2026-08-04T06:40:09.236Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2472,6 +2472,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD Racco tops 700 orders in first week in Japan, report says",
+        "url": "https://cnevpost.com/2026/08/04/byd-racco-700-orders-first-week-japan/",
+        "summary": "Registrations of the Racco were 125 units in July, with BYD saying most of those were demo cars for dealerships.",
+        "publishedAt": "2026-08-04"
+      },
+      {
         "title": "BYD Denza opens Z9S pre-orders from $47,100 with 1,100-km range",
         "url": "https://cnevpost.com/2026/08/03/byd-denza-opens-z9s-pre-orders/",
         "summary": "Denza said the Z9S has the longest range of any mass-produced all-electric model, breaking the 1,036-km record previously held by the Denza Z9GT.",
@@ -2524,12 +2530,6 @@
         "url": "https://cnevpost.com/2026/07/24/byd-unveils-design-sketches-da-han/",
         "summary": "The BEV version of the BYD Da Han has a range of up to 1,008 km and will make its public debut at the Chengdu Auto Show, which opens on August 21.",
         "publishedAt": "2026-07-24"
-      },
-      {
-        "title": "BYD teases 1,008-km Da Han EV ahead of Chengdu Auto Show debut in August",
-        "url": "https://cnevpost.com/2026/07/23/byd-teases-da-han-ev-chengdu-auto-show-debut/",
-        "summary": "The Da Han is the Dynasty lineup's first D-segment flagship sedan, with its battery electric version offering a range of 1,008 km.",
-        "publishedAt": "2026-07-23"
       },
       {
         "title": "BYD previews 2027 Seal 06 sedan with LiDAR for enhanced driver assistance",
@@ -2594,6 +2594,12 @@
     ],
     "Nio": [
       {
+        "title": "Nio ES8 leads China EV owner loyalty, with buyers comparing just 1 rival on average, survey finds",
+        "url": "https://cnevpost.com/2026/08/04/nio-es8-leads-china-ev-owner-loyalty-survey/",
+        "summary": "The Nio ES8's NPS reached 85.3, the highest among China's all-electric models, and is the core pillar of the Nio brand's recommendation score.",
+        "publishedAt": "2026-08-04"
+      },
+      {
         "title": "Nio's flagship ES9 SUV set to reach 20,000th delivery this week",
         "url": "https://cnevpost.com/2026/08/04/nio-es9-to-reach-20000th-delivery-this-week/",
         "summary": "Nio ES9 is on track to add its second 10,000 deliveries in about 6 weeks.",
@@ -2646,12 +2652,6 @@
         "url": "https://cnevpost.com/2026/07/27/nio-ceo-attends-cxmt-listing-dinner/",
         "summary": "CXMT closed up 466% on its trading debut, delivering a striking paper return on Nio's investment.",
         "publishedAt": "2026-07-27"
-      },
-      {
-        "title": "Nio delivers 130,000th third-gen ES8 with latest 10,000 units taking just 1 month",
-        "url": "https://cnevpost.com/2026/07/22/nio-delivers-130000th-third-gen-es8/",
-        "summary": "The latest 10,000 deliveries took just 1 month, suggesting the third-generation ES8's delivery pace is returning to the 10,000-per-month level.",
-        "publishedAt": "2026-07-22"
       },
       {
         "title": "Nio to deliver 130,000th new ES8 this week as 5-seat variant revives momentum",
@@ -3599,11 +3599,11 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-04T03:35:47.143Z",
-  "lastDataChangeAt": "2026-08-04T03:35:47.143Z",
+  "lastCheckedAt": "2026-08-04T06:40:09.240Z",
+  "lastDataChangeAt": "2026-08-04T06:40:09.240Z",
   "latestChanges": [
-    "Nio news: 1 new article",
-    "Xpeng news: 1 new article"
+    "BYD news: 1 new article",
+    "Nio news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -4062,6 +4062,13 @@
       "changes": [
         "Nio news: 1 new article",
         "Xpeng news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-08-04T06:40:09.240Z",
+      "changes": [
+        "BYD news: 1 new article",
+        "Nio news: 1 new article"
       ]
     }
   ]
