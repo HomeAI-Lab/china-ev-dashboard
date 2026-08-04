@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-04T06:40:09.237Z",
-  "newsFetchedAt": "2026-08-04T06:40:09.237Z",
+  "fetchedAt": "2026-08-04T09:49:58.314Z",
+  "newsFetchedAt": "2026-08-04T09:49:58.314Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-04T06:40:09.236Z",
+    "fetchedAt": "2026-08-04T09:49:58.313Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2472,6 +2472,12 @@
   "news": {
     "BYD": [
       {
+        "title": "Global ESS battery market share in H1 2026: CATL at 27.1% as non-China markets overtake China",
+        "url": "https://cnevpost.com/2026/08/04/global-ess-battery-market-share-h1-2026/",
+        "summary": "Global ESS shipments rose 71% year-on-year to 461.3 GWh in the first half, with China's share falling to 43.9% from 50.5 percent.",
+        "publishedAt": "2026-08-04"
+      },
+      {
         "title": "BYD Racco tops 700 orders in first week in Japan, report says",
         "url": "https://cnevpost.com/2026/08/04/byd-racco-700-orders-first-week-japan/",
         "summary": "Registrations of the Racco were 125 units in July, with BYD saying most of those were demo cars for dealerships.",
@@ -2524,12 +2530,6 @@
         "url": "https://cnevpost.com/2026/07/26/byd-may-unveil-humanoid-robot-aug/",
         "summary": "A BYD offline experience venue released a teaser poster hinting that a new humanoid robot will debut in early August.",
         "publishedAt": "2026-07-26"
-      },
-      {
-        "title": "BYD unveils design sketches of Da Han flagship sedan ahead of August debut",
-        "url": "https://cnevpost.com/2026/07/24/byd-unveils-design-sketches-da-han/",
-        "summary": "The BEV version of the BYD Da Han has a range of up to 1,008 km and will make its public debut at the Chengdu Auto Show, which opens on August 21.",
-        "publishedAt": "2026-07-24"
       },
       {
         "title": "BYD previews 2027 Seal 06 sedan with LiDAR for enhanced driver assistance",
@@ -3599,11 +3599,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-04T06:40:09.240Z",
-  "lastDataChangeAt": "2026-08-04T06:40:09.240Z",
+  "lastCheckedAt": "2026-08-04T09:49:58.317Z",
+  "lastDataChangeAt": "2026-08-04T09:49:58.317Z",
   "latestChanges": [
-    "BYD news: 1 new article",
-    "Nio news: 1 new article"
+    "BYD news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -4069,6 +4068,12 @@
       "changes": [
         "BYD news: 1 new article",
         "Nio news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-08-04T09:49:58.317Z",
+      "changes": [
+        "BYD news: 1 new article"
       ]
     }
   ]
