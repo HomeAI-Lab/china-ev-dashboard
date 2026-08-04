@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-04T21:35:37.311Z",
-  "newsFetchedAt": "2026-08-04T21:35:37.311Z",
+  "fetchedAt": "2026-08-04T23:17:49.028Z",
+  "newsFetchedAt": "2026-08-04T23:17:49.028Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-04T21:35:37.310Z",
+    "fetchedAt": "2026-08-04T23:17:49.027Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3599,7 +3599,7 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-04T21:35:37.313Z",
+  "lastCheckedAt": "2026-08-04T23:17:49.031Z",
   "lastDataChangeAt": "2026-08-04T12:17:41.607Z",
   "latestChanges": [
     "Tesla China company-reported 2026-07: added 93579",
