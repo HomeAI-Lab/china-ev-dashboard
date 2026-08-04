@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-04T12:17:41.604Z",
-  "newsFetchedAt": "2026-08-04T12:17:41.604Z",
+  "fetchedAt": "2026-08-04T15:34:43.619Z",
+  "newsFetchedAt": "2026-08-04T15:34:43.619Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-04T12:17:41.604Z",
+    "fetchedAt": "2026-08-04T15:34:43.618Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -1682,8 +1682,8 @@
         "url": "https://cnevpost.com/2026/07/03/chinas-nev-retail-jun-cpca-preliminary-data/",
         "publishedAt": "2026-07-03",
         "status": "preliminary",
-        "tableUrl": "https://cnevpost.com/2026/07/02/cpca-china-jun-2026-nev-wholesale/",
-        "tablePublishedAt": "2026-07-02",
+        "tableUrl": "https://cnevpost.com/2026/08/04/cpca-china-jul-nev-wholesale/",
+        "tablePublishedAt": "2026-08-04",
         "reportedYtd": 6812000,
         "reportedYtdYoyPct": 6,
         "reportedYtdPeriod": "2026-06"
@@ -1915,8 +1915,8 @@
           "url": "https://cnevpost.com/2026/07/03/chinas-nev-retail-jun-cpca-preliminary-data/",
           "publishedAt": "2026-07-03",
           "status": "preliminary",
-          "tableUrl": "https://cnevpost.com/2026/07/02/cpca-china-jun-2026-nev-wholesale/",
-          "tablePublishedAt": "2026-07-02",
+          "tableUrl": "https://cnevpost.com/2026/08/04/cpca-china-jul-nev-wholesale/",
+          "tablePublishedAt": "2026-08-04",
           "reportedYtd": 6812000,
           "reportedYtdYoyPct": 6,
           "reportedYtdPeriod": "2026-06"
@@ -3599,7 +3599,7 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-04T12:17:41.607Z",
+  "lastCheckedAt": "2026-08-04T15:34:43.622Z",
   "lastDataChangeAt": "2026-08-04T12:17:41.607Z",
   "latestChanges": [
     "Tesla China company-reported 2026-07: added 93579",
