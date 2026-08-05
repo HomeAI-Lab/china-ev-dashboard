@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-05T12:15:21.852Z",
-  "newsFetchedAt": "2026-08-05T12:15:21.852Z",
+  "fetchedAt": "2026-08-05T15:26:19.498Z",
+  "newsFetchedAt": "2026-08-05T15:26:19.498Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-05T12:15:21.851Z",
+    "fetchedAt": "2026-08-05T15:26:19.498Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3448,6 +3448,18 @@
     ],
     "Huawei HIMA": [
       {
+        "title": "Huawei-backed Stelato starts pre-sales of G9 off-road SUV",
+        "url": "https://cnevpost.com/2026/08/05/stelato-starts-pre-sales-g9-suv/",
+        "summary": "The Stelato G9 has a starting pre-sales price of 439,800 yuan ($64,780) and received 5,100 pre-orders within the first 2 hours.",
+        "publishedAt": "2026-08-05"
+      },
+      {
+        "title": "Huawei-backed Maextro launches 2 luxury MPVs to take on Toyota Alphard, Lexus LM",
+        "url": "https://cnevpost.com/2026/08/05/maextro-launches-v680-v800-mpvs/",
+        "summary": "The Maextro V680 starts at 648,000 yuan ($95,450), while the V800 is priced from 766,000 yuan to 1.016 million yuan.",
+        "publishedAt": "2026-08-05"
+      },
+      {
         "title": "Huawei HIMA delivers 45,046 vehicles in July, down for second straight month",
         "url": "https://cnevpost.com/2026/08/01/huawei-hima-delivers-45046-vehicles-jul-2026/",
         "summary": "HIMA's July deliveries fell 4.92% year-on-year and 11.02% from June.",
@@ -3494,18 +3506,6 @@
         "url": "https://cnevpost.com/2026/06/25/maextro-unveils-v800-v680/",
         "summary": "Maextro V800 carries a pre-sales price starting at 800,000 yuan ($117,810), while the V680 starts at 650,000 yuan.",
         "publishedAt": "2026-06-25"
-      },
-      {
-        "title": "Huawei-backed Maextro launches S800 Grand Design, deepening push into ultra-luxury market",
-        "url": "https://cnevpost.com/2026/06/25/maextro-launches-s800-grand-design/",
-        "summary": "The Maextro S800 Grand Design starts at 1.388 million yuan ($204,400), taking aim at Mercedes-Benz Maybach.",
-        "publishedAt": "2026-06-25"
-      },
-      {
-        "title": "Huawei-backed Maextro to debut V800 luxury MPV on June 25",
-        "url": "https://cnevpost.com/2026/06/23/maextro-debut-v800-mpv-jun-25/",
-        "summary": "The Maextro V800 is poised to become China's first MPV with a price tag reaching 1 million yuan ($147,600).",
-        "publishedAt": "2026-06-23"
       },
       {
         "title": "Huawei-backed Aistaland to launch first model GT7 shooting-brake on June 26",
@@ -3599,11 +3599,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-05T12:15:21.855Z",
-  "lastDataChangeAt": "2026-08-05T12:15:21.855Z",
+  "lastCheckedAt": "2026-08-05T15:26:19.501Z",
+  "lastDataChangeAt": "2026-08-05T15:26:19.501Z",
   "latestChanges": [
-    "Nio news: 1 new article",
-    "Xiaomi EV news: 1 new article"
+    "Huawei HIMA news: 2 new articles"
   ],
   "changeHistory": [
     {
@@ -4113,6 +4112,12 @@
       "changes": [
         "Nio news: 1 new article",
         "Xiaomi EV news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-08-05T15:26:19.501Z",
+      "changes": [
+        "Huawei HIMA news: 2 new articles"
       ]
     }
   ]
