@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-05T19:53:32.319Z",
-  "newsFetchedAt": "2026-08-05T19:53:32.319Z",
+  "fetchedAt": "2026-08-05T21:31:51.078Z",
+  "newsFetchedAt": "2026-08-05T21:31:51.078Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-05T19:53:32.318Z",
+    "fetchedAt": "2026-08-05T21:31:51.078Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3599,7 +3599,7 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-05T19:53:32.322Z",
+  "lastCheckedAt": "2026-08-05T21:31:51.081Z",
   "lastDataChangeAt": "2026-08-05T15:26:19.501Z",
   "latestChanges": [
     "Huawei HIMA news: 2 new articles"
