@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-05T09:48:01.329Z",
-  "newsFetchedAt": "2026-08-05T09:48:01.329Z",
+  "fetchedAt": "2026-08-05T12:15:21.852Z",
+  "newsFetchedAt": "2026-08-05T12:15:21.852Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-05T09:48:01.328Z",
+    "fetchedAt": "2026-08-05T12:15:21.851Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2594,6 +2594,12 @@
     ],
     "Nio": [
       {
+        "title": "Basketball legend Yao Ming takes delivery of Nio ES9 after 2 months",
+        "url": "https://cnevpost.com/2026/08/05/yao-ming-takes-delivery-nio-es9/",
+        "summary": "Yao locked in his order on the night the ES9 was launched, but was a few minutes slower than the quickest buyers.",
+        "publishedAt": "2026-08-05"
+      },
+      {
         "title": "Nio, Zhongan deliver 90 swap stations as partnership goes national",
         "url": "https://cnevpost.com/2026/08/05/nio-zhongan-deliver-90-swap-stations/",
         "summary": "The delivery is a milestone in their plan to co-build 500 stations, with the footprint expanding beyond Anhui province.",
@@ -2645,12 +2651,6 @@
         "title": "Nio battery operator Mirattery deepens securitization push with new REITs",
         "url": "https://cnevpost.com/2026/07/31/mirattery-securitization-new-reits/",
         "summary": "The first tranche is 337 million yuan, backed by a 5 billion yuan shelf quota.",
-        "publishedAt": "2026-07-31"
-      },
-      {
-        "title": "China's MIIT inspects Nio, Chery and JAC, extending scrutiny to Anhui car plants",
-        "url": "https://cnevpost.com/2026/07/31/china-miit-inspects-nio-chery-jac/",
-        "summary": "Inspectors randomly took sample vehicles and battery packs on site, sending them to institutions for national standard compliance testing.",
         "publishedAt": "2026-07-31"
       },
       {
@@ -3204,6 +3204,12 @@
     ],
     "Xiaomi EV": [
       {
+        "title": "Xiaomi Sky Nomad pre-orders estimated at over 100,000, aiding its annual delivery goal",
+        "url": "https://cnevpost.com/2026/08/05/xiaomi-sky-nomad-pre-orders-estimated-over-100000/",
+        "summary": "Xiaomi Sky Nomad's two EREV SUVs have generally received 200 to 300 intent-deposit orders per store, according to a local media report.",
+        "publishedAt": "2026-08-05"
+      },
+      {
         "title": "Xiaomi EV tops 30,000 deliveries for fourth straight month",
         "url": "https://cnevpost.com/2026/08/01/xiaomi-ev-tops-30000-deliveries-jul-2026/",
         "summary": "Xiaomi EV didn't disclose a specific figure, sticking with the vague wording it has always used.",
@@ -3256,12 +3262,6 @@
         "url": "https://cnevpost.com/2026/07/10/xiaomi-hd-exterior-image-sky-nomad-confirms-n90-name/",
         "summary": "Xiaomi released the first complete HD exterior image of the debut Sky Nomad model, revealing that the large SUV is named the N90.",
         "publishedAt": "2026-07-10"
-      },
-      {
-        "title": "Xiaomi details Sky Nomad SUV with images of transformable interior",
-        "url": "https://cnevpost.com/2026/07/09/xiaomi-details-sky-nomad-transformable-interior/",
-        "summary": "Xiaomi showed the interior space of the Sky Nomad's first model for the first time, with rotating front-row seats and an in-car \"bar counter\" that can be set up.",
-        "publishedAt": "2026-07-09"
       },
       {
         "title": "Xiaomi EV says Sky Nomad is new series, offers first look at new SUV",
@@ -3599,10 +3599,11 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-05T09:48:01.332Z",
-  "lastDataChangeAt": "2026-08-05T09:48:01.332Z",
+  "lastCheckedAt": "2026-08-05T12:15:21.855Z",
+  "lastDataChangeAt": "2026-08-05T12:15:21.855Z",
   "latestChanges": [
-    "BYD news: 1 new article"
+    "Nio news: 1 new article",
+    "Xiaomi EV news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -4105,6 +4106,13 @@
       "changedAt": "2026-08-05T09:48:01.332Z",
       "changes": [
         "BYD news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-08-05T12:15:21.855Z",
+      "changes": [
+        "Nio news: 1 new article",
+        "Xiaomi EV news: 1 new article"
       ]
     }
   ]
