@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-06T12:18:30.609Z",
-  "newsFetchedAt": "2026-08-06T12:18:30.609Z",
+  "fetchedAt": "2026-08-06T15:27:25.743Z",
+  "newsFetchedAt": "2026-08-06T15:27:25.743Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-06T12:18:30.608Z",
+    "fetchedAt": "2026-08-06T15:27:25.742Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3586,7 +3586,10 @@
     "Leapmotor": "https://cnevpost.com/leapmotor/",
     "Huawei HIMA": "https://cnevpost.com/huawei/"
   },
-  "errors": [],
+  "errors": [
+    "Market exportDestinationTotal: Request timed out",
+    "Market exportDestinations: Request timed out"
+  ],
   "assumptions": [
     "CnEVPost reports vehicles/units, not tons.",
     "Missing brand-month cells are kept as null and are not estimated.",
@@ -3599,7 +3602,7 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-06T12:18:30.612Z",
+  "lastCheckedAt": "2026-08-06T15:27:25.746Z",
   "lastDataChangeAt": "2026-08-06T06:44:45.825Z",
   "latestChanges": [
     "BYD news: 1 new article",
