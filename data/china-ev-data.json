@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-06T03:35:29.263Z",
-  "newsFetchedAt": "2026-08-06T03:35:29.263Z",
+  "fetchedAt": "2026-08-06T06:44:45.822Z",
+  "newsFetchedAt": "2026-08-06T06:44:45.822Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-06T03:35:29.262Z",
+    "fetchedAt": "2026-08-06T06:44:45.821Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2472,6 +2472,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD Yangwang launches 4-seat version of flagship U8L SUV at about $215,000",
+        "url": "https://cnevpost.com/2026/08/06/byd-yangwang-launches-4-seat-u8l/",
+        "summary": "The full-size executive flagship SUV starts at 1,458,000 yuan ($214,740).",
+        "publishedAt": "2026-08-06"
+      },
+      {
         "title": "BYD's first Brazil-built plug-in hybrid goes on sale, running on gasoline, ethanol or electricity",
         "url": "https://cnevpost.com/2026/08/05/byd-1st-brazil-built-phev-song-pro-flex-goes-on-sale/",
         "summary": "The BYD Song Pro Super-Hibrido Flex Fuel is launched in Brazil and could eventually be sold in markets including India.",
@@ -2584,12 +2590,6 @@
         "url": "https://cnevpost.com/2026/07/21/byd-launches-seal-05-dm-i-mexico-byd-king/",
         "summary": "The plug-in hybrid sedan features BYD's fifth-generation DM technology and offers a combined range of up to 1,680 km.",
         "publishedAt": "2026-07-21"
-      },
-      {
-        "title": "BYD Fang Cheng Bao Tai 7 surpasses 200,000 sales in about 10 months",
-        "url": "https://cnevpost.com/2026/07/20/byd-fang-cheng-bao-tai-7-200000-sales/",
-        "summary": "The Tai 7 surpassed 200,000 cumulative sales about 10 months after launch, becoming the fastest boxy SUV in China to reach the milestone.",
-        "publishedAt": "2026-07-20"
       }
     ],
     "Nio": [
@@ -2898,6 +2898,12 @@
         "publishedAt": "2026-07-09"
       },
       {
+        "title": "Li Auto teases i9, its largest SUV yet, with September launch planned",
+        "url": "https://cnevpost.com/2026/07/09/li-auto-teases-i9-sept-launch/",
+        "summary": "Li i9 measures 5,225 mm in length with a 3,168 mm wheelbase, significantly larger than the current all-electric flagship Li i8.",
+        "publishedAt": "2026-07-09"
+      },
+      {
         "title": "Li Auto sets July 16 for revamped L6 SUV launch to revive slumping sales",
         "url": "https://cnevpost.com/2026/07/09/li-auto-jul-16-revamped-l6-launch/",
         "summary": "Li Auto will launch the next-generation Li L6 on July 16, delivering a revamp of one of its best-selling models.",
@@ -2950,12 +2956,6 @@
         "url": "https://cnevpost.com/2026/06/17/li-auto-exec-tesla-fsd-stands-alone-urges-peers-face-gap/",
         "summary": "There is no system other than Tesla's FSD that can rank among the first tier, a Li Auto executive said.",
         "publishedAt": "2026-06-17"
-      },
-      {
-        "title": "Li Auto to launch refreshed L6 extended-range SUV in July to boost sales",
-        "url": "https://cnevpost.com/2026/06/16/li-auto-to-launch-refreshed-l6-july/",
-        "summary": "Li Auto will roll out the new-generation Li L6 in July, a redesign of its entry-level extended-range SUV.",
-        "publishedAt": "2026-06-16"
       }
     ],
     "Tesla China": [
@@ -3599,14 +3599,11 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-06T03:35:29.266Z",
-  "lastDataChangeAt": "2026-08-06T03:35:29.266Z",
+  "lastCheckedAt": "2026-08-06T06:44:45.825Z",
+  "lastDataChangeAt": "2026-08-06T06:44:45.825Z",
   "latestChanges": [
     "BYD news: 1 new article",
-    "Nio news: 2 new articles",
-    "Li Auto news: 1 new article",
-    "Xiaomi EV news: 1 new article",
-    "Huawei HIMA news: 2 new articles"
+    "Li Auto news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -4132,6 +4129,13 @@
         "Li Auto news: 1 new article",
         "Xiaomi EV news: 1 new article",
         "Huawei HIMA news: 2 new articles"
+      ]
+    },
+    {
+      "changedAt": "2026-08-06T06:44:45.825Z",
+      "changes": [
+        "BYD news: 1 new article",
+        "Li Auto news: 1 new article"
       ]
     }
   ]
