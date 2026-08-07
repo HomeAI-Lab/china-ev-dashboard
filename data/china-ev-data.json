@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-07T05:49:53.597Z",
-  "newsFetchedAt": "2026-08-07T05:49:53.597Z",
+  "fetchedAt": "2026-08-07T07:40:14.939Z",
+  "newsFetchedAt": "2026-08-07T07:40:14.939Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-07T05:49:53.596Z",
+    "fetchedAt": "2026-08-07T07:40:14.938Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2472,6 +2472,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD Fang Cheng Bao files for Tai 9, its largest SUV yet",
+        "url": "https://cnevpost.com/2026/08/07/byd-fang-cheng-bao-files-tai-9/",
+        "summary": "The 6-seat plug-in hybrid SUV measures 5,270 mm in length, exceeding the 5,195 mm Bao 8, currently Fang Cheng Bao's largest model.",
+        "publishedAt": "2026-08-07"
+      },
+      {
         "title": "Global EV battery market share in H1 2026: CATL 39.9%, BYD 14.4%",
         "url": "https://cnevpost.com/2026/08/07/global-ev-battery-market-share-h1-2026/",
         "summary": "Seven Chinese companies ranked among the top 10, with a combined 72.4% share of the global EV battery market.",
@@ -2524,12 +2530,6 @@
         "url": "https://cnevpost.com/2026/08/01/byd-jul-2026-sales/",
         "summary": "BYD sold 419,211 NEVs at wholesale in July, up 21.76% year-on-year, the third consecutive month of annual growth.",
         "publishedAt": "2026-08-01"
-      },
-      {
-        "title": "Denza Z9S to begin pre-sales on August 3 with up to 920 km range",
-        "url": "https://cnevpost.com/2026/07/28/denza-z9s-pre-sales-aug-3/",
-        "summary": "The Denza Z9S all-electric sedan offers 920 km of CLTC range in single-motor form and 780 km in tri-motor version.",
-        "publishedAt": "2026-07-28"
       },
       {
         "title": "BYD takes on Toyota, Honda, and Nissan on their home turf with all-electric K-Car Racco",
@@ -3599,10 +3599,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-07T05:49:53.599Z",
-  "lastDataChangeAt": "2026-08-07T05:49:53.599Z",
+  "lastCheckedAt": "2026-08-07T07:40:14.942Z",
+  "lastDataChangeAt": "2026-08-07T07:40:14.942Z",
   "latestChanges": [
-    "Leapmotor news: 1 new article"
+    "BYD news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -4148,6 +4148,12 @@
       "changedAt": "2026-08-07T05:49:53.599Z",
       "changes": [
         "Leapmotor news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-08-07T07:40:14.942Z",
+      "changes": [
+        "BYD news: 1 new article"
       ]
     }
   ]
