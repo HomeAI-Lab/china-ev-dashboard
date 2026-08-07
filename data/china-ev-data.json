@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-07T07:40:14.939Z",
-  "newsFetchedAt": "2026-08-07T07:40:14.939Z",
+  "fetchedAt": "2026-08-07T09:14:44.847Z",
+  "newsFetchedAt": "2026-08-07T09:14:44.847Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-07T07:40:14.938Z",
+    "fetchedAt": "2026-08-07T09:14:44.846Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2472,6 +2472,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD files updated Seal 07 sedan with larger dimensions, more power",
+        "url": "https://cnevpost.com/2026/08/07/byd-files-updated-seal-07-sedan/",
+        "summary": "The updated Seal 07 is significantly larger, with its length increasing to 5,080 mm from 4,995 mm.",
+        "publishedAt": "2026-08-07"
+      },
+      {
         "title": "BYD Fang Cheng Bao files for Tai 9, its largest SUV yet",
         "url": "https://cnevpost.com/2026/08/07/byd-fang-cheng-bao-files-tai-9/",
         "summary": "The 6-seat plug-in hybrid SUV measures 5,270 mm in length, exceeding the 5,195 mm Bao 8, currently Fang Cheng Bao's largest model.",
@@ -2526,10 +2532,16 @@
         "publishedAt": "2026-08-03"
       },
       {
-        "title": "BYD July sales jump 21.8% as overseas deliveries hit fresh record",
-        "url": "https://cnevpost.com/2026/08/01/byd-jul-2026-sales/",
-        "summary": "BYD sold 419,211 NEVs at wholesale in July, up 21.76% year-on-year, the third consecutive month of annual growth.",
-        "publishedAt": "2026-08-01"
+        "title": "Denza Z9S to begin pre-sales on August 3 with up to 920 km range",
+        "url": "https://cnevpost.com/2026/07/28/denza-z9s-pre-sales-aug-3/",
+        "summary": "The Denza Z9S all-electric sedan offers 920 km of CLTC range in single-motor form and 780 km in tri-motor version.",
+        "publishedAt": "2026-07-28"
+      },
+      {
+        "title": "BYD confirms plan to unveil humanoid robot in August",
+        "url": "https://cnevpost.com/2026/07/28/byd-confirms-plan-humanoid-robot-aug/",
+        "summary": "BYD told China Securities Journal it plans to unveil a humanoid robot in August.",
+        "publishedAt": "2026-07-28"
       },
       {
         "title": "BYD takes on Toyota, Honda, and Nissan on their home turf with all-electric K-Car Racco",
@@ -2578,18 +2590,6 @@
         "url": "https://cnevpost.com/2026/07/22/byd-da-tang-to-reach-10000-deliveries-1-month/",
         "summary": "The delivery ceremony for the 10,000th Da Tang EV will be held on July 23.",
         "publishedAt": "2026-07-22"
-      },
-      {
-        "title": "BYD unveils Qin Max interior as launch nears",
-        "url": "https://cnevpost.com/2026/07/22/byd-qin-max-interior/",
-        "summary": "BYD has yet to announce the model's planned launch date, though rumors suggest it could be on August 13.",
-        "publishedAt": "2026-07-22"
-      },
-      {
-        "title": "BYD launches Seal 05 DM-i plug-in hybrid sedan in Mexico under BYD King name",
-        "url": "https://cnevpost.com/2026/07/21/byd-launches-seal-05-dm-i-mexico-byd-king/",
-        "summary": "The plug-in hybrid sedan features BYD's fifth-generation DM technology and offers a combined range of up to 1,680 km.",
-        "publishedAt": "2026-07-21"
       }
     ],
     "Nio": [
@@ -2654,6 +2654,12 @@
         "publishedAt": "2026-08-01"
       },
       {
+        "title": "Nio battery operator Mirattery deepens securitization push with new REITs",
+        "url": "https://cnevpost.com/2026/07/31/mirattery-securitization-new-reits/",
+        "summary": "The first tranche is 337 million yuan, backed by a 5 billion yuan shelf quota.",
+        "publishedAt": "2026-07-31"
+      },
+      {
         "title": "China's MIIT inspects Nio, Chery and JAC, extending scrutiny to Anhui car plants",
         "url": "https://cnevpost.com/2026/07/31/china-miit-inspects-nio-chery-jac/",
         "summary": "Inspectors randomly took sample vehicles and battery packs on site, sending them to institutions for national standard compliance testing.",
@@ -2706,12 +2712,6 @@
         "url": "https://cnevpost.com/2026/07/18/nio-day-2026-to-be-held-in-wuhan/",
         "summary": "Wuhan, the capital of Hubei province in central China, is a major industrial and commercial hub along the Yangtze River.",
         "publishedAt": "2026-07-18"
-      },
-      {
-        "title": "Nio chip unit showcases multiple chips at WAIC 2026 in Shanghai",
-        "url": "https://cnevpost.com/2026/07/17/nio-shenji-showcases-chips-waic-2026/",
-        "summary": "Shenji displayed several chips including the NX9031X, NX9031U and NX9031C, covering assisted driving, embodied intelligence and agent inference.",
-        "publishedAt": "2026-07-17"
       }
     ],
     "Xpeng": [
@@ -3386,6 +3386,12 @@
         "publishedAt": "2026-07-10"
       },
       {
+        "title": "Leapmotor starts taking pre-orders for refreshed B01, B10 as product blitz continues",
+        "url": "https://cnevpost.com/2026/07/08/leapmotor-starts-taking-pre-orders-refreshed-b01-b10/",
+        "summary": "The refresh of Leapmotor's two B-series models extends the update cadence of its C-series, aimed at supporting a target of delivering 1 million vehicles in 2026.",
+        "publishedAt": "2026-07-08"
+      },
+      {
         "title": "Leapmotor brings A10-based B03X crossover to Europe at double its China price",
         "url": "https://cnevpost.com/2026/07/07/leapmotor-brings-a10-based-b03x-to-europe/",
         "summary": "Leapmotor B03X features a 145 kW motor, a significant power boost over China's A10.",
@@ -3438,12 +3444,6 @@
         "url": "https://cnevpost.com/2026/06/05/stellantis-begins-leapmotor-vehicle-assembly-malaysia/",
         "summary": "The first Leapmotor model produced at Stellantis' Gurun plant is the C10 SUV, to be followed by the B10 compact SUV.",
         "publishedAt": "2026-06-05"
-      },
-      {
-        "title": "Leapmotor sees sixth management stake increase in two years",
-        "url": "https://cnevpost.com/2026/06/04/leapmotor-sixth-management-stake-increase-two-years/",
-        "summary": "The latest share purchase comes as Leapmotor's stock price has tumbled 29% since mid-April.",
-        "publishedAt": "2026-06-04"
       }
     ],
     "Huawei HIMA": [
@@ -3599,10 +3599,12 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-07T07:40:14.942Z",
-  "lastDataChangeAt": "2026-08-07T07:40:14.942Z",
+  "lastCheckedAt": "2026-08-07T09:14:44.850Z",
+  "lastDataChangeAt": "2026-08-07T09:14:44.850Z",
   "latestChanges": [
-    "BYD news: 1 new article"
+    "BYD news: 3 new articles",
+    "Nio news: 1 new article",
+    "Leapmotor news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -4154,6 +4156,14 @@
       "changedAt": "2026-08-07T07:40:14.942Z",
       "changes": [
         "BYD news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-08-07T09:14:44.850Z",
+      "changes": [
+        "BYD news: 3 new articles",
+        "Nio news: 1 new article",
+        "Leapmotor news: 1 new article"
       ]
     }
   ]
