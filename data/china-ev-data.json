@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-08T04:21:14.110Z",
-  "newsFetchedAt": "2026-08-08T04:21:14.110Z",
+  "fetchedAt": "2026-08-08T05:55:55.986Z",
+  "newsFetchedAt": "2026-08-08T05:55:55.986Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-08T04:21:14.110Z",
+    "fetchedAt": "2026-08-08T05:55:55.986Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -2472,6 +2472,12 @@
   "news": {
     "BYD": [
       {
+        "title": "BYD's 2027 Seal 06 set for August 11 launch with LiDAR-based driver assistance",
+        "url": "https://cnevpost.com/2026/08/08/byd-2027-seal-06-aug-11-launch/",
+        "summary": "The new model will come in both EV and DM-i plug-in hybrid versions, featuring the God's Eye B driver assistance system with LiDAR.",
+        "publishedAt": "2026-08-08"
+      },
+      {
         "title": "BYD files updated Seal 07 sedan with larger dimensions, more power",
         "url": "https://cnevpost.com/2026/08/07/byd-files-updated-seal-07-sedan/",
         "summary": "The updated Seal 07 is significantly larger, with its length increasing to 5,080 mm from 4,995 mm.",
@@ -2583,12 +2589,6 @@
         "title": "BYD marks 10,000th Da Tang EV delivery as flagship SUV ramps up",
         "url": "https://cnevpost.com/2026/07/23/byd-10000th-da-tang-ev-delivery/",
         "summary": "The 10,000th Da Tang EV was delivered today, with the owner being Dong Lu, founder of China's grassroots youth football development program Chinese Football Boy.",
-        "publishedAt": "2026-07-23"
-      },
-      {
-        "title": "BYD previews 2027 Seal 06 sedan with LiDAR for enhanced driver assistance",
-        "url": "https://cnevpost.com/2026/07/23/byd-previews-2027-seal-06-sedan/",
-        "summary": "The current Seal 06 EV was launched in June 2025 with a starting price of 109,800 yuan ($16,170) and BYD's LiDAR-free God's Eye C driver-assistance system.",
         "publishedAt": "2026-07-23"
       }
     ],
@@ -3599,10 +3599,10 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-08T04:21:14.113Z",
-  "lastDataChangeAt": "2026-08-07T15:08:26.896Z",
+  "lastCheckedAt": "2026-08-08T05:55:55.988Z",
+  "lastDataChangeAt": "2026-08-08T05:55:55.988Z",
   "latestChanges": [
-    "Nio news: 1 new article"
+    "BYD news: 1 new article"
   ],
   "changeHistory": [
     {
@@ -4181,6 +4181,12 @@
       "changedAt": "2026-08-07T15:08:26.896Z",
       "changes": [
         "Nio news: 1 new article"
+      ]
+    },
+    {
+      "changedAt": "2026-08-08T05:55:55.988Z",
+      "changes": [
+        "BYD news: 1 new article"
       ]
     }
   ]
