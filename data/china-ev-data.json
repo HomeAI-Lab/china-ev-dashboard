@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-09T04:36:05.083Z",
-  "newsFetchedAt": "2026-08-09T04:36:05.083Z",
+  "fetchedAt": "2026-08-09T05:57:24.796Z",
+  "newsFetchedAt": "2026-08-09T05:57:24.796Z",
   "unit": "vehicles",
   "months": [
     "2024-01",
@@ -335,7 +335,7 @@
     ]
   },
   "market": {
-    "fetchedAt": "2026-08-09T04:36:05.082Z",
+    "fetchedAt": "2026-08-09T05:57:24.795Z",
     "unit": "vehicles",
     "months": [
       "2021-06",
@@ -3599,7 +3599,7 @@
   "schemaVersion": 3,
   "firstFetchedAt": "2026-06-27T04:35:04.718Z",
   "historyPolicy": "append-and-merge: brand and market months, ranking periods, source snapshots, and change events are retained; news is a replaceable latest-20 snapshot.",
-  "lastCheckedAt": "2026-08-09T04:36:05.086Z",
+  "lastCheckedAt": "2026-08-09T05:57:24.798Z",
   "lastDataChangeAt": "2026-08-08T13:59:04.764Z",
   "latestChanges": [
     "Nio news: 1 new article"
